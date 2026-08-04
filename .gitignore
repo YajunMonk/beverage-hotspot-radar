@@ -1,0 +1,42 @@
+# macOS and editor residue
+.DS_Store
+*.swp
+*.tmp
+
+# Local credentials and machine-specific settings
+.env
+.env.*
+!.env.example
+.netlify/
+
+# Re-creatable browser/test caches
+.playwright-cli/
+test-results/
+99_工程工具/outputs/playwright/
+
+# Re-creatable packages and one-off import workspaces
+99_工程工具/dist/
+99_工程工具/outputs/**/source_import/
+99_工程工具/scripts/node_modules/
+99_工程工具/outputs/**/node_modules/
+
+# Runtime dependencies are provided by the local workspace
+node_modules/
+**/node_modules/
+**/node_modules
+
+# Logs and language caches
+*.log
+__pycache__/
+*.pyc
+.venv/
+
+# Public-source branch boundary
+90_历史归档/
+01_数据抓取/Codex抓取/
+01_数据抓取/来源名单/
+02_数据清洗/处理后数据/
+02_数据清洗/校验记录/
+99_工程工具/outputs/
+99_工程工具/project_state.json
+*.xlsx

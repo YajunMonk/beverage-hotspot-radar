@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#fffefc">
+  <meta name="description" content="饮品热点雷达 V1.1：浏览小红书品牌官号周度行业事件与原始证据，并查看已登记的行业资讯、美食垂类与热点选题来源。">
+  <title>饮品热点雷达 V1.1</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111111'/%3E%3Cpath d='M18 19h28l-3 31H21z' fill='%23fff'/%3E%3Cpath d='M25 28c5-5 11-5 16 0-5 5-11 5-16 0Z' fill='%23f15b35'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./radar-v1.css">
+  <script src="./radar-v1-data.js" defer></script>
+  <script src="./radar-v1.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <div class="header-bar page-shell">
+      <a class="brand-mark" href="#overview" aria-label="返回饮品热点雷达本周概览">
+        <span class="radar-glyph beverage-cup-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" focusable="false">
+            <path d="M18 19h28l-3 31H21z" fill="#fff"></path>
+            <path d="M25 28c5-5 11-5 16 0-5 5-11 5-16 0Z" fill="#f15b35"></path>
+          </svg>
+        </span>
+        <span>
+          <strong>饮品热点雷达</strong>
+          <small>BEVERAGE SIGNAL DESK</small>
+        </span>
+      </a>
+      <div class="release-stamp" aria-label="当前版本">
+        <span>W30</span>
+        <strong>V1.1</strong>
+      </div>
+    </div>
+
+    <nav class="section-nav" aria-label="页面章节">
+      <div class="page-shell nav-track">
+        <a href="#overview">本周概览</a>
+        <a href="#events">来源线索</a>
+        <a href="#evidence">原始内容</a>
+        <a href="#methodology">数据口径</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="overview" class="hero section">
+      <div class="page-shell">
+        <div class="scope-line" aria-label="本期数据范围">
+          <span class="eyebrow">WEEKLY RESEARCH NOTE · 2026.07.21—07.27</span>
+          <div class="scope-chips">
+            <span>小红书</span>
+            <span>品牌 · 三方 · KOC</span>
+            <span>最近 7 天</span>
+            <span>规则 V1.1</span>
+          </div>
+        </div>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">本周饮品市场，什么值得看？</p>
+            <h1>从品牌发帖，<span class="mobile-break" aria-hidden="true"></span>回到<br><em>真正发生的事</em></h1>
+            <p class="hero-lead">
+              本周 94 条官方内容被归并为 35 轮可回读的行业事件。内容是证据，事件是主对象，
+              蜘蛛侠、菠萝等具体对象作为动态实体持续追踪。
+            </p>
+          </div>
+        </div>
+
+        <section id="core-themes" class="core-theme-section" aria-labelledby="core-theme-heading">
+          <div class="core-theme-heading">
+            <div>
+              <span class="section-index">01 / CORE THEMES</span>
+              <h2 id="core-theme-heading">核心看点</h2>
+            </div>
+            <p>先看判断，再看标签；点击卡片、代表事件或标签，即可回到对应事件与原始证据。</p>
+          </div>
+
+          <div id="theme-analysis-grid" class="theme-analysis-grid" aria-label="核心看点分析"></div>
+        </section>
+
+        <section id="editorial-watch" class="editorial-watch" aria-labelledby="editorial-watch-heading">
+          <div class="editorial-watch-heading">
+            <div>
+              <span class="section-index">HOT TOPICS / 选题参考</span>
+              <h2 id="editorial-watch-heading">近 7 天热点选题</h2>
+            </div>
+            <span class="editorial-scope-badge">按抓取时点赞排序</span>
+          </div>
+          <div id="editorial-watch-content" aria-live="polite"></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="events" class="section event-section">
+      <div class="page-shell">
+        <div class="section-title">
+          <div>
+            <span class="section-index">02 / EVENT LIBRARY</span>
+            <h2>来源线索库</h2>
+          </div>
+          <p>品牌按事件归并；三方与 KOC 按单帖呈现，可直接打开原帖。</p>
+        </div>
+
+        <div class="event-toolbar">
+          <div class="toolbar-summary">
+            <strong id="event-result-count">64 条来源线索</strong>
+            <span id="filter-summary">当前为全部结果</span>
+          </div>
+          <button id="mobile-filter-open" class="mobile-filter-button" type="button">
+            筛选线索
+            <span id="mobile-filter-count" aria-label="已选筛选数量">0</span>
+          </button>
+          <button class="text-button reset-filters" type="button">清空筛选</button>
+        </div>
+
+        <div id="source-coverage" class="source-coverage" aria-live="polite"></div>
+
+        <div class="event-layout">
+          <aside class="desktop-filter-panel" aria-label="来源线索筛选">
+            <div class="filter-intro">
+              <strong>筛选规则</strong>
+              <p>同一组为 OR，不同组之间为 AND。</p>
+            </div>
+            <div id="desktop-filters" class="filter-groups"></div>
+          </aside>
+
+          <div class="event-results">
+            <div id="active-filter-chips" class="active-filter-chips" aria-live="polite"></div>
+            <div id="event-list" class="event-list"></div>
+            <div id="event-empty" class="empty-state" hidden>
+              <span aria-hidden="true">○</span>
+              <h3>没有符合条件的来源线索</h3>
+              <p>可以减少一个筛选条件，或清空后重新查看。</p>
+              <button class="button reset-filters" type="button">清空筛选</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence" class="section evidence-section">
+      <div class="page-shell">
+        <div class="section-title">
+          <div>
+            <span class="section-index">03 / SOURCE EVIDENCE</span>
+            <h2>原始内容证据</h2>
+          </div>
+          <p>保留原文、发布时间与互动快照，不展示缺失的分享数。</p>
+        </div>
+
+        <div class="evidence-toolbar">
+          <label class="search-field">
+            <span>搜索标题、品牌或线索</span>
+            <input id="content-search" type="search" placeholder="例如：菠萝、蜘蛛侠、瑞幸" autocomplete="off">
+          </label>
+          <label class="select-field">
+            <span>排序</span>
+            <select id="content-sort">
+              <option value="latest">最新发布</option>
+              <option value="likes">点赞从高到低</option>
+              <option value="collects">收藏从高到低</option>
+              <option value="comments">评论从高到低</option>
+            </select>
+          </label>
+          <p id="content-result-count" class="content-result-count"></p>
+        </div>
+
+        <div id="content-list" class="content-list"></div>
+        <button id="content-load-more" class="load-more" type="button">继续查看</button>
+      </div>
+    </section>
+
+    <section id="methodology" class="section methodology-section">
+      <div class="page-shell">
+        <div class="section-title light">
+          <div>
+            <span class="section-index">04 / READING RULES</span>
+            <h2>这份雷达应该怎么读</h2>
+          </div>
+          <p>边界比结论更重要。</p>
+        </div>
+
+        <div class="method-grid">
+          <article>
+            <span>01</span>
+            <h3>当前只代表监测样本</h3>
+            <p>本期 KPI 仍只覆盖 9 个品牌官号、94 条内容与 35 个事件。三方 10 条、KOC 19 条只进入来源线索筛选，不改变本期统计。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>内容数不等于事件数</h3>
+            <p>品牌可以为同一轮活动连续发布多条内容。页面默认按事件归并，内容只作为证据展开。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>互动量不等于销量</h3>
+            <p>点赞、收藏和评论只反映公开内容互动。它们不能替代销售、到店、转化或完整消费者调研。</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>具体实体不等于固定分类</h3>
+            <p>蜘蛛侠是合作对象，菠萝是产品元素；它们进入动态实体词典，方便以后跨周、跨品牌观察。</p>
+          </article>
+          <article>
+            <span>05</span>
+            <h3>趋势必须跨事件判断</h3>
+            <p>单品牌高强度传播仍是单品牌案例。跨品牌、跨来源并持续出现，才有资格进入趋势候选。</p>
+          </article>
+          <article>
+            <span>06</span>
+            <h3>KOC 覆盖会显示完成度</h3>
+            <p>8 个指定账号均已完成本轮；3 个资讯/测评号保留 9 条、5 个美食号保留 10 条，共 19 条可回读单帖。</p>
+          </article>
+        </div>
+
+        <div class="method-footer">
+          <p>数据版本 <strong>V1.1</strong> · 标签规则 <strong>tag-filter-v1.1-r3</strong></p>
+          <p>更新于 <time id="generated-time">—</time></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-shell">
+      <span>饮品热点雷达 · 公开研究原型</span>
+      <span>小红书 × 品牌 / 三方 / KOC</span>
+    </div>
+  </footer>
+
+  <dialog id="event-dialog" class="event-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-shell">
+      <button id="event-dialog-close" class="dialog-close" type="button" aria-label="关闭事件详情">×</button>
+      <div id="event-dialog-content"></div>
+    </div>
+  </dialog>
+
+  <dialog id="mobile-filter-dialog" class="mobile-filter-dialog" aria-labelledby="mobile-filter-title">
+    <div class="mobile-filter-shell">
+      <div class="mobile-filter-head">
+        <div>
+          <span class="section-index">FILTER EVENTS</span>
+          <h2 id="mobile-filter-title">筛选来源线索</h2>
+        </div>
+        <button id="mobile-filter-close" class="dialog-close" type="button" aria-label="关闭筛选">×</button>
+      </div>
+      <p class="mobile-filter-rule">同一组为 OR，不同组之间为 AND。</p>
+      <div id="mobile-filters" class="filter-groups"></div>
+      <div class="mobile-filter-actions">
+        <button class="text-button reset-filters" type="button">清空</button>
+        <button id="mobile-filter-apply" class="button" type="button">查看结果</button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
