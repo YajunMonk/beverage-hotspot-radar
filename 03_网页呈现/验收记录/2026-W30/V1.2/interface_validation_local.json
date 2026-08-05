@@ -1,0 +1,184 @@
+{
+  "schema_version": "interface-validation-v1.2",
+  "target_url": "http://127.0.0.1:8877/",
+  "checked_at": "2026-08-05T03:45:12.523Z",
+  "status": "passed",
+  "summary": {
+    "total": 26,
+    "passed": 26,
+    "failed": 0
+  },
+  "failed_check_ids": [],
+  "checks": [
+    {
+      "id": "http_status",
+      "status": "passed",
+      "expected": "2xx",
+      "actual": 200
+    },
+    {
+      "id": "title",
+      "status": "passed",
+      "expected": "饮品热点雷达 V1.2 · BI 数据版",
+      "actual": "饮品热点雷达 V1.2 · BI 数据版"
+    },
+    {
+      "id": "release",
+      "status": "passed",
+      "expected": "V1.2",
+      "actual": "V1.2"
+    },
+    {
+      "id": "all_source_count",
+      "status": "passed",
+      "expected": "64 条来源线索",
+      "actual": "64 条来源线索"
+    },
+    {
+      "id": "brand_content_count",
+      "status": "passed",
+      "expected": "94 条内容",
+      "actual": "94 条内容"
+    },
+    {
+      "id": "theme_count",
+      "status": "passed",
+      "expected": 3,
+      "actual": 3
+    },
+    {
+      "id": "tag_metric_count",
+      "status": "passed",
+      "expected": 25,
+      "actual": 25
+    },
+    {
+      "id": "kpi_values",
+      "status": "passed",
+      "expected": [
+        "35事件",
+        "94篇",
+        "94N",
+        "688",
+        "1,335.5",
+        "37,000"
+      ],
+      "actual": [
+        "35事件",
+        "94篇",
+        "94N",
+        "688",
+        "1,335.5",
+        "37,000"
+      ]
+    },
+    {
+      "id": "desktop_overflow",
+      "status": "passed",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "id": "visible_content_link",
+      "status": "passed",
+      "expected": "查看单条原文",
+      "actual": "查看单条原文 ↗"
+    },
+    {
+      "id": "canonical_content_link",
+      "status": "passed",
+      "expected": "canonical explore URL",
+      "actual": "https://www.xiaohongshu.com/explore/6a672b3c000000000101d62e"
+    },
+    {
+      "id": "koc_filter",
+      "status": "passed",
+      "expected": "19 条来源线索",
+      "actual": "19 条来源线索"
+    },
+    {
+      "id": "koc_direct_link",
+      "status": "passed",
+      "expected": "打开单条原帖",
+      "actual": "打开单条原帖 ↗"
+    },
+    {
+      "id": "third_party_filter",
+      "status": "passed",
+      "expected": "10 条来源线索",
+      "actual": "10 条来源线索"
+    },
+    {
+      "id": "jasmine_filter",
+      "status": "passed",
+      "expected": "3 条来源线索",
+      "actual": "3 条来源线索"
+    },
+    {
+      "id": "event_dialog",
+      "status": "passed",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "id": "visible_evidence_link",
+      "status": "passed",
+      "expected": "查看单条小红书原文",
+      "actual": "查看单条小红书原文 ↗"
+    },
+    {
+      "id": "canonical_evidence_link",
+      "status": "passed",
+      "expected": "canonical explore URL",
+      "actual": "https://www.xiaohongshu.com/explore/6a61909f0000000001002bb5"
+    },
+    {
+      "id": "ephemeral_url_count",
+      "status": "passed",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "id": "mobile_overflow",
+      "status": "passed",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "id": "mobile_filter_button",
+      "status": "passed",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "id": "mobile_tag_header_hidden",
+      "status": "passed",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "id": "mobile_filter_group_count",
+      "status": "passed",
+      "expected": 8,
+      "actual": 8
+    },
+    {
+      "id": "mobile_filter_close",
+      "status": "passed",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "id": "console_errors",
+      "status": "passed",
+      "expected": 0,
+      "actual": []
+    },
+    {
+      "id": "console_warnings",
+      "status": "passed",
+      "expected": 0,
+      "actual": []
+    }
+  ]
+}

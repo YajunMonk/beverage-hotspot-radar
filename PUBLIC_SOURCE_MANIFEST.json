@@ -1,0 +1,300 @@
+{
+  "release": "V1.2",
+  "scope": "public_safe_source",
+  "generated_at": "2026-08-05T03:48:40.756Z",
+  "excluded": [
+    "原始抓取",
+    "运行记录",
+    "完整事实明细",
+    "账号登记库",
+    "历史归档",
+    "本地预览"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 651,
+      "sha256": "61186cf422f8c35f6807fa43407b6440092296b6b15a94a46ad6d47aab21de6e"
+    },
+    {
+      "path": "01_数据抓取/来源说明.md",
+      "bytes": 3134,
+      "sha256": "0c81738b97e4f5e9e19a2ada24e062533c8bfcf7bf1ac1ccf3c3d36dab4e033b"
+    },
+    {
+      "path": "01_数据抓取/抓取规则.md",
+      "bytes": 10007,
+      "sha256": "c5af5c50d9bf5c063950f6659762404cfb8122ca978f1667d8fbde2c3dcccbf8"
+    },
+    {
+      "path": "01_数据抓取/API抓取/README.md",
+      "bytes": 547,
+      "sha256": "4c3af3190a8d250183b11d9f6f25e6a34d30984578dae80a2bfd8097dfa9a285"
+    },
+    {
+      "path": "01_数据抓取/README.md",
+      "bytes": 1609,
+      "sha256": "cb3b13ef4ac8e5b4d829f5b00f4e2289c4e5ce81567f8ef17b7f96559f3d17bd"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/主数据/dim_brands.csv",
+      "bytes": 853,
+      "sha256": "cdfc4f72bee8a851dd3d36e0f714c6440d28f1757ff6d192d243a02b457c408b"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/主数据/dim_entities.csv",
+      "bytes": 9570,
+      "sha256": "3e1c28916193ebc0739f21965a14975dd952dc689323837ac8fc11473869db11"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/主数据/dim_metrics.csv",
+      "bytes": 2540,
+      "sha256": "29287523c4c6f55ba90f5a3e83a2eda4f98f0313375c5d00fb92ba0bdc9dbd7f"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/主数据/dim_tags.csv",
+      "bytes": 23382,
+      "sha256": "75d36d6a8739164b435500cdff65c7538738761a534371c813332996da75b590"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/饮品热点雷达_V1.2_BI数据中心.xlsx",
+      "bytes": 66622,
+      "sha256": "ff4cf14cc1e8ff5ba691c93f06d21c281902a0b0f88d23777d8dc55f076e47ab"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_brand_metrics.csv",
+      "bytes": 2021,
+      "sha256": "63175aedc429ff1adef2c2c4ff9274ca340944f4848aa63cda83b2daa70d88b3"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_collaboration.csv",
+      "bytes": 2301,
+      "sha256": "230e9837e51f52805b31d4b372c0cb8281909c69b2a8b47052c9915241248d36"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_event_metrics.csv",
+      "bytes": 8823,
+      "sha256": "ddd89266357cd5f316d9118791f51296cc6b6f35232d168663b17979169d5163"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_hotspot.csv",
+      "bytes": 2893,
+      "sha256": "6543060fe63f9bd27ec9b1da86f880a5dcd16330037643c246d9179a23d697b6"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_ingredient.csv",
+      "bytes": 4258,
+      "sha256": "03b719a1e6bab72bd9387f802995c1ebe1d0233896ed804c61c15212e1bed2a9"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_product_category.csv",
+      "bytes": 5212,
+      "sha256": "ee549253a49537a8433006b224942621e49ee419c81aaa910f849f68f61ca5b2"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_promotion.csv",
+      "bytes": 593,
+      "sha256": "90097810e11c7802db5c927a086c4ac1dd59b9973ac314c1606c2c993d726780"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_tag_metrics.csv",
+      "bytes": 7526,
+      "sha256": "7f84b73d33d06f057c8675cd1487d1ed6629ace2c84b999debead808da4f4f2e"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_theme_metrics.csv",
+      "bytes": 1396,
+      "sha256": "1ff7431b068053ed8a80d16f532add431f89dcfdb438810a5e9b9240addb80e4"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_weekly_overview.csv",
+      "bytes": 1326,
+      "sha256": "fd03ff302bd6f39411c0bcf09bb6a49eacb43e9cbe28e5b8685ce55bd4afecfc"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/04_分析结论/analysis_insights.csv",
+      "bytes": 3835,
+      "sha256": "35acfe0cc411cb77d7481e86dbec184b257d171206144528c3dd08c2214171a8"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/04_分析结论/analysis_insights.json",
+      "bytes": 5607,
+      "sha256": "39077457010fcb19d64df669d79faabaede3d15a6b94be5add0c8bfed9322536"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/README.md",
+      "bytes": 431,
+      "sha256": "64c2d935962c25304a4d87f414c9d6ecd23e9acf9b82ed93253765b024c5b4b2"
+    },
+    {
+      "path": "02_数据清洗/当前执行规则.md",
+      "bytes": 2237,
+      "sha256": "4470f5b02e5c7ca92d13af9e8bdbf5645f3a5413380503f81f8a18c1ac4e238f"
+    },
+    {
+      "path": "02_数据清洗/规则/01_字段字典/字段字典_V1.2.csv",
+      "bytes": 3499,
+      "sha256": "607a71afffa3053c1cec81f3763587a16ca8ef1e6cf3fbd1893e4fccc352077c"
+    },
+    {
+      "path": "02_数据清洗/规则/02_指标字典/指标字典_V1.2.csv",
+      "bytes": 2540,
+      "sha256": "29287523c4c6f55ba90f5a3e83a2eda4f98f0313375c5d00fb92ba0bdc9dbd7f"
+    },
+    {
+      "path": "02_数据清洗/规则/03_标签字典/标签字典_V1.2.csv",
+      "bytes": 23382,
+      "sha256": "75d36d6a8739164b435500cdff65c7538738761a534371c813332996da75b590"
+    },
+    {
+      "path": "02_数据清洗/规则/04_分析策略与提示词/分析输入输出契约_V1.2.md",
+      "bytes": 611,
+      "sha256": "e07e0b6519a0919c178c092b04be231482c582f2422b7f5c7bea554beba3b0f2"
+    },
+    {
+      "path": "02_数据清洗/规则/数据分析与BI执行规范_V1.2.md",
+      "bytes": 15304,
+      "sha256": "d4061104019efe906756bbf2130fc3a93e053f09d9910860b070a5bfb36f481c"
+    },
+    {
+      "path": "02_数据清洗/校验记录/2026-W30/V1.2/data_quality_checks.csv",
+      "bytes": 11946,
+      "sha256": "5ada88ed0e2b992f8d11e8574d0635ecdea739765caca38092b2066b993541f7"
+    },
+    {
+      "path": "02_数据清洗/校验记录/2026-W30/V1.2/data_quality_report.json",
+      "bytes": 29930,
+      "sha256": "534517da379713cea1ca6a8562f110b9c0271f5553c1b7ce9ef164765d4dd49e"
+    },
+    {
+      "path": "02_数据清洗/校验记录/2026-W30/V1.2/metric_reconciliation.csv",
+      "bytes": 526,
+      "sha256": "f70a58662aac57eb42238bb130dc09c4ad17baae7585a4029e4caff981404403"
+    },
+    {
+      "path": "02_数据清洗/校验记录/2026-W30/V1.2/README.md",
+      "bytes": 1635,
+      "sha256": "63e2843200bd94ca6e8ee0d599471e932b4bad63b168e45ad9b20665c64ad346"
+    },
+    {
+      "path": "02_数据清洗/校验记录/2026-W30/V1.2/release_validation_report.json",
+      "bytes": 180402,
+      "sha256": "2b776ce5b21e14582234a227552466068abb04b0af4f4877c4421649894b71d8"
+    },
+    {
+      "path": "02_数据清洗/校验记录/2026-W30/V1.2/v1.1_immutable_fingerprints.json",
+      "bytes": 2707,
+      "sha256": "5af1febb744f0c30bb4dd9a292a5837e9bbb017c95cab8cbc12db097108fa03b"
+    },
+    {
+      "path": "02_数据清洗/README.md",
+      "bytes": 3317,
+      "sha256": "7e30b477c2ed52a0c082e30bc10f9f37dc44adb8655be45de582b6f199998a22"
+    },
+    {
+      "path": "03_网页呈现/验收记录/2026-W30/V1.2/页面验收记录.md",
+      "bytes": 1780,
+      "sha256": "0d9b8659b498d23f2f158bc22633e8a88ae5f211b1302ce99b9e801f1b6bb11e"
+    },
+    {
+      "path": "03_网页呈现/验收记录/2026-W30/V1.2/interface_validation_live.json",
+      "bytes": 4002,
+      "sha256": "8d439535632d96e5aec1e3586189721c4ccd587d9ba039d55598b2b7e3e55e6a"
+    },
+    {
+      "path": "03_网页呈现/验收记录/2026-W30/V1.2/interface_validation_local.json",
+      "bytes": 3973,
+      "sha256": "09d6a829c27bd7ca28baa08ccd77e8b4bf45961e19d85150fe56a91def193911"
+    },
+    {
+      "path": "03_网页呈现/README.md",
+      "bytes": 1318,
+      "sha256": "8d5acba862caddb3051edb154fa7e893d440357bb123389dd5132d6ebb80897c"
+    },
+    {
+      "path": "03_网页呈现/V1.2/.nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "03_网页呈现/V1.2/index.html",
+      "bytes": 13906,
+      "sha256": "8c9d7587653dcda1800853fdd6124b51d05a03eb7f826d2cafb7fad7ccd11775"
+    },
+    {
+      "path": "03_网页呈现/V1.2/radar-v1-2-data.js",
+      "bytes": 556271,
+      "sha256": "0be3fa39595970f19be93c538ec89cf38a8ecae88305eb0fab003cded7f18c8f"
+    },
+    {
+      "path": "03_网页呈现/V1.2/radar-v1-2.css",
+      "bytes": 58735,
+      "sha256": "044c722cc769f6f08e14d5a23dae4321a1fae0ae3ed2160a4cea1d46413a8e40"
+    },
+    {
+      "path": "03_网页呈现/V1.2/radar-v1-2.js",
+      "bytes": 55860,
+      "sha256": "c3547a29687de5b9b61dafc56d57ddf58b3dd61339782ff7cf9c762f2ce60994"
+    },
+    {
+      "path": "03_网页呈现/V1.2/README.md",
+      "bytes": 1825,
+      "sha256": "e9b369d22c0027be6336018e002a9fe94eeb77c3b3befb44824c0ff2c0818080"
+    },
+    {
+      "path": "99_工程工具/project_state.json",
+      "bytes": 4467,
+      "sha256": "41a3bb785de9f3c75c338a9abfcacb21b87ab132882b6d8177aa62feec9733b9"
+    },
+    {
+      "path": "99_工程工具/README.md",
+      "bytes": 1269,
+      "sha256": "c62f4e71e9a6af66c929d855136f6fbb5cd98fc6a746ff233c3210a6b8e87841"
+    },
+    {
+      "path": "99_工程工具/scripts/build_public_source_v1_2.mjs",
+      "bytes": 6935,
+      "sha256": "b696bdf99a3cfced397e347bf864952f2ac5bde6b4062c04f335e18ff0521556"
+    },
+    {
+      "path": "99_工程工具/scripts/build_public_v1_2_release.mjs",
+      "bytes": 6740,
+      "sha256": "687a2a34175af51ddcf8f2e3979743ba5ed25f446d585f4a49c2f3278702bdd5"
+    },
+    {
+      "path": "99_工程工具/scripts/build_v1_2_release.mjs",
+      "bytes": 79940,
+      "sha256": "fe53dfa0314415fa8a5ac159f26c2777a99f5b80a043e4727c686ce7eb44a9ba"
+    },
+    {
+      "path": "99_工程工具/scripts/build_v1_2_workbook.mjs",
+      "bytes": 53919,
+      "sha256": "bda3b92601abe0e7d2b436d98089e78f5c14d8a71b0b459e41f4e5d678481678"
+    },
+    {
+      "path": "99_工程工具/scripts/playwright_v1_2_interface_qa.mjs",
+      "bytes": 7999,
+      "sha256": "560552ef05a5c977456e8a8c49e38e5eaf0f24e84281175ae38eebab5ecd8401"
+    },
+    {
+      "path": "99_工程工具/scripts/README.md",
+      "bytes": 1626,
+      "sha256": "208920099109a816e71984f5649b0149bee06ff7518681643395437c583211a8"
+    },
+    {
+      "path": "99_工程工具/scripts/validate_v1_2_release.mjs",
+      "bytes": 57466,
+      "sha256": "0e61533348a17d2de10f80dffe8fcad237d74e2dda8ad84ff2c0857f17b5c995"
+    },
+    {
+      "path": "PUBLICATION_BOUNDARY.md",
+      "bytes": 1366,
+      "sha256": "2dd288297244330d9e5c90d538d43f9f6c22e53a0723f873dc18cc3a80db594f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5192,
+      "sha256": "a3242b6f546238288bd88cbb84c1226d98c92a3fdc0ed9cb5e73f0b839423bf0"
+    }
+  ]
+}

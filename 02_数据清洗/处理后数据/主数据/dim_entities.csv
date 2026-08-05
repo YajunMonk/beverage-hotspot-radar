@@ -1,0 +1,76 @@
+﻿entity_id,entity_name,entity_type,parent_category,aliases,status,signal_level,event_count,content_count,brand_count,v1_1_event_count,v1_1_content_count,rule_version
+ENT-CAMPAIGN-NAME-上海炒冰实验室,上海炒冰实验室+,campaign_name,新店型／新业态,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-COLLAB-PARTNER-crocs,Crocs,collab_partner,品牌跨界,克骆格｜洞门｜洞洞鞋,active,single_brand_case,1,6,1,1,6,bi-tag-rule-v1.2
+ENT-COLLAB-PARTNER-三丽鸥,三丽鸥,collab_partner,潮流角色 IP,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-COLLAB-PARTNER-多邻国,多邻国,collab_partner,品牌跨界,Duolingo,active,single_brand_case,1,2,1,1,2,bi-tag-rule-v1.2
+ENT-COLLAB-PARTNER-斩神,斩神,collab_partner,文学／国漫 IP,,active,single_brand_case,1,3,1,1,3,bi-tag-rule-v1.2
+ENT-COLLAB-PARTNER-王者荣耀,王者荣耀,collab_partner,游戏 IP,,active,single_brand_case,1,8,1,1,8,bi-tag-rule-v1.2
+ENT-COLLAB-PARTNER-米菲,米菲,collab_partner,潮流角色 IP,Miffy,active,single_brand_case,1,2,1,1,2,bi-tag-rule-v1.2
+ENT-COLLAB-PARTNER-蜘蛛侠,蜘蛛侠,collab_partner,影视／动漫 IP,Spider-Man｜Spider Man,active,single_brand_case,1,18,1,1,18,bi-tag-rule-v1.2
+ENT-COLLAB-PARTNER-赞萌露比,赞萌露比,collab_partner,潮流角色 IP,Zanmang Loopy｜Loopy,active,single_brand_case,1,4,1,1,4,bi-tag-rule-v1.2
+ENT-COLLAB-PROJECT-蜘蛛侠-崭新之日,《蜘蛛侠：崭新之日》,collab_project,影视／动漫 IP,蜘蛛侠崭新之日｜蜘蛛侠：崭新之日｜Spider-Man: Brand New Day,active,single_brand_case,1,18,1,1,18,bi-tag-rule-v1.2
+ENT-LOCATION-上海,上海,location,城市,,active,trend_candidate,4,4,3,4,4,bi-tag-rule-v1.2
+ENT-LOCATION-北京,北京,location,城市,,active,cross_brand_signal,2,2,2,2,2,bi-tag-rule-v1.2
+ENT-LOCATION-广西茉莉产区,广西茉莉产区,location,产区,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-LOCATION-成都宽窄巷子,成都宽窄巷子,location,商圈／场馆,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-LOCATION-泰国,泰国,location,国家／市场,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-MERCH-ITEM-crocs-联名洞洞鞋,Crocs 联名洞洞鞋,merch_item,包袋／服饰,,active,single_brand_case,1,4,1,1,4,bi-tag-rule-v1.2
+ENT-MERCH-ITEM-蜘蛛侠冷变杯,蜘蛛侠冷变杯,merch_item,杯具,,active,single_brand_case,1,7,1,1,7,bi-tag-rule-v1.2
+ENT-MERCH-ITEM-蜘蛛侠泡棉贴纸,蜘蛛侠泡棉贴纸,merch_item,徽章／冰箱贴／贴纸／卡片,,active,single_brand_case,1,3,1,1,3,bi-tag-rule-v1.2
+ENT-MERCH-ITEM-蜘蛛侠联名冰箱贴,蜘蛛侠联名冰箱贴,merch_item,徽章／冰箱贴／贴纸／卡片,,active,single_brand_case,1,4,1,1,4,bi-tag-rule-v1.2
+ENT-MERCH-ITEM-陪你许愿系列生日徽章,陪你许愿系列生日徽章,merch_item,徽章／冰箱贴／贴纸／卡片,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-OCCASION-chinajoy,ChinaJoy,occasion,展会,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-OCCASION-三伏,三伏,occasion,节气／时段,,active,cross_brand_signal,2,2,2,2,2,bi-tag-rule-v1.2
+ENT-OCCASION-世界杯,世界杯,occasion,赛事,,active,single_brand_case,1,1,1,0,0,bi-tag-rule-v1.2
+ENT-OCCASION-全冰节,全冰节,occasion,品牌自造节点,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-OCCASION-大暑,大暑,occasion,节气／时段,,active,trend_candidate,4,4,4,4,4,bi-tag-rule-v1.2
+ENT-OCCASION-苏超,苏超,occasion,赛事,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PERSON-刘亦菲,刘亦菲,person,品牌代言人,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PERSON-吴克群,吴克群,person,品牌到访,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PROCESS-CLAIM-hpp,HPP,process_claim,工艺／形态,HPP急冻锁鲜｜HPP冷压,active,trend_candidate,3,5,3,3,5,bi-tag-rule-v1.2
+ENT-PROCESS-CLAIM-soe,SOE,process_claim,咖啡表达／工艺,SOE咖啡,active,trend_candidate,3,3,3,3,3,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-抹茶,抹茶,product_element,茶与花香,,active,single_brand_case,2,7,1,2,7,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-柑橘,柑橘,product_element,柑橘类,,active,cross_brand_signal,5,10,2,5,10,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-柠檬,柠檬,product_element,柑橘类,,active,trend_candidate,6,10,4,6,10,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-椰,椰,product_element,乳品与椰,,candidate,cross_brand_signal,2,8,2,2,8,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-百香果,百香果,product_element,水果／热带水果,,active,trend_candidate,3,3,3,3,3,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-糯米,糯米,product_element,谷物／豆类／坚果,,active,trend_candidate,3,3,3,3,3,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-绿豆,绿豆,product_element,谷物／豆类／坚果,,active,single_brand_case,1,3,1,1,3,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-芒果,芒果,product_element,水果／热带水果,,active,trend_candidate,4,4,4,4,4,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-芭乐,芭乐,product_element,水果／热带水果,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-苹果,苹果,product_element,水果／热带水果,,active,cross_brand_signal,3,5,2,3,5,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-茉莉,茉莉,product_element,茶与花香,,active,trend_candidate,7,9,3,8,10,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-菠萝,菠萝,product_element,水果／热带水果,,active,cross_brand_signal,2,21,2,2,21,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-西瓜,西瓜,product_element,水果／热带水果,,active,cross_brand_signal,3,4,2,3,4,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-酸奶,酸奶,product_element,乳品与椰,,active,trend_candidate,4,8,4,4,8,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-黄桃,黄桃,product_element,核果类,,active,single_brand_case,1,5,1,1,5,bi-tag-rule-v1.2
+ENT-PRODUCT-ELEMENT-黑巧,黑巧,product_element,可可／甜品风味,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-全冰黑巧美式,全冰黑巧美式,product_name,,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-大菠萝海盐气泡水鲜柠,大菠萝海盐气泡水（鲜柠）,product_name,,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-大菠萝生椰冷萃,大菠萝生椰冷萃,product_name,,,active,single_brand_case,1,5,1,1,5,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-抹茶柚子冰,抹茶柚子冰,product_name,,,active,single_brand_case,1,6,1,1,6,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-桃喜芒芒,桃喜芒芒,product_name,,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-泰橘冰茶,泰橘冰茶,product_name,,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-泰橘糯米酸奶,泰橘糯米酸奶,product_name,,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-泰橘美式,泰橘美式,product_name,,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-滇西特调,滇西特调,product_name,,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-百香果凤梨气泡水鲜柠,百香果凤梨气泡水（鲜柠）,product_name,,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-菠萝的海库可冰,菠萝的海库可冰,product_name,,,active,single_brand_case,1,3,1,1,3,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-菠萝美式,菠萝美式,product_name,,,active,single_brand_case,1,3,1,1,3,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-菠萝轻椰水,菠萝轻椰水,product_name,,,active,single_brand_case,1,3,1,1,3,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-青沫观音,青沫观音,product_name,,,active,single_brand_case,1,9,1,1,9,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-香草抹茶冰,香草抹茶冰,product_name,,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-鲜榨茉莉西瓜,鲜榨茉莉西瓜,product_name,,,active,single_brand_case,1,2,1,1,2,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-鲜橙粒酸奶冰,鲜橙粒酸奶冰,product_name,,,active,single_brand_case,1,5,1,1,5,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-鲜橙角冰茶,鲜橙角冰茶,product_name,,,active,single_brand_case,1,5,1,1,5,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-黄桃果霸,黄桃果霸,product_name,,,active,single_brand_case,1,5,1,1,5,bi-tag-rule-v1.2
+ENT-PRODUCT-NAME-黄桃燕麦酸奶,黄桃燕麦酸奶,product_name,,,active,single_brand_case,1,1,1,1,1,bi-tag-rule-v1.2
+ENT-PRODUCT-SERIES-全冰去水系列,全冰去水系列,product_series,,,active,single_brand_case,1,2,1,1,2,bi-tag-rule-v1.2
+ENT-PRODUCT-SERIES-古茗泰橘系列,古茗泰橘系列,product_series,,,active,single_brand_case,1,2,1,1,2,bi-tag-rule-v1.2
+ENT-PRODUCT-SERIES-喜茶苹果产品系列,喜茶苹果产品系列,product_series,,,inactive_rejected_v1.2,single_brand_case,0,0,0,1,3,bi-tag-rule-v1.2
+ENT-PRODUCT-SERIES-库迪菠萝系列,库迪菠萝系列,product_series,,,active,single_brand_case,1,16,1,1,16,bi-tag-rule-v1.2
+ENT-PRODUCT-SERIES-沪上阿姨绿豆冰系列,沪上阿姨绿豆冰系列,product_series,,,active,single_brand_case,1,3,1,1,3,bi-tag-rule-v1.2
+ENT-PRODUCT-SERIES-瑞幸夏日海岛系列,瑞幸夏日海岛系列,product_series,,,active,single_brand_case,1,5,1,1,3,bi-tag-rule-v1.2
+ENT-PRODUCT-SERIES-茶百道夏日柑橘系列,茶百道夏日柑橘系列,product_series,,,active,single_brand_case,1,6,1,1,6,bi-tag-rule-v1.2
+ENT-PRODUCT-SERIES-针王香柠系列,针王香柠系列,product_series,,,active,single_brand_case,1,2,1,1,2,bi-tag-rule-v1.2
+ENT-PRODUCT-SERIES-黄桃果霸系列,黄桃果霸系列,product_series,,,active,single_brand_case,1,6,1,1,5,bi-tag-rule-v1.2

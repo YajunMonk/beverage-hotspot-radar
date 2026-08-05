@@ -1,0 +1,27 @@
+{
+  "schema_version": "v1.0",
+  "frozen_release": "V1.1",
+  "purpose": "V1.2 构建与验收期间确认 V1.1 正式产物未被改写。Finder 元数据文件不纳入比较。",
+  "files": {
+    "02_数据清洗/处理后数据/V1.1/README.md": "d25c532c3e1419dfdd6cf9ce86936f59502a52cf9b86113ab7b80af257fcb214",
+    "02_数据清洗/处理后数据/V1.1/accounts.json": "4080e54b2a897ca893e7d9dc2f39041ea5ebaae0faa399537ec280754c286a02",
+    "02_数据清洗/处理后数据/V1.1/brands.json": "086227428b97f1a898f7a9ed8a1e470efb5035cfa40cac506893fbc9185737d3",
+    "02_数据清洗/处理后数据/V1.1/collection_runs.json": "fba3e4209552bb0fbd1386ddd25ec1cffec6de958dddaf355fb437b1d6968985",
+    "02_数据清洗/处理后数据/V1.1/content_entity_relations.json": "6b245a559bc82f9f4105f400563cae13201b23574d58f07cb1048316d3564c26",
+    "02_数据清洗/处理后数据/V1.1/contents.json": "ecc8b64686a2759cdb347cf50c8371066d1d63a050e0153c02a3987a9c82ca29",
+    "02_数据清洗/处理后数据/V1.1/editorial_topics.json": "7765e0fdd18d9da6ba8ca1294e49acf71c9a9a5ca9caa5cf5b97b8d3eb4db718",
+    "02_数据清洗/处理后数据/V1.1/entities.json": "a1bf9529cbb132ef3e9dfd0755eaa3a6ea13d5ab9c10999f44ebc5e6c0e6eba9",
+    "02_数据清洗/处理后数据/V1.1/events.json": "5b48781f6ef2f1b8a2dc485468a68aebf5e32c3c76be778b66b427d392d6fd5c",
+    "02_数据清洗/处理后数据/V1.1/manifest.json": "49aab4a6b3bc840cac2bf3d884f3af0d3a2d5ba96904cb8b94a271eecd997a39",
+    "02_数据清洗/处理后数据/V1.1/observations.json": "a34b4b3dcc056ddb5cabbb5320920c037109bfb8efbf0a02133b7c53e2337825",
+    "02_数据清洗/处理后数据/V1.1/period_summaries.json": "e72529c577820cd0159e3c888bef762883e30571998bfbf922672a2fa923d5cc",
+    "02_数据清洗/处理后数据/V1.1/source_registry.json": "a88dcf28c03c1ad485a662fca8f47afb8ef5ec0e53b66b56642d27e8adbc0f2a",
+    "02_数据清洗/处理后数据/V1.1/source_signals.json": "c74b844f770998da09e641c845356fbe5da76ad40212bce60efde48e71bd9ad1",
+    "02_数据清洗/处理后数据/V1.1/饮品热点雷达_V1.1_数据中心.xlsx": "23bff30b30cda08cdca77672b8388d4e34b745deb6f28cf40ff5935760294f2b",
+    "03_网页呈现/V1.1/README.md": "2412b70f8312abf78254bd1920dde7488759f708957478e972b581c65b161aac",
+    "03_网页呈现/V1.1/index.html": "3f9e33143519291f909e7bc09a512a8b90dfa469a940f7361ddae6a227b387cd",
+    "03_网页呈现/V1.1/radar-v1-data.js": "d3292a6cbdb9b4c33f288896afa0950c86ac0623a71037d0ee1808d3c4a6ddb6",
+    "03_网页呈现/V1.1/radar-v1.css": "2f4d394f8e691669ab54c7cb58795123d893ae78281bf6969806d18e53923fea",
+    "03_网页呈现/V1.1/radar-v1.js": "b2dd3f1f62a83cc46e33b0b6c014830cf681a5457005a5b2b8babd4c12dd382b"
+  }
+}

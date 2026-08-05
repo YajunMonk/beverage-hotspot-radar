@@ -1,0 +1,21 @@
+﻿metric_id,metric_name,formula,grain,source_scope,metric_role,interpretation_rule,version
+unique_event_count,去重事件数,count_distinct(event_id),period,brand,主指标,主题重叠时不得相加,bi-metric-v1.2
+brand_content_count,品牌内容数,count_distinct(content_id),period,brand,主指标,不含三方/KOC,bi-metric-v1.2
+active_brand_count,活跃品牌数,count_distinct(brand_id),period,brand,主指标,至少一条合格内容,bi-metric-v1.2
+likes_valid_count,有效点赞样本N,count(likes where likes>=0),任意分组,brand,主指标,必须与分位数同显,bi-metric-v1.2
+likes_sum,点赞合计,sum(likes),任意分组,brand,辅助指标,不可替代覆盖,bi-metric-v1.2
+likes_mean,点赞均值,sum(likes)/N,任意分组,brand,辅助指标,受极端值影响,bi-metric-v1.2
+likes_median,点赞中位数,"quantile(likes,0.50)",任意分组,brand,主指标,线性插值,bi-metric-v1.2
+likes_p75,点赞P75,"quantile(likes,0.75)",任意分组,brand,主指标,线性插值,bi-metric-v1.2
+likes_p90,点赞P90,"quantile(likes,0.90)",任意分组,brand,诊断指标,极高互动观察线,bi-metric-v1.2
+likes_max,点赞最大值,max(likes),任意分组,brand,诊断指标,需配N和中位数,bi-metric-v1.2
+theme_membership_count,主题归属次数,sum(theme assignments),period,brand,结构指标,主题允许重叠,bi-metric-v1.2
+theme_union_event_count,主题并集事件数,count_distinct(event_id in themes),period,brand,结构指标,不得用归属次数替代,bi-metric-v1.2
+review_completion_rate,事件标签复核完成率,approved_events/all_events,period,brand,质量指标,只表示流程状态,bi-metric-v1.2
+snapshot_age_hours,互动快照龄,captured_at-published_at,content,brand,可比性指标,小时,bi-metric-v1.2
+source_layer_contamination_count,来源混算数,非brand记录进入品牌KPI的行数,period,all,质量指标,目标0,bi-metric-v1.2
+direct_url_parameter_count,临时链接参数数,count(url with xsec/m_source),output,all,质量指标,公开输出目标0,bi-metric-v1.2
+promotion_official_count,官方促销机制数,count(approved offer where official=true),period,brand,诊断指标,按机制去重,bi-metric-v1.2
+discovery_signal_count,发现线索数,count(signal_id),period,third_party/koc,诊断指标,计量单位为帖子,bi-metric-v1.2
+wow_change,周环比,current/previous-1,period,same source,趋势指标,至少2个同口径周期,bi-metric-v1.2
+trend_status,趋势判断,rule based on >=4 comparable periods,period,same source,趋势指标,当前周期禁用,bi-metric-v1.2

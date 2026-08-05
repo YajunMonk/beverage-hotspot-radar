@@ -1,0 +1,31 @@
+﻿table_name,field_name,data_type,required,description,lineage,validation_rule,rule_version
+dim_brands,brand_id,string,Y,品牌唯一ID,V1.1 brands,唯一且非空,bi-tag-rule-v1.2
+dim_brands,brand_name,string,Y,标准品牌名,V1.1 brands,非空,bi-tag-rule-v1.2
+dim_accounts,account_key,string,Y,跨来源唯一账号键,品牌账号/来源登记/发现信号,唯一且非空,bi-tag-rule-v1.2
+dim_accounts,source_type_original,enum,Y,来源登记时的原始类型,source_registry,不得被分析分类覆盖,bi-tag-rule-v1.2
+dim_accounts,analysis_source_class,enum,Y,分析层使用的 brand/third_party/koc/editorial 分类,处理规则,与原始类型并存,bi-tag-rule-v1.2
+dim_tags,tag_id,string,Y,正式标签唯一ID,标签规则,唯一且有版本,bi-tag-rule-v1.2
+dim_tags,dimension,enum,Y,标签所属维度,标签规则,十类标签维度之一,bi-tag-rule-v1.2
+dim_tags,inclusion_rule,string,Y,纳入条件,标签规则,可由人理解和复核,bi-tag-rule-v1.2
+dim_metrics,metric_id,string,Y,指标唯一ID,指标规则,唯一且有公式,bi-tag-rule-v1.2
+fact_contents,content_id,string,Y,品牌官号内容唯一ID,V1.1 contents,唯一且非空,bi-tag-rule-v1.2
+fact_contents,canonical_url,url,Y,无临时参数的原帖地址,V1.1 contents.url,仅保留稳定路径,bi-tag-rule-v1.2
+fact_contents,source_class,enum,Y,来源层,V1.1 source_identity,本表固定brand,bi-tag-rule-v1.2
+fact_contents,captured_at,datetime,Y,内容抓取时间,V1.1 contents,ISO时间,bi-tag-rule-v1.2
+fact_engagement_snapshots,observation_id,string,Y,互动快照唯一ID,V1.1 observations,唯一且非空,bi-tag-rule-v1.2
+fact_engagement_snapshots,likes,integer,N,抓取时点赞数,V1.1 observations,>=0或空,bi-tag-rule-v1.2
+fact_engagement_snapshots,snapshot_age_hours,number,N,发布到抓取的小时差,发布时间与抓取时间,>=0或空,bi-tag-rule-v1.2
+fact_events,event_id,string,Y,去重事件唯一ID,V1.1 events,唯一且非空,bi-tag-rule-v1.2
+fact_events,tag_review_status,enum,Y,事件标签复核状态,V1.1 events,待复核必须进入队列,bi-tag-rule-v1.2
+bridge_event_content,event_content_key,string,Y,事件和内容关联唯一键,V1.1 events.content_ids,组合唯一,bi-tag-rule-v1.2
+fact_tag_assignments,assignment_id,string,Y,对象标签判定唯一ID,V1.1+V1.2规则,唯一且可追溯,bi-tag-rule-v1.2
+fact_tag_assignments,review_status,enum,Y,标签判定审核状态,处理规则,仅approved进入正式口径,bi-tag-rule-v1.2
+fact_source_signals,analysis_source_class,enum,Y,三方或KOC分析分类,source_signals,不得进入品牌KPI,bi-tag-rule-v1.2
+fact_source_signals,source_type_original,string,N,来源登记原始类型,source_registry,缺失时标记unregistered,bi-tag-rule-v1.2
+fact_promotion_offers,promotion_id,string,Y,促销证据唯一ID,正文/页面证据/发现信号,唯一且非空,bi-tag-rule-v1.2
+fact_promotion_offers,included_in_official_kpi,boolean,Y,是否进入官方促销事实数,来源分层规则,只有官方明确证据为true,bi-tag-rule-v1.2
+mart_*,likes_valid_count,integer,Y,有效点赞样本N,事实表重算,>=0,bi-tag-rule-v1.2
+mart_*,likes_median,number,N,点赞中位数,事实表重算,N=0时为空,bi-tag-rule-v1.2
+mart_*,likes_p75,number,N,点赞75分位数,事实表重算,N=0时为空,bi-tag-rule-v1.2
+mart_*,sample_flag,enum,Y,样本量提示,N<5规则,small_sample或sufficient,bi-tag-rule-v1.2
+analysis_insights,boundary_note,string,Y,结论边界,分析策略,必须说明不能推断什么,bi-tag-rule-v1.2

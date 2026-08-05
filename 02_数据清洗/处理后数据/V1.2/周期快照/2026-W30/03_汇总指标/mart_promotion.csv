@@ -1,0 +1,7 @@
+﻿period_id,source_class,promotion_type,offer_count,active_brand_count,approved_count,pending_count,included_in_official_kpi,metric_version,rule_version
+2026-W30,brand,买一送一,3,2,3,0,true,bi-metric-v1.2,bi-tag-rule-v1.2
+2026-W30,brand,赠品,1,1,1,0,true,bi-metric-v1.2,bi-tag-rule-v1.2
+2026-W30,brand,优惠券,2,1,2,0,true,bi-metric-v1.2,bi-tag-rule-v1.2
+2026-W30,brand,限时一口价,1,1,1,0,true,bi-metric-v1.2,bi-tag-rule-v1.2
+2026-W30,brand,阶梯次卡,1,1,1,0,true,bi-metric-v1.2,bi-tag-rule-v1.2
+2026-W30,third_party,低价线索,1,1,0,1,false,bi-metric-v1.2,bi-tag-rule-v1.2

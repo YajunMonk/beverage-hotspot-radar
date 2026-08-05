@@ -19,6 +19,7 @@ test-results/
 99_工程工具/outputs/**/source_import/
 99_工程工具/scripts/node_modules/
 99_工程工具/outputs/**/node_modules/
+99_工程工具/outputs/V1.2/workbook_preview/
 
 # Runtime dependencies are provided by the local workspace
 node_modules/
@@ -30,13 +31,3 @@ node_modules/
 __pycache__/
 *.pyc
 .venv/
-
-# Public-source branch boundary
-90_历史归档/
-01_数据抓取/Codex抓取/
-01_数据抓取/来源名单/
-02_数据清洗/处理后数据/
-02_数据清洗/校验记录/
-99_工程工具/outputs/
-99_工程工具/project_state.json
-*.xlsx

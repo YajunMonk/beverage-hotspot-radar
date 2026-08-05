@@ -1,0 +1,5534 @@
+{
+  "schema_version": "release-validation-v1.2",
+  "release": "V1.2",
+  "period_id": "2026-W30",
+  "checked_at": "2026-08-05T03:46:44.663Z",
+  "status": "passed",
+  "summary": {
+    "total_checks": 245,
+    "passed_checks": 245,
+    "failed_checks": 0,
+    "categories": {
+      "bi_reconciliation": {
+        "total": 14,
+        "passed": 14,
+        "failed": 0
+      },
+      "canonical_url": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      },
+      "foreign_key": {
+        "total": 28,
+        "passed": 28,
+        "failed": 0
+      },
+      "grain": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      },
+      "manifest": {
+        "total": 5,
+        "passed": 5,
+        "failed": 0
+      },
+      "manifest_hash": {
+        "total": 45,
+        "passed": 45,
+        "failed": 0
+      },
+      "metric_recomputation": {
+        "total": 67,
+        "passed": 67,
+        "failed": 0
+      },
+      "page_data": {
+        "total": 8,
+        "passed": 8,
+        "failed": 0
+      },
+      "primary_key": {
+        "total": 27,
+        "passed": 27,
+        "failed": 0
+      },
+      "review_resolution": {
+        "total": 6,
+        "passed": 6,
+        "failed": 0
+      },
+      "row_count": {
+        "total": 28,
+        "passed": 28,
+        "failed": 0
+      },
+      "source_immutability": {
+        "total": 13,
+        "passed": 13,
+        "failed": 0
+      },
+      "source_layer": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0
+      }
+    }
+  },
+  "failed_check_ids": [],
+  "checks": [
+    {
+      "id": "manifest.release",
+      "category": "manifest",
+      "status": "passed",
+      "message": "manifest版本链正确",
+      "expected": {
+        "release": "V1.2",
+        "source_release": "V1.1"
+      },
+      "actual": {
+        "release": "V1.2",
+        "source_release": "V1.1"
+      }
+    },
+    {
+      "id": "manifest.period",
+      "category": "manifest",
+      "status": "passed",
+      "message": "manifest周期正确",
+      "expected": "2026-W30",
+      "actual": "2026-W30"
+    },
+    {
+      "id": "manifest.versions",
+      "category": "manifest",
+      "status": "passed",
+      "message": "manifest规则与指标版本正确",
+      "expected": {
+        "rule_version": "bi-tag-rule-v1.2",
+        "metric_version": "bi-metric-v1.2"
+      },
+      "actual": {
+        "rule_version": "bi-tag-rule-v1.2",
+        "metric_version": "bi-metric-v1.2"
+      }
+    },
+    {
+      "id": "v11.fingerprint_set",
+      "category": "source_immutability",
+      "status": "passed",
+      "message": "V1.1不可变输入文件集合完整",
+      "expected": [
+        "accounts.json",
+        "brands.json",
+        "collection_runs.json",
+        "content_entity_relations.json",
+        "contents.json",
+        "editorial_topics.json",
+        "entities.json",
+        "events.json",
+        "observations.json",
+        "period_summaries.json",
+        "source_registry.json",
+        "source_signals.json"
+      ],
+      "actual": [
+        "accounts.json",
+        "brands.json",
+        "collection_runs.json",
+        "content_entity_relations.json",
+        "contents.json",
+        "editorial_topics.json",
+        "entities.json",
+        "events.json",
+        "observations.json",
+        "period_summaries.json",
+        "source_registry.json",
+        "source_signals.json"
+      ]
+    },
+    {
+      "id": "v11.immutable.brands.json",
+      "category": "source_immutability",
+      "status": "passed",
+      "message": "brands.json 与冻结指纹及V1.2输入声明一致",
+      "expected": "086227428b97f1a898f7a9ed8a1e470efb5035cfa40cac506893fbc9185737d3",
+      "actual": {
+        "current": "086227428b97f1a898f7a9ed8a1e470efb5035cfa40cac506893fbc9185737d3",
+        "manifest": "086227428b97f1a898f7a9ed8a1e470efb5035cfa40cac506893fbc9185737d3"
+      }
+    },
+    {
+      "id": "v11.immutable.accounts.json",
+      "category": "source_immutability",
+      "status": "passed",
+      "message": "accounts.json 与冻结指纹及V1.2输入声明一致",
+      "expected": "4080e54b2a897ca893e7d9dc2f39041ea5ebaae0faa399537ec280754c286a02",
+      "actual": {
+        "current": "4080e54b2a897ca893e7d9dc2f39041ea5ebaae0faa399537ec280754c286a02",
+        "manifest": "4080e54b2a897ca893e7d9dc2f39041ea5ebaae0faa399537ec280754c286a02"
+      }
+    },
+    {
+      "id": "v11.immutable.collection_runs.json",
+      "category": "source_immutability",
+      "status": "passed",
+      "message": "collection_runs.json 与冻结指纹及V1.2输入声明一致",
+      "expected": "fba3e4209552bb0fbd1386ddd25ec1cffec6de958dddaf355fb437b1d6968985",
+      "actual": {
+        "current": "fba3e4209552bb0fbd1386ddd25ec1cffec6de958dddaf355fb437b1d6968985",
+        "manifest": "fba3e4209552bb0fbd1386ddd25ec1cffec6de958dddaf355fb437b1d6968985"
+      }
+    },
+    {
+      "id": "v11.immutable.observations.json",
+      "category": "source_immutability",
+      "status": "passed",
+      "message": "observations.json 与冻结指纹及V1.2输入声明一致",
+      "expected": "a34b4b3dcc056ddb5cabbb5320920c037109bfb8efbf0a02133b7c53e2337825",
+      "actual": {
+        "current": "a34b4b3dcc056ddb5cabbb5320920c037109bfb8efbf0a02133b7c53e2337825",
+        "manifest": "a34b4b3dcc056ddb5cabbb5320920c037109bfb8efbf0a02133b7c53e2337825"
+      }
+    },
+    {
+      "id": "v11.immutable.contents.json",
+      "category": "source_immutability",
+      "status": "passed",
+      "message": "contents.json 与冻结指纹及V1.2输入声明一致",
+      "expected": "ecc8b64686a2759cdb347cf50c8371066d1d63a050e0153c02a3987a9c82ca29",
+      "actual": {
+        "current": "ecc8b64686a2759cdb347cf50c8371066d1d63a050e0153c02a3987a9c82ca29",
+        "manifest": "ecc8b64686a2759cdb347cf50c8371066d1d63a050e0153c02a3987a9c82ca29"
+      }
+    },
+    {
+      "id": "v11.immutable.events.json",
+      "category": "source_immutability",
+      "status": "passed",
+      "message": "events.json 与冻结指纹及V1.2输入声明一致",
+      "expected": "5b48781f6ef2f1b8a2dc485468a68aebf5e32c3c76be778b66b427d392d6fd5c",
+      "actual": {
+        "current": "5b48781f6ef2f1b8a2dc485468a68aebf5e32c3c76be778b66b427d392d6fd5c",
+        "manifest": "5b48781f6ef2f1b8a2dc485468a68aebf5e32c3c76be778b66b427d392d6fd5c"
+      }
+    },
+    {
+      "id": "v11.immutable.entities.json",
+      "category": "source_immutability",
+      "status": "passed",
+      "message": "entities.json 与冻结指纹及V1.2输入声明一致",
+      "expected": "a1bf9529cbb132ef3e9dfd0755eaa3a6ea13d5ab9c10999f44ebc5e6c0e6eba9",
+      "actual": {
+        "current": "a1bf9529cbb132ef3e9dfd0755eaa3a6ea13d5ab9c10999f44ebc5e6c0e6eba9",
+        "manifest": "a1bf9529cbb132ef3e9dfd0755eaa3a6ea13d5ab9c10999f44ebc5e6c0e6eba9"
+      }
+    },
+    {
+      "id": "v11.immutable.content_entity_relations.json",
+      "category": "source_immutability",
+      "status": "passed",
+      "message": "content_entity_relations.json 与冻结指纹及V1.2输入声明一致",
+      "expected": "6b245a559bc82f9f4105f400563cae13201b23574d58f07cb1048316d3564c26",
+      "actual": {
+        "current": "6b245a559bc82f9f4105f400563cae13201b23574d58f07cb1048316d3564c26",
+        "manifest": "6b245a559bc82f9f4105f400563cae13201b23574d58f07cb1048316d3564c26"
+      }
+    },
+    {
+      "id": "v11.immutable.period_summaries.json",
+      "category": "source_immutability",
+      "status": "passed",
+      "message": "period_summaries.json 与冻结指纹及V1.2输入声明一致",
+      "expected": "e72529c577820cd0159e3c888bef762883e30571998bfbf922672a2fa923d5cc",
+      "actual": {
+        "current": "e72529c577820cd0159e3c888bef762883e30571998bfbf922672a2fa923d5cc",
+        "manifest": "e72529c577820cd0159e3c888bef762883e30571998bfbf922672a2fa923d5cc"
+      }
+    },
+    {
+      "id": "v11.immutable.source_registry.json",
+      "category": "source_immutability",
+      "status": "passed",
+      "message": "source_registry.json 与冻结指纹及V1.2输入声明一致",
+      "expected": "a88dcf28c03c1ad485a662fca8f47afb8ef5ec0e53b66b56642d27e8adbc0f2a",
+      "actual": {
+        "current": "a88dcf28c03c1ad485a662fca8f47afb8ef5ec0e53b66b56642d27e8adbc0f2a",
+        "manifest": "a88dcf28c03c1ad485a662fca8f47afb8ef5ec0e53b66b56642d27e8adbc0f2a"
+      }
+    },
+    {
+      "id": "v11.immutable.editorial_topics.json",
+      "category": "source_immutability",
+      "status": "passed",
+      "message": "editorial_topics.json 与冻结指纹及V1.2输入声明一致",
+      "expected": "7765e0fdd18d9da6ba8ca1294e49acf71c9a9a5ca9caa5cf5b97b8d3eb4db718",
+      "actual": {
+        "current": "7765e0fdd18d9da6ba8ca1294e49acf71c9a9a5ca9caa5cf5b97b8d3eb4db718",
+        "manifest": "7765e0fdd18d9da6ba8ca1294e49acf71c9a9a5ca9caa5cf5b97b8d3eb4db718"
+      }
+    },
+    {
+      "id": "v11.immutable.source_signals.json",
+      "category": "source_immutability",
+      "status": "passed",
+      "message": "source_signals.json 与冻结指纹及V1.2输入声明一致",
+      "expected": "c74b844f770998da09e641c845356fbe5da76ad40212bce60efde48e71bd9ad1",
+      "actual": {
+        "current": "c74b844f770998da09e641c845356fbe5da76ad40212bce60efde48e71bd9ad1",
+        "manifest": "c74b844f770998da09e641c845356fbe5da76ad40212bce60efde48e71bd9ad1"
+      }
+    },
+    {
+      "id": "manifest.safe_paths",
+      "category": "manifest",
+      "status": "passed",
+      "message": "manifest仅引用项目目录内相对路径",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "manifest.unique_outputs",
+      "category": "manifest",
+      "status": "passed",
+      "message": "manifest输出路径不重复",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/主数据/dim_accounts.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/主数据/dim_accounts.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "9a9604c4038be270d4996cff98453212a95da79e0be276d643e17eb253fc3f6e",
+        "bytes": 52211
+      },
+      "actual": {
+        "sha256": "9a9604c4038be270d4996cff98453212a95da79e0be276d643e17eb253fc3f6e",
+        "bytes": 52211
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/主数据/dim_brands.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/主数据/dim_brands.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "cdfc4f72bee8a851dd3d36e0f714c6440d28f1757ff6d192d243a02b457c408b",
+        "bytes": 853
+      },
+      "actual": {
+        "sha256": "cdfc4f72bee8a851dd3d36e0f714c6440d28f1757ff6d192d243a02b457c408b",
+        "bytes": 853
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/主数据/dim_entities.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/主数据/dim_entities.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "3e1c28916193ebc0739f21965a14975dd952dc689323837ac8fc11473869db11",
+        "bytes": 9570
+      },
+      "actual": {
+        "sha256": "3e1c28916193ebc0739f21965a14975dd952dc689323837ac8fc11473869db11",
+        "bytes": 9570
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/主数据/dim_metrics.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/主数据/dim_metrics.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "29287523c4c6f55ba90f5a3e83a2eda4f98f0313375c5d00fb92ba0bdc9dbd7f",
+        "bytes": 2540
+      },
+      "actual": {
+        "sha256": "29287523c4c6f55ba90f5a3e83a2eda4f98f0313375c5d00fb92ba0bdc9dbd7f",
+        "bytes": 2540
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/主数据/dim_tags.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/主数据/dim_tags.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "75d36d6a8739164b435500cdff65c7538738761a534371c813332996da75b590",
+        "bytes": 23382
+      },
+      "actual": {
+        "sha256": "75d36d6a8739164b435500cdff65c7538738761a534371c813332996da75b590",
+        "bytes": 23382
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/饮品热点雷达_V1.2_BI数据中心.xlsx",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/饮品热点雷达_V1.2_BI数据中心.xlsx 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "ff4cf14cc1e8ff5ba691c93f06d21c281902a0b0f88d23777d8dc55f076e47ab",
+        "bytes": 66622
+      },
+      "actual": {
+        "sha256": "ff4cf14cc1e8ff5ba691c93f06d21c281902a0b0f88d23777d8dc55f076e47ab",
+        "bytes": 66622
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/01_标准化明细/bridge_content_entity.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/01_标准化明细/bridge_content_entity.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "31b1e025a681ae9f31e5df7ccebc71ac0d27447fa56798c7a44c09a3976ab50b",
+        "bytes": 65970
+      },
+      "actual": {
+        "sha256": "31b1e025a681ae9f31e5df7ccebc71ac0d27447fa56798c7a44c09a3976ab50b",
+        "bytes": 65970
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/01_标准化明细/bridge_event_content.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/01_标准化明细/bridge_event_content.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "35f34f2e2835630fa3bd249a1e20533bf2c303e17777e1e344212b77acb85536",
+        "bytes": 14763
+      },
+      "actual": {
+        "sha256": "35f34f2e2835630fa3bd249a1e20533bf2c303e17777e1e344212b77acb85536",
+        "bytes": 14763
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/01_标准化明细/fact_contents.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/01_标准化明细/fact_contents.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "329e40667a6a94a85a1f4e9712b8b0e91af9b0f7baeecd495b53cd9a92f4c690",
+        "bytes": 90445
+      },
+      "actual": {
+        "sha256": "329e40667a6a94a85a1f4e9712b8b0e91af9b0f7baeecd495b53cd9a92f4c690",
+        "bytes": 90445
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/01_标准化明细/fact_engagement_snapshots.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/01_标准化明细/fact_engagement_snapshots.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "a230e1283653e08ec2f6e9170df3d04cd2ceb8aa1c96f523633f97bcf7dd3d02",
+        "bytes": 17127
+      },
+      "actual": {
+        "sha256": "a230e1283653e08ec2f6e9170df3d04cd2ceb8aa1c96f523633f97bcf7dd3d02",
+        "bytes": 17127
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/01_标准化明细/fact_events.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/01_标准化明细/fact_events.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "413ca31024502379342968f4aeef8d61f2655e6f30f013c3a16f65c842f2dc77",
+        "bytes": 14585
+      },
+      "actual": {
+        "sha256": "413ca31024502379342968f4aeef8d61f2655e6f30f013c3a16f65c842f2dc77",
+        "bytes": 14585
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/01_标准化明细/fact_promotion_offers.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/01_标准化明细/fact_promotion_offers.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "a01311e569d98be604a41d6c3a49325c1a939e321e4dd21975b0e9279bcebd84",
+        "bytes": 3468
+      },
+      "actual": {
+        "sha256": "a01311e569d98be604a41d6c3a49325c1a939e321e4dd21975b0e9279bcebd84",
+        "bytes": 3468
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/01_标准化明细/fact_source_signals.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/01_标准化明细/fact_source_signals.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "9f8c0c4432dd9e985e3f4cd475a66c3c3c996b7bf1e36576c3bd40ee3fe9a27c",
+        "bytes": 15728
+      },
+      "actual": {
+        "sha256": "9f8c0c4432dd9e985e3f4cd475a66c3c3c996b7bf1e36576c3bd40ee3fe9a27c",
+        "bytes": 15728
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/02_AI打标与人工复核/fact_tag_assignments.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/02_AI打标与人工复核/fact_tag_assignments.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "963296da9efdec5383e6057b3b7461aa669b352686915f48f54dba357b456ea9",
+        "bytes": 38984
+      },
+      "actual": {
+        "sha256": "963296da9efdec5383e6057b3b7461aa669b352686915f48f54dba357b456ea9",
+        "bytes": 38984
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/02_AI打标与人工复核/review_decisions.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/02_AI打标与人工复核/review_decisions.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "05d197489499568fa2211a416f2668cad125cd58c7585f9ed70ae0f1a8a1b290",
+        "bytes": 13052
+      },
+      "actual": {
+        "sha256": "05d197489499568fa2211a416f2668cad125cd58c7585f9ed70ae0f1a8a1b290",
+        "bytes": 13052
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/02_AI打标与人工复核/tag_review_queue.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/02_AI打标与人工复核/tag_review_queue.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "38c2360e77d05c3f649772206e3bc09c5a2e00a72bfa3377d727c09171775e63",
+        "bytes": 135
+      },
+      "actual": {
+        "sha256": "38c2360e77d05c3f649772206e3bc09c5a2e00a72bfa3377d727c09171775e63",
+        "bytes": 135
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_brand_metrics.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_brand_metrics.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "63175aedc429ff1adef2c2c4ff9274ca340944f4848aa63cda83b2daa70d88b3",
+        "bytes": 2021
+      },
+      "actual": {
+        "sha256": "63175aedc429ff1adef2c2c4ff9274ca340944f4848aa63cda83b2daa70d88b3",
+        "bytes": 2021
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_collaboration.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_collaboration.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "230e9837e51f52805b31d4b372c0cb8281909c69b2a8b47052c9915241248d36",
+        "bytes": 2301
+      },
+      "actual": {
+        "sha256": "230e9837e51f52805b31d4b372c0cb8281909c69b2a8b47052c9915241248d36",
+        "bytes": 2301
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_event_metrics.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_event_metrics.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "ddd89266357cd5f316d9118791f51296cc6b6f35232d168663b17979169d5163",
+        "bytes": 8823
+      },
+      "actual": {
+        "sha256": "ddd89266357cd5f316d9118791f51296cc6b6f35232d168663b17979169d5163",
+        "bytes": 8823
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_hotspot.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_hotspot.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "6543060fe63f9bd27ec9b1da86f880a5dcd16330037643c246d9179a23d697b6",
+        "bytes": 2893
+      },
+      "actual": {
+        "sha256": "6543060fe63f9bd27ec9b1da86f880a5dcd16330037643c246d9179a23d697b6",
+        "bytes": 2893
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_ingredient.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_ingredient.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "03b719a1e6bab72bd9387f802995c1ebe1d0233896ed804c61c15212e1bed2a9",
+        "bytes": 4258
+      },
+      "actual": {
+        "sha256": "03b719a1e6bab72bd9387f802995c1ebe1d0233896ed804c61c15212e1bed2a9",
+        "bytes": 4258
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_product_category.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_product_category.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "ee549253a49537a8433006b224942621e49ee419c81aaa910f849f68f61ca5b2",
+        "bytes": 5212
+      },
+      "actual": {
+        "sha256": "ee549253a49537a8433006b224942621e49ee419c81aaa910f849f68f61ca5b2",
+        "bytes": 5212
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_promotion.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_promotion.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "90097810e11c7802db5c927a086c4ac1dd59b9973ac314c1606c2c993d726780",
+        "bytes": 593
+      },
+      "actual": {
+        "sha256": "90097810e11c7802db5c927a086c4ac1dd59b9973ac314c1606c2c993d726780",
+        "bytes": 593
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_tag_metrics.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_tag_metrics.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "7f84b73d33d06f057c8675cd1487d1ed6629ace2c84b999debead808da4f4f2e",
+        "bytes": 7526
+      },
+      "actual": {
+        "sha256": "7f84b73d33d06f057c8675cd1487d1ed6629ace2c84b999debead808da4f4f2e",
+        "bytes": 7526
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_theme_metrics.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_theme_metrics.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "1ff7431b068053ed8a80d16f532add431f89dcfdb438810a5e9b9240addb80e4",
+        "bytes": 1396
+      },
+      "actual": {
+        "sha256": "1ff7431b068053ed8a80d16f532add431f89dcfdb438810a5e9b9240addb80e4",
+        "bytes": 1396
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_weekly_overview.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标/mart_weekly_overview.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "fd03ff302bd6f39411c0bcf09bb6a49eacb43e9cbe28e5b8685ce55bd4afecfc",
+        "bytes": 1326
+      },
+      "actual": {
+        "sha256": "fd03ff302bd6f39411c0bcf09bb6a49eacb43e9cbe28e5b8685ce55bd4afecfc",
+        "bytes": 1326
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/04_分析结论/analysis_insights.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/04_分析结论/analysis_insights.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "35acfe0cc411cb77d7481e86dbec184b257d171206144528c3dd08c2214171a8",
+        "bytes": 3835
+      },
+      "actual": {
+        "sha256": "35acfe0cc411cb77d7481e86dbec184b257d171206144528c3dd08c2214171a8",
+        "bytes": 3835
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/04_分析结论/analysis_insights.json",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/04_分析结论/analysis_insights.json 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "39077457010fcb19d64df669d79faabaede3d15a6b94be5add0c8bfed9322536",
+        "bytes": 5607
+      },
+      "actual": {
+        "sha256": "39077457010fcb19d64df669d79faabaede3d15a6b94be5add0c8bfed9322536",
+        "bytes": 5607
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/05_BI数据集/bi_dashboard_snapshot.json",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/05_BI数据集/bi_dashboard_snapshot.json 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "135bafd5becdafe0e65259da951a5a8df1273d566c28d70cdbc2ee70837bab9d",
+        "bytes": 162009
+      },
+      "actual": {
+        "sha256": "135bafd5becdafe0e65259da951a5a8df1273d566c28d70cdbc2ee70837bab9d",
+        "bytes": 162009
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/05_BI数据集/bi_metric_long.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/05_BI数据集/bi_metric_long.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "2ccc3362b0216c9c6c1a75adcd356b837bc501bb0edc3479683ef106c7070cf5",
+        "bytes": 14786
+      },
+      "actual": {
+        "sha256": "2ccc3362b0216c9c6c1a75adcd356b837bc501bb0edc3479683ef106c7070cf5",
+        "bytes": 14786
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/处理后数据/V1.2/README.md",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/处理后数据/V1.2/README.md 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "64c2d935962c25304a4d87f414c9d6ecd23e9acf9b82ed93253765b024c5b4b2",
+        "bytes": 431
+      },
+      "actual": {
+        "sha256": "64c2d935962c25304a4d87f414c9d6ecd23e9acf9b82ed93253765b024c5b4b2",
+        "bytes": 431
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/规则/01_字段字典/字段字典_V1.2.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/规则/01_字段字典/字段字典_V1.2.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "607a71afffa3053c1cec81f3763587a16ca8ef1e6cf3fbd1893e4fccc352077c",
+        "bytes": 3499
+      },
+      "actual": {
+        "sha256": "607a71afffa3053c1cec81f3763587a16ca8ef1e6cf3fbd1893e4fccc352077c",
+        "bytes": 3499
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/规则/02_指标字典/指标字典_V1.2.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/规则/02_指标字典/指标字典_V1.2.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "29287523c4c6f55ba90f5a3e83a2eda4f98f0313375c5d00fb92ba0bdc9dbd7f",
+        "bytes": 2540
+      },
+      "actual": {
+        "sha256": "29287523c4c6f55ba90f5a3e83a2eda4f98f0313375c5d00fb92ba0bdc9dbd7f",
+        "bytes": 2540
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/规则/03_标签字典/标签字典_V1.2.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/规则/03_标签字典/标签字典_V1.2.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "75d36d6a8739164b435500cdff65c7538738761a534371c813332996da75b590",
+        "bytes": 23382
+      },
+      "actual": {
+        "sha256": "75d36d6a8739164b435500cdff65c7538738761a534371c813332996da75b590",
+        "bytes": 23382
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/规则/04_分析策略与提示词/分析输入输出契约_V1.2.md",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/规则/04_分析策略与提示词/分析输入输出契约_V1.2.md 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "e07e0b6519a0919c178c092b04be231482c582f2422b7f5c7bea554beba3b0f2",
+        "bytes": 611
+      },
+      "actual": {
+        "sha256": "e07e0b6519a0919c178c092b04be231482c582f2422b7f5c7bea554beba3b0f2",
+        "bytes": 611
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/校验记录/2026-W30/V1.2/data_quality_checks.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/校验记录/2026-W30/V1.2/data_quality_checks.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "5ada88ed0e2b992f8d11e8574d0635ecdea739765caca38092b2066b993541f7",
+        "bytes": 11946
+      },
+      "actual": {
+        "sha256": "5ada88ed0e2b992f8d11e8574d0635ecdea739765caca38092b2066b993541f7",
+        "bytes": 11946
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/校验记录/2026-W30/V1.2/data_quality_report.json",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/校验记录/2026-W30/V1.2/data_quality_report.json 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "534517da379713cea1ca6a8562f110b9c0271f5553c1b7ce9ef164765d4dd49e",
+        "bytes": 29930
+      },
+      "actual": {
+        "sha256": "534517da379713cea1ca6a8562f110b9c0271f5553c1b7ce9ef164765d4dd49e",
+        "bytes": 29930
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/校验记录/2026-W30/V1.2/metric_reconciliation.csv",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/校验记录/2026-W30/V1.2/metric_reconciliation.csv 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "f70a58662aac57eb42238bb130dc09c4ad17baae7585a4029e4caff981404403",
+        "bytes": 526
+      },
+      "actual": {
+        "sha256": "f70a58662aac57eb42238bb130dc09c4ad17baae7585a4029e4caff981404403",
+        "bytes": 526
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/校验记录/2026-W30/V1.2/README.md",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/校验记录/2026-W30/V1.2/README.md 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "63e2843200bd94ca6e8ee0d599471e932b4bad63b168e45ad9b20665c64ad346",
+        "bytes": 1635
+      },
+      "actual": {
+        "sha256": "63e2843200bd94ca6e8ee0d599471e932b4bad63b168e45ad9b20665c64ad346",
+        "bytes": 1635
+      }
+    },
+    {
+      "id": "manifest.output.02_数据清洗/校验记录/2026-W30/V1.2/v1.1_immutable_fingerprints.json",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "02_数据清洗/校验记录/2026-W30/V1.2/v1.1_immutable_fingerprints.json 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "5af1febb744f0c30bb4dd9a292a5837e9bbb017c95cab8cbc12db097108fa03b",
+        "bytes": 2707
+      },
+      "actual": {
+        "sha256": "5af1febb744f0c30bb4dd9a292a5837e9bbb017c95cab8cbc12db097108fa03b",
+        "bytes": 2707
+      }
+    },
+    {
+      "id": "manifest.output.03_网页呈现/V1.2/index.html",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "03_网页呈现/V1.2/index.html 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "8c9d7587653dcda1800853fdd6124b51d05a03eb7f826d2cafb7fad7ccd11775",
+        "bytes": 13906
+      },
+      "actual": {
+        "sha256": "8c9d7587653dcda1800853fdd6124b51d05a03eb7f826d2cafb7fad7ccd11775",
+        "bytes": 13906
+      }
+    },
+    {
+      "id": "manifest.output.03_网页呈现/V1.2/radar-v1-2-data.js",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "03_网页呈现/V1.2/radar-v1-2-data.js 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "f58c7bbd694690e76389cbb10c4ef01ba95405aba4766046bc13f8a02ae9f2e6",
+        "bytes": 804164
+      },
+      "actual": {
+        "sha256": "f58c7bbd694690e76389cbb10c4ef01ba95405aba4766046bc13f8a02ae9f2e6",
+        "bytes": 804164
+      }
+    },
+    {
+      "id": "manifest.output.03_网页呈现/V1.2/radar-v1-2.css",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "03_网页呈现/V1.2/radar-v1-2.css 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "044c722cc769f6f08e14d5a23dae4321a1fae0ae3ed2160a4cea1d46413a8e40",
+        "bytes": 58735
+      },
+      "actual": {
+        "sha256": "044c722cc769f6f08e14d5a23dae4321a1fae0ae3ed2160a4cea1d46413a8e40",
+        "bytes": 58735
+      }
+    },
+    {
+      "id": "manifest.output.03_网页呈现/V1.2/radar-v1-2.js",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "03_网页呈现/V1.2/radar-v1-2.js 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "c3547a29687de5b9b61dafc56d57ddf58b3dd61339782ff7cf9c762f2ce60994",
+        "bytes": 55860
+      },
+      "actual": {
+        "sha256": "c3547a29687de5b9b61dafc56d57ddf58b3dd61339782ff7cf9c762f2ce60994",
+        "bytes": 55860
+      }
+    },
+    {
+      "id": "manifest.output.03_网页呈现/V1.2/README.md",
+      "category": "manifest_hash",
+      "status": "passed",
+      "message": "03_网页呈现/V1.2/README.md 文件哈希和字节数符合manifest",
+      "expected": {
+        "sha256": "db070f460db33b4e7b0c18596e719aeb242843c3d3cd3400546a19e74ceb90f9",
+        "bytes": 1197
+      },
+      "actual": {
+        "sha256": "db070f460db33b4e7b0c18596e719aeb242843c3d3cd3400546a19e74ceb90f9",
+        "bytes": 1197
+      }
+    },
+    {
+      "id": "rows.dim_brands",
+      "category": "row_count",
+      "status": "passed",
+      "message": "dim_brands 关键行数符合口径",
+      "expected": 9,
+      "actual": 9
+    },
+    {
+      "id": "rows.dim_accounts",
+      "category": "row_count",
+      "status": "passed",
+      "message": "dim_accounts 关键行数符合口径",
+      "expected": 183,
+      "actual": 183
+    },
+    {
+      "id": "rows.dim_entities",
+      "category": "row_count",
+      "status": "passed",
+      "message": "dim_entities 关键行数符合口径",
+      "expected": 75,
+      "actual": 75
+    },
+    {
+      "id": "rows.dim_tags",
+      "category": "row_count",
+      "status": "passed",
+      "message": "dim_tags 关键行数符合口径",
+      "expected": 54,
+      "actual": 54
+    },
+    {
+      "id": "rows.dim_metrics",
+      "category": "row_count",
+      "status": "passed",
+      "message": "dim_metrics 关键行数符合口径",
+      "expected": 20,
+      "actual": 20
+    },
+    {
+      "id": "rows.fact_contents",
+      "category": "row_count",
+      "status": "passed",
+      "message": "fact_contents 关键行数符合口径",
+      "expected": 94,
+      "actual": 94
+    },
+    {
+      "id": "rows.fact_engagement_snapshots",
+      "category": "row_count",
+      "status": "passed",
+      "message": "fact_engagement_snapshots 关键行数符合口径",
+      "expected": 94,
+      "actual": 94
+    },
+    {
+      "id": "rows.fact_events",
+      "category": "row_count",
+      "status": "passed",
+      "message": "fact_events 关键行数符合口径",
+      "expected": 35,
+      "actual": 35
+    },
+    {
+      "id": "rows.bridge_event_content",
+      "category": "row_count",
+      "status": "passed",
+      "message": "bridge_event_content 关键行数符合口径",
+      "expected": 94,
+      "actual": 94
+    },
+    {
+      "id": "rows.bridge_content_entity",
+      "category": "row_count",
+      "status": "passed",
+      "message": "bridge_content_entity 关键行数符合口径",
+      "expected": 315,
+      "actual": 315
+    },
+    {
+      "id": "rows.fact_source_signals",
+      "category": "row_count",
+      "status": "passed",
+      "message": "fact_source_signals 关键行数符合口径",
+      "expected": 29,
+      "actual": 29
+    },
+    {
+      "id": "rows.fact_promotion_offers",
+      "category": "row_count",
+      "status": "passed",
+      "message": "fact_promotion_offers 关键行数符合口径",
+      "expected": 9,
+      "actual": 9
+    },
+    {
+      "id": "rows.fact_tag_assignments",
+      "category": "row_count",
+      "status": "passed",
+      "message": "fact_tag_assignments 关键行数符合口径",
+      "expected": 162,
+      "actual": 162
+    },
+    {
+      "id": "rows.review_decisions",
+      "category": "row_count",
+      "status": "passed",
+      "message": "review_decisions 关键行数符合口径",
+      "expected": 39,
+      "actual": 39
+    },
+    {
+      "id": "rows.tag_review_queue",
+      "category": "row_count",
+      "status": "passed",
+      "message": "tag_review_queue 关键行数符合口径",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "id": "rows.mart_weekly_overview",
+      "category": "row_count",
+      "status": "passed",
+      "message": "mart_weekly_overview 关键行数符合口径",
+      "expected": 1,
+      "actual": 1
+    },
+    {
+      "id": "rows.mart_event_metrics",
+      "category": "row_count",
+      "status": "passed",
+      "message": "mart_event_metrics 关键行数符合口径",
+      "expected": 35,
+      "actual": 35
+    },
+    {
+      "id": "rows.mart_theme_metrics",
+      "category": "row_count",
+      "status": "passed",
+      "message": "mart_theme_metrics 关键行数符合口径",
+      "expected": 3,
+      "actual": 3
+    },
+    {
+      "id": "rows.mart_tag_metrics",
+      "category": "row_count",
+      "status": "passed",
+      "message": "mart_tag_metrics 关键行数符合口径",
+      "expected": 25,
+      "actual": 25
+    },
+    {
+      "id": "rows.mart_brand_metrics",
+      "category": "row_count",
+      "status": "passed",
+      "message": "mart_brand_metrics 关键行数符合口径",
+      "expected": 9,
+      "actual": 9
+    },
+    {
+      "id": "rows.mart_product_category",
+      "category": "row_count",
+      "status": "passed",
+      "message": "mart_product_category 关键行数符合口径",
+      "expected": 23,
+      "actual": 23
+    },
+    {
+      "id": "rows.mart_ingredient",
+      "category": "row_count",
+      "status": "passed",
+      "message": "mart_ingredient 关键行数符合口径",
+      "expected": 16,
+      "actual": 16
+    },
+    {
+      "id": "rows.mart_collaboration",
+      "category": "row_count",
+      "status": "passed",
+      "message": "mart_collaboration 关键行数符合口径",
+      "expected": 8,
+      "actual": 8
+    },
+    {
+      "id": "rows.mart_promotion",
+      "category": "row_count",
+      "status": "passed",
+      "message": "mart_promotion 关键行数符合口径",
+      "expected": 6,
+      "actual": 6
+    },
+    {
+      "id": "rows.mart_hotspot",
+      "category": "row_count",
+      "status": "passed",
+      "message": "mart_hotspot 关键行数符合口径",
+      "expected": 3,
+      "actual": 3
+    },
+    {
+      "id": "rows.analysis_insights",
+      "category": "row_count",
+      "status": "passed",
+      "message": "analysis_insights 关键行数符合口径",
+      "expected": 7,
+      "actual": 7
+    },
+    {
+      "id": "rows.bi_metric_long",
+      "category": "row_count",
+      "status": "passed",
+      "message": "bi_metric_long 关键行数符合口径",
+      "expected": 174,
+      "actual": 174
+    },
+    {
+      "id": "tags.formal_dimension_set",
+      "category": "row_count",
+      "status": "passed",
+      "message": "dim_tags与V1.2确认后的正式标签集合完全一致",
+      "expected": [
+        "brand-corporate-legal",
+        "brand-new-format",
+        "brand-offline-event",
+        "brand-person",
+        "brand-seasonal",
+        "brand-store-channel",
+        "brand-supply-chain",
+        "brand-ugc",
+        "category-americano_black",
+        "category-badge_magnet_sticker_card",
+        "category-cold_brew",
+        "category-drinkware",
+        "category-flavored_specialty",
+        "category-fresh_milk_tea",
+        "category-fruit_tea",
+        "category-fruit_tea_coffee",
+        "category-gelato_shaved",
+        "category-milk_coffee",
+        "category-non_product",
+        "category-other_beverage",
+        "category-other_merchandise",
+        "category-pure_tea",
+        "category-slush_ice_drink",
+        "category-tea_specialty",
+        "category-yogurt_fermented",
+        "collaboration-crocs",
+        "collaboration-duolingo",
+        "collaboration-honor-of-kings",
+        "collaboration-miffy",
+        "collaboration-offline-event",
+        "collaboration-product-bundle",
+        "collaboration-sanrio",
+        "collaboration-spider-man",
+        "product-jasmine",
+        "product-lemon",
+        "product-new-launch",
+        "product-passion-fruit",
+        "product-pineapple",
+        "product-product-bundle",
+        "product-routine-promotion",
+        "product-series-launch",
+        "product-yogurt",
+        "promotion-buy-one-get-one",
+        "promotion-coupon",
+        "promotion-fixed-price",
+        "promotion-gift",
+        "promotion-pass-card",
+        "source-brand",
+        "source-editorial",
+        "source-koc",
+        "source-third-party",
+        "theme-brand_event",
+        "theme-collaboration",
+        "theme-product_action"
+      ],
+      "actual": [
+        "brand-corporate-legal",
+        "brand-new-format",
+        "brand-offline-event",
+        "brand-person",
+        "brand-seasonal",
+        "brand-store-channel",
+        "brand-supply-chain",
+        "brand-ugc",
+        "category-americano_black",
+        "category-badge_magnet_sticker_card",
+        "category-cold_brew",
+        "category-drinkware",
+        "category-flavored_specialty",
+        "category-fresh_milk_tea",
+        "category-fruit_tea",
+        "category-fruit_tea_coffee",
+        "category-gelato_shaved",
+        "category-milk_coffee",
+        "category-non_product",
+        "category-other_beverage",
+        "category-other_merchandise",
+        "category-pure_tea",
+        "category-slush_ice_drink",
+        "category-tea_specialty",
+        "category-yogurt_fermented",
+        "collaboration-crocs",
+        "collaboration-duolingo",
+        "collaboration-honor-of-kings",
+        "collaboration-miffy",
+        "collaboration-offline-event",
+        "collaboration-product-bundle",
+        "collaboration-sanrio",
+        "collaboration-spider-man",
+        "product-jasmine",
+        "product-lemon",
+        "product-new-launch",
+        "product-passion-fruit",
+        "product-pineapple",
+        "product-product-bundle",
+        "product-routine-promotion",
+        "product-series-launch",
+        "product-yogurt",
+        "promotion-buy-one-get-one",
+        "promotion-coupon",
+        "promotion-fixed-price",
+        "promotion-gift",
+        "promotion-pass-card",
+        "source-brand",
+        "source-editorial",
+        "source-koc",
+        "source-third-party",
+        "theme-brand_event",
+        "theme-collaboration",
+        "theme-product_action"
+      ]
+    },
+    {
+      "id": "pk.dim_brands",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "dim_brands 主键 brand_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.dim_accounts",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "dim_accounts 主键 account_key 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.dim_entities",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "dim_entities 主键 entity_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.dim_tags",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "dim_tags 主键 tag_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.dim_metrics",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "dim_metrics 主键 metric_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.fact_contents",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "fact_contents 主键 content_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.fact_engagement_snapshots",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "fact_engagement_snapshots 主键 observation_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.fact_events",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "fact_events 主键 event_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.bridge_event_content",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "bridge_event_content 主键 event_content_key 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.bridge_content_entity",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "bridge_content_entity 主键 relation_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.fact_source_signals",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "fact_source_signals 主键 signal_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.fact_promotion_offers",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "fact_promotion_offers 主键 promotion_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.fact_tag_assignments",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "fact_tag_assignments 主键 assignment_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.review_decisions",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "review_decisions 主键 review_item_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.tag_review_queue",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "tag_review_queue 主键 review_item_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.mart_weekly_overview",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "mart_weekly_overview 主键 period_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.mart_event_metrics",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "mart_event_metrics 主键 period_id+event_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.mart_theme_metrics",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "mart_theme_metrics 主键 period_id+theme_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.mart_tag_metrics",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "mart_tag_metrics 主键 period_id+theme_id+tag_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.mart_brand_metrics",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "mart_brand_metrics 主键 period_id+brand_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.mart_product_category",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "mart_product_category 主键 period_id+category_level+category_code 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.mart_ingredient",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "mart_ingredient 主键 period_id+entity_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.mart_collaboration",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "mart_collaboration 主键 period_id+entity_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.mart_promotion",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "mart_promotion 主键 period_id+source_class+promotion_type 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.mart_hotspot",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "mart_hotspot 主键 report_period_id+topic_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.analysis_insights",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "analysis_insights 主键 insight_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "pk.bi_metric_long",
+      "category": "primary_key",
+      "status": "passed",
+      "message": "bi_metric_long 主键 period_id+dimension_type+dimension_id+metric_id 非空且唯一",
+      "expected": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "actual": {
+        "empty": 0,
+        "duplicates": 0
+      },
+      "details": []
+    },
+    {
+      "id": "fk.dim_brands.account",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "official_account_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.fact_contents.brand",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "brand_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.fact_contents.account",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "account_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.fact_contents.primary_event",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "primary_event_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.fact_contents.events",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "event_ids 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.engagement.content",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "content_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.events.brand",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "primary_brand_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.bridge.event",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "event_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.bridge.content",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "content_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.bridge.brand",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "primary_brand_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.content_entity.content",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "content_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.content_entity.event",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "event_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.content_entity.entity",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "entity_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.source_signals.source",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "source_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.source_signals.brand_scope",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "监测池外品牌仅可出现在不计入KPI的发现层",
+      "expected": 0,
+      "actual": 0,
+      "details": {
+        "out_of_panel_reference_count": 5,
+        "invalid_rows": []
+      }
+    },
+    {
+      "id": "fk.promotions.brand",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "primary_brand_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.promotions.evidence",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "促销证据回指品牌内容或发现信号",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.tag_assignments.tag",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "tag_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.tag_assignments.object",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "标签判定对象均回指事件事实",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.review_queue.object",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "复核队列对象均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.review_decisions.object",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "复核决策对象均可回溯到正式事实或冻结关系",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.mart_events.event",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "event_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.mart_events.brand",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "primary_brand_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.mart_brands.brand",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "brand_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.mart_ingredient.entity",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "entity_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.mart_collaboration.entity",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "entity_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.mart_tags.tag",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "tag_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "fk.hotspots.source",
+      "category": "foreign_key",
+      "status": "passed",
+      "message": "source_id 外键均可回溯",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "grain.engagement_one_snapshot_per_content",
+      "category": "grain",
+      "status": "passed",
+      "message": "本周期每篇品牌内容恰有一条互动快照",
+      "expected": {
+        "duplicates": 0,
+        "rows": 94
+      },
+      "actual": {
+        "duplicates": 0,
+        "rows": 94
+      },
+      "details": []
+    },
+    {
+      "id": "review.decisions.coverage",
+      "category": "review_resolution",
+      "status": "passed",
+      "message": "原39个待复核项均有且只有一条正式决策",
+      "expected": [
+        "REVIEW-CONTENT-xhs-6a5ed2c500000000130267b8",
+        "REVIEW-CONTENT-xhs-6a5f3ee5000000001002a11a",
+        "REVIEW-CONTENT-xhs-6a60247c000000000c0152af",
+        "REVIEW-CONTENT-xhs-6a61ff63000000001102d7fe",
+        "REVIEW-CONTENT-xhs-6a6434730000000001032781",
+        "REVIEW-CONTENT-xhs-6a6470040000000013024ea2",
+        "REVIEW-CONTENT-xhs-6a659d4d000000000101d9e3",
+        "REVIEW-CONTENT-xhs-6a65f6610000000001002624",
+        "REVIEW-CONTENT-xhs-6a66ed06000000000301df0a",
+        "REVIEW-CONTENT-xhs-6a66ffee000000000c016382",
+        "REVIEW-CONTENT-xhs-6a672494000000000301db16",
+        "REVIEW-EVENT-EVT-2026W30-CHABAIDAO-COFFEE-MENU",
+        "REVIEW-EVENT-EVT-2026W30-CHABAIDAO-SIMILARITY",
+        "REVIEW-EVENT-EVT-2026W30-CHAGEE-TEA-SPACE",
+        "REVIEW-EVENT-EVT-2026W30-COTTI-SUCHAO",
+        "REVIEW-EVENT-EVT-2026W30-HEYTEA-APPLE",
+        "REVIEW-EVENT-EVT-2026W30-HEYTEA-INSPIRATION-CARD",
+        "REVIEW-EVENT-EVT-2026W30-LUCKIN-GREEN-LATTE",
+        "REVIEW-EVENT-EVT-2026W30-MIXUE-SHANGHAI-CITY",
+        "REVIEW-EVENT-EVT-2026W30-MOLLY-BIRTHDAY-BADGE",
+        "REVIEW-RELATION-REL-049687EA159BAE",
+        "REVIEW-RELATION-REL-0E95639ED7CBDF",
+        "REVIEW-RELATION-REL-13C27533872B13",
+        "REVIEW-RELATION-REL-16D261CCC0BCA0",
+        "REVIEW-RELATION-REL-71450658E4409D",
+        "REVIEW-RELATION-REL-76969A1F903ACC",
+        "REVIEW-RELATION-REL-7B80DF212EDA0E",
+        "REVIEW-RELATION-REL-906057D6D2D6CA",
+        "REVIEW-RELATION-REL-92E074693CDF28",
+        "REVIEW-RELATION-REL-A3238B5ECB6275",
+        "REVIEW-RELATION-REL-B2E940B9B7D9F4",
+        "REVIEW-RELATION-REL-B55A05B29CE6B1",
+        "REVIEW-RELATION-REL-B5E99DED232D08",
+        "REVIEW-RELATION-REL-B62BC7EC6B4C98",
+        "REVIEW-RELATION-REL-CE78533B993847",
+        "REVIEW-RELATION-REL-DDAED48F7EBEC1",
+        "REVIEW-RELATION-REL-DFCB191FC50105",
+        "REVIEW-RELATION-REL-E8A347D7EFFB99",
+        "REVIEW-RELATION-REL-F830AAE8D39CD4"
+      ],
+      "actual": [
+        "REVIEW-CONTENT-xhs-6a5ed2c500000000130267b8",
+        "REVIEW-CONTENT-xhs-6a5f3ee5000000001002a11a",
+        "REVIEW-CONTENT-xhs-6a60247c000000000c0152af",
+        "REVIEW-CONTENT-xhs-6a61ff63000000001102d7fe",
+        "REVIEW-CONTENT-xhs-6a6434730000000001032781",
+        "REVIEW-CONTENT-xhs-6a6470040000000013024ea2",
+        "REVIEW-CONTENT-xhs-6a659d4d000000000101d9e3",
+        "REVIEW-CONTENT-xhs-6a65f6610000000001002624",
+        "REVIEW-CONTENT-xhs-6a66ed06000000000301df0a",
+        "REVIEW-CONTENT-xhs-6a66ffee000000000c016382",
+        "REVIEW-CONTENT-xhs-6a672494000000000301db16",
+        "REVIEW-EVENT-EVT-2026W30-CHABAIDAO-COFFEE-MENU",
+        "REVIEW-EVENT-EVT-2026W30-CHABAIDAO-SIMILARITY",
+        "REVIEW-EVENT-EVT-2026W30-CHAGEE-TEA-SPACE",
+        "REVIEW-EVENT-EVT-2026W30-COTTI-SUCHAO",
+        "REVIEW-EVENT-EVT-2026W30-HEYTEA-APPLE",
+        "REVIEW-EVENT-EVT-2026W30-HEYTEA-INSPIRATION-CARD",
+        "REVIEW-EVENT-EVT-2026W30-LUCKIN-GREEN-LATTE",
+        "REVIEW-EVENT-EVT-2026W30-MIXUE-SHANGHAI-CITY",
+        "REVIEW-EVENT-EVT-2026W30-MOLLY-BIRTHDAY-BADGE",
+        "REVIEW-RELATION-REL-049687EA159BAE",
+        "REVIEW-RELATION-REL-0E95639ED7CBDF",
+        "REVIEW-RELATION-REL-13C27533872B13",
+        "REVIEW-RELATION-REL-16D261CCC0BCA0",
+        "REVIEW-RELATION-REL-71450658E4409D",
+        "REVIEW-RELATION-REL-76969A1F903ACC",
+        "REVIEW-RELATION-REL-7B80DF212EDA0E",
+        "REVIEW-RELATION-REL-906057D6D2D6CA",
+        "REVIEW-RELATION-REL-92E074693CDF28",
+        "REVIEW-RELATION-REL-A3238B5ECB6275",
+        "REVIEW-RELATION-REL-B2E940B9B7D9F4",
+        "REVIEW-RELATION-REL-B55A05B29CE6B1",
+        "REVIEW-RELATION-REL-B5E99DED232D08",
+        "REVIEW-RELATION-REL-B62BC7EC6B4C98",
+        "REVIEW-RELATION-REL-CE78533B993847",
+        "REVIEW-RELATION-REL-DDAED48F7EBEC1",
+        "REVIEW-RELATION-REL-DFCB191FC50105",
+        "REVIEW-RELATION-REL-E8A347D7EFFB99",
+        "REVIEW-RELATION-REL-F830AAE8D39CD4"
+      ]
+    },
+    {
+      "id": "review.decisions.outcomes",
+      "category": "review_resolution",
+      "status": "passed",
+      "message": "39条决策类型、结果和审计字段完整",
+      "expected": {
+        "types": {
+          "event_tag": 9,
+          "content_migration": 11,
+          "content_entity_relation": 19
+        },
+        "outcomes": {
+          "approved_v1.2": 35,
+          "rejected_v1.2": 4
+        },
+        "malformed": 0
+      },
+      "actual": {
+        "types": {
+          "event_tag": 9,
+          "content_migration": 11,
+          "content_entity_relation": 19
+        },
+        "outcomes": {
+          "approved_v1.2": 35,
+          "rejected_v1.2": 4
+        },
+        "malformed": 0
+      },
+      "details": []
+    },
+    {
+      "id": "review.rejected_relations",
+      "category": "review_resolution",
+      "status": "passed",
+      "message": "4条被驳回关系在决策表和关系桥表中一致留痕并停用",
+      "expected": [
+        "REL-049687EA159BAE",
+        "REL-92E074693CDF28",
+        "REL-B5E99DED232D08",
+        "REL-E8A347D7EFFB99"
+      ],
+      "actual": {
+        "decisions": [
+          "REL-049687EA159BAE",
+          "REL-92E074693CDF28",
+          "REL-B5E99DED232D08",
+          "REL-E8A347D7EFFB99"
+        ],
+        "relations": [
+          "REL-049687EA159BAE",
+          "REL-92E074693CDF28",
+          "REL-B5E99DED232D08",
+          "REL-E8A347D7EFFB99"
+        ],
+        "malformed": 0
+      }
+    },
+    {
+      "id": "review.zero_unresolved",
+      "category": "review_resolution",
+      "status": "passed",
+      "message": "待复核队列及各正式事实层未决状态全部清零",
+      "expected": {
+        "queue": 0,
+        "events": 0,
+        "contents": 0,
+        "assignments": 0,
+        "relations": 0
+      },
+      "actual": {
+        "queue": 0,
+        "events": 0,
+        "contents": 0,
+        "assignments": 0,
+        "relations": 0
+      }
+    },
+    {
+      "id": "review.overview",
+      "category": "review_resolution",
+      "status": "passed",
+      "message": "BI总览准确反映复核完成状态",
+      "expected": {
+        "approved_event_review_count": 35,
+        "pending_event_review_count": 0,
+        "review_completion_rate": 1,
+        "pending_content_review_count": 0,
+        "pending_relation_review_count": 0,
+        "resolved_review_decision_count": 39,
+        "rejected_relation_count": 4
+      },
+      "actual": {
+        "approved_event_review_count": 35,
+        "pending_event_review_count": 0,
+        "review_completion_rate": 1,
+        "pending_content_review_count": 0,
+        "pending_relation_review_count": 0,
+        "resolved_review_decision_count": 39,
+        "rejected_relation_count": 4
+      }
+    },
+    {
+      "id": "entities.v12_active_count",
+      "category": "review_resolution",
+      "status": "passed",
+      "message": "V1.2保留驳回实体审计行，但正式活跃实体口径为74",
+      "expected": {
+        "active": 74,
+        "overview": 74,
+        "inactive_rejected": [
+          "ENT-PRODUCT-SERIES-喜茶苹果产品系列"
+        ]
+      },
+      "actual": {
+        "active": 74,
+        "overview": 74,
+        "inactive_rejected": [
+          "ENT-PRODUCT-SERIES-喜茶苹果产品系列"
+        ]
+      }
+    },
+    {
+      "id": "source_layer.isolation",
+      "category": "source_layer",
+      "status": "passed",
+      "message": "品牌、三方、KOC、编辑热点严格分层",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "source_layer.overview_counts",
+      "category": "source_layer",
+      "status": "passed",
+      "message": "概览只旁列发现层数量，且与事实表一致",
+      "expected": {
+        "discovery": 29,
+        "third_party": 10,
+        "koc": 19
+      },
+      "actual": {
+        "discovery": "29",
+        "third_party": "10",
+        "koc": "19"
+      }
+    },
+    {
+      "id": "url.canonical_no_ephemeral_params",
+      "category": "canonical_url",
+      "status": "passed",
+      "message": "所有规范链接均不含xsec或m_source临时参数",
+      "expected": 0,
+      "actual": 0,
+      "details": []
+    },
+    {
+      "id": "recompute.theme.product_action",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "产品动作主题指标由事实表重算一致",
+      "expected": {
+        "event_count": 20,
+        "active_brand_count": 9,
+        "content_count": 77,
+        "likes_valid_count": 77,
+        "likes_missing_count": 0,
+        "likes_sum": 101655,
+        "likes_mean": 1320.19,
+        "likes_median": 612,
+        "likes_p75": 1207,
+        "likes_p90": 3415.8,
+        "likes_max": 11000,
+        "top_content_id": "xhs-6a61909f0000000001002bb5",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 3.7,
+        "snapshot_age_hours_median": 77.1,
+        "snapshot_age_hours_max": 155.7,
+        "top3_event_content_share": 0.44
+      },
+      "actual": {
+        "event_count": "20",
+        "content_count": "77",
+        "active_brand_count": "9",
+        "likes_valid_count": "77",
+        "likes_missing_count": "0",
+        "likes_sum": "101655",
+        "likes_mean": "1320.19",
+        "likes_median": "612",
+        "likes_p75": "1207",
+        "likes_p90": "3415.8",
+        "likes_max": "11000",
+        "top_content_id": "xhs-6a61909f0000000001002bb5",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "3.7",
+        "snapshot_age_hours_median": "77.1",
+        "snapshot_age_hours_max": "155.7",
+        "top3_event_content_share": "0.44"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.theme.collaboration",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "联名合作主题指标由事实表重算一致",
+      "expected": {
+        "event_count": 9,
+        "active_brand_count": 6,
+        "content_count": 50,
+        "likes_valid_count": 50,
+        "likes_missing_count": 0,
+        "likes_sum": 59992,
+        "likes_mean": 1199.84,
+        "likes_median": 698,
+        "likes_p75": 1223.5,
+        "likes_p90": 2869.5,
+        "likes_max": 6568,
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 4,
+        "snapshot_age_hours_median": 75.55,
+        "snapshot_age_hours_max": 147.8,
+        "top3_event_content_share": 0.68
+      },
+      "actual": {
+        "event_count": "9",
+        "content_count": "50",
+        "active_brand_count": "6",
+        "likes_valid_count": "50",
+        "likes_missing_count": "0",
+        "likes_sum": "59992",
+        "likes_mean": "1199.84",
+        "likes_median": "698",
+        "likes_p75": "1223.5",
+        "likes_p90": "2869.5",
+        "likes_max": "6568",
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "4",
+        "snapshot_age_hours_median": "75.55",
+        "snapshot_age_hours_max": "147.8",
+        "top3_event_content_share": "0.68"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.theme.brand_event",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "品牌事件主题指标由事实表重算一致",
+      "expected": {
+        "event_count": 15,
+        "active_brand_count": 7,
+        "content_count": 17,
+        "likes_valid_count": 17,
+        "likes_missing_count": 0,
+        "likes_sum": 59892,
+        "likes_mean": 3523.06,
+        "likes_median": 1287,
+        "likes_p75": 1798,
+        "likes_p90": 4259.2,
+        "likes_max": 37000,
+        "top_content_id": "xhs-6a66d7e7000000001101fb64",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 6.9,
+        "snapshot_age_hours_median": 77.2,
+        "snapshot_age_hours_max": 147.8,
+        "top3_event_content_share": 0.29
+      },
+      "actual": {
+        "event_count": "15",
+        "content_count": "17",
+        "active_brand_count": "7",
+        "likes_valid_count": "17",
+        "likes_missing_count": "0",
+        "likes_sum": "59892",
+        "likes_mean": "3523.06",
+        "likes_median": "1287",
+        "likes_p75": "1798",
+        "likes_p90": "4259.2",
+        "likes_max": "37000",
+        "top_content_id": "xhs-6a66d7e7000000001101fb64",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "6.9",
+        "snapshot_age_hours_median": "77.2",
+        "snapshot_age_hours_max": "147.8",
+        "top3_event_content_share": "0.29"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.theme.members",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "主题指标集合与冻结口径一致",
+      "expected": [
+        "brand_event",
+        "collaboration",
+        "product_action"
+      ],
+      "actual": [
+        "brand_event",
+        "collaboration",
+        "product_action"
+      ]
+    },
+    {
+      "id": "recompute.tag.product_action.product-new-launch",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "新品上市标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 5,
+        "active_brand_count": 4,
+        "content_count": 7,
+        "likes_valid_count": 7,
+        "likes_missing_count": 0,
+        "likes_sum": 12687,
+        "likes_mean": 1812.43,
+        "likes_median": 729,
+        "likes_p75": 1631,
+        "likes_p90": 4303.8,
+        "likes_max": 7833,
+        "top_content_id": "xhs-6a5ed2c500000000130267b8",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 25.8,
+        "snapshot_age_hours_median": 131.7,
+        "snapshot_age_hours_max": 155.7,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "5",
+        "content_count": "7",
+        "active_brand_count": "4",
+        "likes_valid_count": "7",
+        "likes_missing_count": "0",
+        "likes_sum": "12687",
+        "likes_mean": "1812.43",
+        "likes_median": "729",
+        "likes_p75": "1631",
+        "likes_p90": "4303.8",
+        "likes_max": "7833",
+        "top_content_id": "xhs-6a5ed2c500000000130267b8",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "25.8",
+        "snapshot_age_hours_median": "131.7",
+        "snapshot_age_hours_max": "155.7",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.product_action.product-product-bundle",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "联名产品或套餐标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 5,
+        "active_brand_count": 4,
+        "content_count": 39,
+        "likes_valid_count": 39,
+        "likes_missing_count": 0,
+        "likes_sum": 49763,
+        "likes_mean": 1275.97,
+        "likes_median": 754,
+        "likes_p75": 1218,
+        "likes_p90": 3380,
+        "likes_max": 6568,
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 4,
+        "snapshot_age_hours_median": 76.5,
+        "snapshot_age_hours_max": 130.7,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "5",
+        "content_count": "39",
+        "active_brand_count": "4",
+        "likes_valid_count": "39",
+        "likes_missing_count": "0",
+        "likes_sum": "49763",
+        "likes_mean": "1275.97",
+        "likes_median": "754",
+        "likes_p75": "1218",
+        "likes_p90": "3380",
+        "likes_max": "6568",
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "4",
+        "snapshot_age_hours_median": "76.5",
+        "snapshot_age_hours_max": "130.7",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.product_action.product-lemon",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "柠檬标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 5,
+        "active_brand_count": 4,
+        "content_count": 18,
+        "likes_valid_count": 18,
+        "likes_missing_count": 0,
+        "likes_sum": 19166,
+        "likes_mean": 1064.78,
+        "likes_median": 790,
+        "likes_p75": 1068.5,
+        "likes_p90": 1700.2,
+        "likes_max": 6568,
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 11.6,
+        "snapshot_age_hours_median": 102.15,
+        "snapshot_age_hours_max": 152.2,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "5",
+        "content_count": "18",
+        "active_brand_count": "4",
+        "likes_valid_count": "18",
+        "likes_missing_count": "0",
+        "likes_sum": "19166",
+        "likes_mean": "1064.78",
+        "likes_median": "790",
+        "likes_p75": "1068.5",
+        "likes_p90": "1700.2",
+        "likes_max": "6568",
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "11.6",
+        "snapshot_age_hours_median": "102.15",
+        "snapshot_age_hours_max": "152.2",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.product_action.product-jasmine",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "茉莉标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 3,
+        "active_brand_count": 2,
+        "content_count": 5,
+        "likes_valid_count": 5,
+        "likes_missing_count": 0,
+        "likes_sum": 3429,
+        "likes_mean": 685.8,
+        "likes_median": 647,
+        "likes_p75": 1022,
+        "likes_p90": 1022,
+        "likes_max": 1022,
+        "top_content_id": "xhs-6a5f4da1000000000f0303c1",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 25.8,
+        "snapshot_age_hours_median": 117.5,
+        "snapshot_age_hours_max": 147,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "3",
+        "content_count": "5",
+        "active_brand_count": "2",
+        "likes_valid_count": "5",
+        "likes_missing_count": "0",
+        "likes_sum": "3429",
+        "likes_mean": "685.8",
+        "likes_median": "647",
+        "likes_p75": "1022",
+        "likes_p90": "1022",
+        "likes_max": "1022",
+        "top_content_id": "xhs-6a5f4da1000000000f0303c1",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "25.8",
+        "snapshot_age_hours_median": "117.5",
+        "snapshot_age_hours_max": "147",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.product_action.product-yogurt",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "酸奶标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 3,
+        "active_brand_count": 3,
+        "content_count": 14,
+        "likes_valid_count": 14,
+        "likes_missing_count": 0,
+        "likes_sum": 30868,
+        "likes_mean": 2204.86,
+        "likes_median": 922,
+        "likes_p75": 2348.25,
+        "likes_p90": 5513.7,
+        "likes_max": 11000,
+        "top_content_id": "xhs-6a61909f0000000001002bb5",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 3.7,
+        "snapshot_age_hours_median": 70.35,
+        "snapshot_age_hours_max": 152.2,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "3",
+        "content_count": "14",
+        "active_brand_count": "3",
+        "likes_valid_count": "14",
+        "likes_missing_count": "0",
+        "likes_sum": "30868",
+        "likes_mean": "2204.86",
+        "likes_median": "922",
+        "likes_p75": "2348.25",
+        "likes_p90": "5513.7",
+        "likes_max": "11000",
+        "top_content_id": "xhs-6a61909f0000000001002bb5",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "3.7",
+        "snapshot_age_hours_median": "70.35",
+        "snapshot_age_hours_max": "152.2",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.product_action.product-passion-fruit",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "百香果标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 3,
+        "active_brand_count": 3,
+        "content_count": 10,
+        "likes_valid_count": 10,
+        "likes_missing_count": 0,
+        "likes_sum": 11229,
+        "likes_mean": 1122.9,
+        "likes_median": 471.5,
+        "likes_p75": 1025.75,
+        "likes_p90": 1728.7,
+        "likes_max": 6568,
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 4.2,
+        "snapshot_age_hours_median": 75.15,
+        "snapshot_age_hours_max": 127.6,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "3",
+        "content_count": "10",
+        "active_brand_count": "3",
+        "likes_valid_count": "10",
+        "likes_missing_count": "0",
+        "likes_sum": "11229",
+        "likes_mean": "1122.9",
+        "likes_median": "471.5",
+        "likes_p75": "1025.75",
+        "likes_p90": "1728.7",
+        "likes_max": "6568",
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "4.2",
+        "snapshot_age_hours_median": "75.15",
+        "snapshot_age_hours_max": "127.6",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.product_action.product-series-launch",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "系列上新标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 3,
+        "active_brand_count": 3,
+        "content_count": 10,
+        "likes_valid_count": 10,
+        "likes_missing_count": 0,
+        "likes_sum": 7829,
+        "likes_mean": 782.9,
+        "likes_median": 659,
+        "likes_p75": 1003.75,
+        "likes_p90": 1513.4,
+        "likes_max": 2354,
+        "top_content_id": "xhs-6a62d580000000000100181a",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 11.6,
+        "snapshot_age_hours_median": 112.6,
+        "snapshot_age_hours_max": 152.2,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "3",
+        "content_count": "10",
+        "active_brand_count": "3",
+        "likes_valid_count": "10",
+        "likes_missing_count": "0",
+        "likes_sum": "7829",
+        "likes_mean": "782.9",
+        "likes_median": "659",
+        "likes_p75": "1003.75",
+        "likes_p90": "1513.4",
+        "likes_max": "2354",
+        "top_content_id": "xhs-6a62d580000000000100181a",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "11.6",
+        "snapshot_age_hours_median": "112.6",
+        "snapshot_age_hours_max": "152.2",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.product_action.product-pineapple",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "菠萝标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 2,
+        "active_brand_count": 2,
+        "content_count": 25,
+        "likes_valid_count": 25,
+        "likes_missing_count": 0,
+        "likes_sum": 29178,
+        "likes_mean": 1167.12,
+        "likes_median": 545,
+        "likes_p75": 1207,
+        "likes_p90": 2856.2,
+        "likes_max": 6568,
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 5.4,
+        "snapshot_age_hours_median": 75.5,
+        "snapshot_age_hours_max": 124,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "2",
+        "content_count": "25",
+        "active_brand_count": "2",
+        "likes_valid_count": "25",
+        "likes_missing_count": "0",
+        "likes_sum": "29178",
+        "likes_mean": "1167.12",
+        "likes_median": "545",
+        "likes_p75": "1207",
+        "likes_p90": "2856.2",
+        "likes_max": "6568",
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "5.4",
+        "snapshot_age_hours_median": "75.5",
+        "snapshot_age_hours_max": "124",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.collaboration.collaboration-product-bundle",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "联名产品或套餐标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 5,
+        "active_brand_count": 4,
+        "content_count": 39,
+        "likes_valid_count": 39,
+        "likes_missing_count": 0,
+        "likes_sum": 49763,
+        "likes_mean": 1275.97,
+        "likes_median": 754,
+        "likes_p75": 1218,
+        "likes_p90": 3380,
+        "likes_max": 6568,
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 4,
+        "snapshot_age_hours_median": 76.5,
+        "snapshot_age_hours_max": 130.7,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "5",
+        "content_count": "39",
+        "active_brand_count": "4",
+        "likes_valid_count": "39",
+        "likes_missing_count": "0",
+        "likes_sum": "49763",
+        "likes_mean": "1275.97",
+        "likes_median": "754",
+        "likes_p75": "1218",
+        "likes_p90": "3380",
+        "likes_max": "6568",
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "4",
+        "snapshot_age_hours_median": "76.5",
+        "snapshot_age_hours_max": "130.7",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.collaboration.collaboration-offline-event",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "联名线下活动标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 2,
+        "active_brand_count": 2,
+        "content_count": 2,
+        "likes_valid_count": 2,
+        "likes_missing_count": 0,
+        "likes_sum": 2352,
+        "likes_mean": 1176,
+        "likes_median": 1176,
+        "likes_p75": 1231.5,
+        "likes_p90": 1264.8,
+        "likes_max": 1287,
+        "top_content_id": "xhs-6a6434730000000001032781",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 57.7,
+        "snapshot_age_hours_median": 77.05,
+        "snapshot_age_hours_max": 96.4,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "2",
+        "content_count": "2",
+        "active_brand_count": "2",
+        "likes_valid_count": "2",
+        "likes_missing_count": "0",
+        "likes_sum": "2352",
+        "likes_mean": "1176",
+        "likes_median": "1176",
+        "likes_p75": "1231.5",
+        "likes_p90": "1264.8",
+        "likes_max": "1287",
+        "top_content_id": "xhs-6a6434730000000001032781",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "57.7",
+        "snapshot_age_hours_median": "77.05",
+        "snapshot_age_hours_max": "96.4",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.collaboration.collaboration-duolingo",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "多邻国标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "content_count": 2,
+        "likes_valid_count": 2,
+        "likes_missing_count": 0,
+        "likes_sum": 4632,
+        "likes_mean": 2316,
+        "likes_median": 2316,
+        "likes_p75": 2575,
+        "likes_p90": 2730.4,
+        "likes_max": 2834,
+        "top_content_id": "xhs-6a632195000000000f02bdfd",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 77.2,
+        "snapshot_age_hours_median": 112.5,
+        "snapshot_age_hours_max": 147.8,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "content_count": "2",
+        "active_brand_count": "1",
+        "likes_valid_count": "2",
+        "likes_missing_count": "0",
+        "likes_sum": "4632",
+        "likes_mean": "2316",
+        "likes_median": "2316",
+        "likes_p75": "2575",
+        "likes_p90": "2730.4",
+        "likes_max": "2834",
+        "top_content_id": "xhs-6a632195000000000f02bdfd",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "77.2",
+        "snapshot_age_hours_median": "112.5",
+        "snapshot_age_hours_max": "147.8",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.collaboration.collaboration-honor-of-kings",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "王者荣耀标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "content_count": 9,
+        "likes_valid_count": 9,
+        "likes_missing_count": 0,
+        "likes_sum": 16026,
+        "likes_mean": 1780.67,
+        "likes_median": 1001,
+        "likes_p75": 1367,
+        "likes_p90": 4852.4,
+        "likes_max": 5722,
+        "top_content_id": "xhs-6a620670000000001101feb4",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 4,
+        "snapshot_age_hours_median": 78.4,
+        "snapshot_age_hours_max": 125.5,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "content_count": "9",
+        "active_brand_count": "1",
+        "likes_valid_count": "9",
+        "likes_missing_count": "0",
+        "likes_sum": "16026",
+        "likes_mean": "1780.67",
+        "likes_median": "1001",
+        "likes_p75": "1367",
+        "likes_p90": "4852.4",
+        "likes_max": "5722",
+        "top_content_id": "xhs-6a620670000000001101feb4",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "4",
+        "snapshot_age_hours_median": "78.4",
+        "snapshot_age_hours_max": "125.5",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.collaboration.collaboration-crocs",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "Crocs标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "content_count": 7,
+        "likes_valid_count": 7,
+        "likes_missing_count": 0,
+        "likes_sum": 10608,
+        "likes_mean": 1515.43,
+        "likes_median": 851,
+        "likes_p75": 1137.5,
+        "likes_p90": 3341.8,
+        "likes_max": 6568,
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 21.2,
+        "snapshot_age_hours_median": 75,
+        "snapshot_age_hours_max": 123.2,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "content_count": "7",
+        "active_brand_count": "1",
+        "likes_valid_count": "7",
+        "likes_missing_count": "0",
+        "likes_sum": "10608",
+        "likes_mean": "1515.43",
+        "likes_median": "851",
+        "likes_p75": "1137.5",
+        "likes_p90": "3341.8",
+        "likes_max": "6568",
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "21.2",
+        "snapshot_age_hours_median": "75",
+        "snapshot_age_hours_max": "123.2",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.collaboration.collaboration-miffy",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "米菲标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "content_count": 2,
+        "likes_valid_count": 2,
+        "likes_missing_count": 0,
+        "likes_sum": 2151,
+        "likes_mean": 1075.5,
+        "likes_median": 1075.5,
+        "likes_p75": 1377.75,
+        "likes_p90": 1559.1,
+        "likes_max": 1680,
+        "top_content_id": "xhs-6a603293000000001303c324",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 106.9,
+        "snapshot_age_hours_median": 118.8,
+        "snapshot_age_hours_max": 130.7,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "content_count": "2",
+        "active_brand_count": "1",
+        "likes_valid_count": "2",
+        "likes_missing_count": "0",
+        "likes_sum": "2151",
+        "likes_mean": "1075.5",
+        "likes_median": "1075.5",
+        "likes_p75": "1377.75",
+        "likes_p90": "1559.1",
+        "likes_max": "1680",
+        "top_content_id": "xhs-6a603293000000001303c324",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "106.9",
+        "snapshot_age_hours_median": "118.8",
+        "snapshot_age_hours_max": "130.7",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.collaboration.collaboration-sanrio",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "三丽鸥标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 1065,
+        "likes_mean": 1065,
+        "likes_median": 1065,
+        "likes_p75": 1065,
+        "likes_p90": 1065,
+        "likes_max": 1065,
+        "top_content_id": "xhs-6a6215dc000000000f02ba74",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 96.4,
+        "snapshot_age_hours_median": 96.4,
+        "snapshot_age_hours_max": 96.4,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "content_count": "1",
+        "active_brand_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "1065",
+        "likes_mean": "1065",
+        "likes_median": "1065",
+        "likes_p75": "1065",
+        "likes_p90": "1065",
+        "likes_max": "1065",
+        "top_content_id": "xhs-6a6215dc000000000f02ba74",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "96.4",
+        "snapshot_age_hours_median": "96.4",
+        "snapshot_age_hours_max": "96.4",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.collaboration.collaboration-spider-man",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "蜘蛛侠标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "content_count": 18,
+        "likes_valid_count": 18,
+        "likes_missing_count": 0,
+        "likes_sum": 18570,
+        "likes_mean": 1031.67,
+        "likes_median": 478.5,
+        "likes_p75": 1223.5,
+        "likes_p90": 2606.6,
+        "likes_max": 4144,
+        "top_content_id": "xhs-6a61f537000000000100dc0c",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 5.4,
+        "snapshot_age_hours_median": 75.5,
+        "snapshot_age_hours_max": 124,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "content_count": "18",
+        "active_brand_count": "1",
+        "likes_valid_count": "18",
+        "likes_missing_count": "0",
+        "likes_sum": "18570",
+        "likes_mean": "1031.67",
+        "likes_median": "478.5",
+        "likes_p75": "1223.5",
+        "likes_p90": "2606.6",
+        "likes_max": "4144",
+        "top_content_id": "xhs-6a61f537000000000100dc0c",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "5.4",
+        "snapshot_age_hours_median": "75.5",
+        "snapshot_age_hours_max": "124",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.brand_event.brand-new-format",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "新店型标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 3,
+        "active_brand_count": 2,
+        "content_count": 3,
+        "likes_valid_count": 3,
+        "likes_missing_count": 0,
+        "likes_sum": 3288,
+        "likes_mean": 1096,
+        "likes_median": 1336,
+        "likes_p75": 1438,
+        "likes_p90": 1499.2,
+        "likes_max": 1540,
+        "top_content_id": "xhs-6a61793b000000001303cc49",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 74.7,
+        "snapshot_age_hours_median": 97.9,
+        "snapshot_age_hours_max": 107.5,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "3",
+        "content_count": "3",
+        "active_brand_count": "2",
+        "likes_valid_count": "3",
+        "likes_missing_count": "0",
+        "likes_sum": "3288",
+        "likes_mean": "1096",
+        "likes_median": "1336",
+        "likes_p75": "1438",
+        "likes_p90": "1499.2",
+        "likes_max": "1540",
+        "top_content_id": "xhs-6a61793b000000001303cc49",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "74.7",
+        "snapshot_age_hours_median": "97.9",
+        "snapshot_age_hours_max": "107.5",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.brand_event.brand-ugc",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "UGC互动标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 3,
+        "active_brand_count": 2,
+        "content_count": 3,
+        "likes_valid_count": 3,
+        "likes_missing_count": 0,
+        "likes_sum": 1560,
+        "likes_mean": 520,
+        "likes_median": 499,
+        "likes_p75": 713,
+        "likes_p90": 841.4,
+        "likes_max": 927,
+        "top_content_id": "xhs-6a61e507000000000402ba3a",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 6.9,
+        "snapshot_age_hours_median": 8.2,
+        "snapshot_age_hours_max": 99.8,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "3",
+        "content_count": "3",
+        "active_brand_count": "2",
+        "likes_valid_count": "3",
+        "likes_missing_count": "0",
+        "likes_sum": "1560",
+        "likes_mean": "520",
+        "likes_median": "499",
+        "likes_p75": "713",
+        "likes_p90": "841.4",
+        "likes_max": "927",
+        "top_content_id": "xhs-6a61e507000000000402ba3a",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "6.9",
+        "snapshot_age_hours_median": "8.2",
+        "snapshot_age_hours_max": "99.8",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.brand_event.brand-offline-event",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "联名线下活动标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 2,
+        "active_brand_count": 2,
+        "content_count": 2,
+        "likes_valid_count": 2,
+        "likes_missing_count": 0,
+        "likes_sum": 2352,
+        "likes_mean": 1176,
+        "likes_median": 1176,
+        "likes_p75": 1231.5,
+        "likes_p90": 1264.8,
+        "likes_max": 1287,
+        "top_content_id": "xhs-6a6434730000000001032781",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 57.7,
+        "snapshot_age_hours_median": 77.05,
+        "snapshot_age_hours_max": 96.4,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "2",
+        "content_count": "2",
+        "active_brand_count": "2",
+        "likes_valid_count": "2",
+        "likes_missing_count": "0",
+        "likes_sum": "2352",
+        "likes_mean": "1176",
+        "likes_median": "1176",
+        "likes_p75": "1231.5",
+        "likes_p90": "1264.8",
+        "likes_max": "1287",
+        "top_content_id": "xhs-6a6434730000000001032781",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "57.7",
+        "snapshot_age_hours_median": "77.05",
+        "snapshot_age_hours_max": "96.4",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.brand_event.brand-seasonal",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "节日营销标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 2,
+        "active_brand_count": 2,
+        "content_count": 3,
+        "likes_valid_count": 3,
+        "likes_missing_count": 0,
+        "likes_sum": 2020,
+        "likes_mean": 673.33,
+        "likes_median": 363,
+        "likes_p75": 848.5,
+        "likes_p90": 1139.8,
+        "likes_max": 1334,
+        "top_content_id": "xhs-6a65cc04000000000402ac45",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 28.5,
+        "snapshot_age_hours_median": 28.7,
+        "snapshot_age_hours_max": 106.2,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "2",
+        "content_count": "3",
+        "active_brand_count": "2",
+        "likes_valid_count": "3",
+        "likes_missing_count": "0",
+        "likes_sum": "2020",
+        "likes_mean": "673.33",
+        "likes_median": "363",
+        "likes_p75": "848.5",
+        "likes_p90": "1139.8",
+        "likes_max": "1334",
+        "top_content_id": "xhs-6a65cc04000000000402ac45",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "28.5",
+        "snapshot_age_hours_median": "28.7",
+        "snapshot_age_hours_max": "106.2",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.brand_event.brand-corporate-legal",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "企业/法律/公共事务标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 37000,
+        "likes_mean": 37000,
+        "likes_median": 37000,
+        "likes_p75": 37000,
+        "likes_p90": 37000,
+        "likes_max": 37000,
+        "top_content_id": "xhs-6a66d7e7000000001101fb64",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 9.6,
+        "snapshot_age_hours_median": 9.6,
+        "snapshot_age_hours_max": 9.6,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "content_count": "1",
+        "active_brand_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "37000",
+        "likes_mean": "37000",
+        "likes_median": "37000",
+        "likes_p75": "37000",
+        "likes_p90": "37000",
+        "likes_max": "37000",
+        "top_content_id": "xhs-6a66d7e7000000001101fb64",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "9.6",
+        "snapshot_age_hours_median": "9.6",
+        "snapshot_age_hours_max": "9.6",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.brand_event.brand-person",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "人物传播标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 5053,
+        "likes_mean": 5053,
+        "likes_median": 5053,
+        "likes_p75": 5053,
+        "likes_p90": 5053,
+        "likes_max": 5053,
+        "top_content_id": "xhs-6a606392000000000503bacc",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 127.1,
+        "snapshot_age_hours_median": 127.1,
+        "snapshot_age_hours_max": 127.1,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "content_count": "1",
+        "active_brand_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "5053",
+        "likes_mean": "5053",
+        "likes_median": "5053",
+        "likes_p75": "5053",
+        "likes_p90": "5053",
+        "likes_max": "5053",
+        "top_content_id": "xhs-6a606392000000000503bacc",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "127.1",
+        "snapshot_age_hours_median": "127.1",
+        "snapshot_age_hours_max": "127.1",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.brand_event.brand-supply-chain",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "原料/产区/供应链标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 3730,
+        "likes_mean": 3730,
+        "likes_median": 3730,
+        "likes_p75": 3730,
+        "likes_p90": 3730,
+        "likes_max": 3730,
+        "top_content_id": "xhs-6a61b9b8000000000a03a23a",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 102.8,
+        "snapshot_age_hours_median": 102.8,
+        "snapshot_age_hours_max": 102.8,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "content_count": "1",
+        "active_brand_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "3730",
+        "likes_mean": "3730",
+        "likes_median": "3730",
+        "likes_p75": "3730",
+        "likes_p90": "3730",
+        "likes_max": "3730",
+        "top_content_id": "xhs-6a61b9b8000000000a03a23a",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "102.8",
+        "snapshot_age_hours_median": "102.8",
+        "snapshot_age_hours_max": "102.8",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.brand_event.brand-store-channel",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "门店渠道标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 257,
+        "likes_mean": 257,
+        "likes_median": 257,
+        "likes_p75": 257,
+        "likes_p90": 257,
+        "likes_max": 257,
+        "top_content_id": "xhs-6a6329c0000000000101deac",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 76.7,
+        "snapshot_age_hours_median": 76.7,
+        "snapshot_age_hours_max": 76.7,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "content_count": "1",
+        "active_brand_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "257",
+        "likes_mean": "257",
+        "likes_median": "257",
+        "likes_p75": "257",
+        "likes_p90": "257",
+        "likes_max": "257",
+        "top_content_id": "xhs-6a6329c0000000000101deac",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "76.7",
+        "snapshot_age_hours_median": "76.7",
+        "snapshot_age_hours_max": "76.7",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.product_action.product-routine-promotion",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "常规产品传播标签指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 321,
+        "likes_mean": 321,
+        "likes_median": 321,
+        "likes_p75": 321,
+        "likes_p90": 321,
+        "likes_max": 321,
+        "top_content_id": "xhs-6a659d4d000000000101d9e3",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 32.1,
+        "snapshot_age_hours_median": 32.1,
+        "snapshot_age_hours_max": 32.1,
+        "pending_event_count": 0,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "content_count": "1",
+        "active_brand_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "321",
+        "likes_mean": "321",
+        "likes_median": "321",
+        "likes_p75": "321",
+        "likes_p90": "321",
+        "likes_max": "321",
+        "top_content_id": "xhs-6a659d4d000000000101d9e3",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "32.1",
+        "snapshot_age_hours_median": "32.1",
+        "snapshot_age_hours_max": "32.1",
+        "pending_event_count": "0",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.tag.members",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "标签指标集合与冻结口径一致",
+      "expected": [
+        "brand_event|brand-corporate-legal",
+        "brand_event|brand-new-format",
+        "brand_event|brand-offline-event",
+        "brand_event|brand-person",
+        "brand_event|brand-seasonal",
+        "brand_event|brand-store-channel",
+        "brand_event|brand-supply-chain",
+        "brand_event|brand-ugc",
+        "collaboration|collaboration-crocs",
+        "collaboration|collaboration-duolingo",
+        "collaboration|collaboration-honor-of-kings",
+        "collaboration|collaboration-miffy",
+        "collaboration|collaboration-offline-event",
+        "collaboration|collaboration-product-bundle",
+        "collaboration|collaboration-sanrio",
+        "collaboration|collaboration-spider-man",
+        "product_action|product-jasmine",
+        "product_action|product-lemon",
+        "product_action|product-new-launch",
+        "product_action|product-passion-fruit",
+        "product_action|product-pineapple",
+        "product_action|product-product-bundle",
+        "product_action|product-routine-promotion",
+        "product_action|product-series-launch",
+        "product_action|product-yogurt"
+      ],
+      "actual": [
+        "brand_event|brand-corporate-legal",
+        "brand_event|brand-new-format",
+        "brand_event|brand-offline-event",
+        "brand_event|brand-person",
+        "brand_event|brand-seasonal",
+        "brand_event|brand-store-channel",
+        "brand_event|brand-supply-chain",
+        "brand_event|brand-ugc",
+        "collaboration|collaboration-crocs",
+        "collaboration|collaboration-duolingo",
+        "collaboration|collaboration-honor-of-kings",
+        "collaboration|collaboration-miffy",
+        "collaboration|collaboration-offline-event",
+        "collaboration|collaboration-product-bundle",
+        "collaboration|collaboration-sanrio",
+        "collaboration|collaboration-spider-man",
+        "product_action|product-jasmine",
+        "product_action|product-lemon",
+        "product_action|product-new-launch",
+        "product_action|product-passion-fruit",
+        "product_action|product-pineapple",
+        "product_action|product-product-bundle",
+        "product_action|product-routine-promotion",
+        "product_action|product-series-launch",
+        "product_action|product-yogurt"
+      ]
+    },
+    {
+      "id": "recompute.tag.product_jasmine_correction",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "茉莉标签已排除品牌名误识别并按确认口径重算",
+      "expected": {
+        "event_count": 3,
+        "content_count": 5,
+        "likes_sum": 3429
+      },
+      "actual": {
+        "event_count": 3,
+        "content_count": 5,
+        "likes_sum": 3429
+      }
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-MIXUE-HUANGTAO-RETURN",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "蜜雪冰城黄桃果霸系列回归事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 6,
+        "likes_valid_count": 6,
+        "likes_missing_count": 0,
+        "likes_sum": 24339,
+        "likes_mean": 4056.5,
+        "likes_median": 3043.5,
+        "likes_p75": 5639.25,
+        "likes_p90": 8633.5,
+        "likes_max": 11000,
+        "top_content_id": "xhs-6a61909f0000000001002bb5",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 3.7,
+        "snapshot_age_hours_median": 54.9,
+        "snapshot_age_hours_max": 105.7,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "6",
+        "likes_valid_count": "6",
+        "likes_missing_count": "0",
+        "likes_sum": "24339",
+        "likes_mean": "4056.5",
+        "likes_median": "3043.5",
+        "likes_p75": "5639.25",
+        "likes_p90": "8633.5",
+        "likes_max": "11000",
+        "top_content_id": "xhs-6a61909f0000000001002bb5",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "3.7",
+        "snapshot_age_hours_median": "54.9",
+        "snapshot_age_hours_max": "105.7",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-CHAGEE-HONOR-OF-KINGS",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "霸王茶姬 × 王者荣耀事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 2,
+        "content_count": 9,
+        "likes_valid_count": 9,
+        "likes_missing_count": 0,
+        "likes_sum": 16026,
+        "likes_mean": 1780.67,
+        "likes_median": 1001,
+        "likes_p75": 1367,
+        "likes_p90": 4852.4,
+        "likes_max": 5722,
+        "top_content_id": "xhs-6a620670000000001101feb4",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 4,
+        "snapshot_age_hours_median": 78.4,
+        "snapshot_age_hours_max": 125.5,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "2",
+        "content_count": "9",
+        "likes_valid_count": "9",
+        "likes_missing_count": "0",
+        "likes_sum": "16026",
+        "likes_mean": "1780.67",
+        "likes_median": "1001",
+        "likes_p75": "1367",
+        "likes_p90": "4852.4",
+        "likes_max": "5722",
+        "top_content_id": "xhs-6a620670000000001101feb4",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "4",
+        "snapshot_age_hours_median": "78.4",
+        "snapshot_age_hours_max": "125.5",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-MIXUE-SHANGHAI-CITY",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "蜜雪冰城满杯百香果上海创意内容事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 398,
+        "likes_mean": 398,
+        "likes_median": 398,
+        "likes_p75": 398,
+        "likes_p90": 398,
+        "likes_max": 398,
+        "top_content_id": "xhs-6a672494000000000301db16",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 4.2,
+        "snapshot_age_hours_median": 4.2,
+        "snapshot_age_hours_max": 4.2,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "398",
+        "likes_mean": "398",
+        "likes_median": "398",
+        "likes_p75": "398",
+        "likes_p90": "398",
+        "likes_max": "398",
+        "top_content_id": "xhs-6a672494000000000301db16",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "4.2",
+        "snapshot_age_hours_median": "4.2",
+        "snapshot_age_hours_max": "4.2",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-COTTI-SPIDERMAN",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "库迪咖啡 ×《蜘蛛侠：崭新之日》事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 2,
+        "content_count": 18,
+        "likes_valid_count": 18,
+        "likes_missing_count": 0,
+        "likes_sum": 18570,
+        "likes_mean": 1031.67,
+        "likes_median": 478.5,
+        "likes_p75": 1223.5,
+        "likes_p90": 2606.6,
+        "likes_max": 4144,
+        "top_content_id": "xhs-6a61f537000000000100dc0c",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 5.4,
+        "snapshot_age_hours_median": 75.5,
+        "snapshot_age_hours_max": 124,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "2",
+        "content_count": "18",
+        "likes_valid_count": "18",
+        "likes_missing_count": "0",
+        "likes_sum": "18570",
+        "likes_mean": "1031.67",
+        "likes_median": "478.5",
+        "likes_p75": "1223.5",
+        "likes_p90": "2606.6",
+        "likes_max": "4144",
+        "top_content_id": "xhs-6a61f537000000000100dc0c",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "5.4",
+        "snapshot_age_hours_median": "75.5",
+        "snapshot_age_hours_max": "124",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-HEYTEA-INSPIRATION-CARD",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "喜茶大家的灵感内容互动事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 499,
+        "likes_mean": 499,
+        "likes_median": 499,
+        "likes_p75": 499,
+        "likes_p90": 499,
+        "likes_max": 499,
+        "top_content_id": "xhs-6a66ffee000000000c016382",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 6.9,
+        "snapshot_age_hours_median": 6.9,
+        "snapshot_age_hours_max": 6.9,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "499",
+        "likes_mean": "499",
+        "likes_median": "499",
+        "likes_p75": "499",
+        "likes_p90": "499",
+        "likes_max": "499",
+        "top_content_id": "xhs-6a66ffee000000000c016382",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "6.9",
+        "snapshot_age_hours_median": "6.9",
+        "snapshot_age_hours_max": "6.9",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-AUNTEA-LOOPY",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "沪上阿姨 × 赞萌露比事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 2,
+        "content_count": 7,
+        "likes_valid_count": 7,
+        "likes_missing_count": 0,
+        "likes_sum": 3245,
+        "likes_mean": 463.57,
+        "likes_median": 478,
+        "likes_p75": 519.5,
+        "likes_p90": 774.6,
+        "likes_max": 1155,
+        "top_content_id": "xhs-6a6589e1000000000402abaf",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 7,
+        "snapshot_age_hours_median": 33.4,
+        "snapshot_age_hours_max": 82.8,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "2",
+        "content_count": "7",
+        "likes_valid_count": "7",
+        "likes_missing_count": "0",
+        "likes_sum": "3245",
+        "likes_mean": "463.57",
+        "likes_median": "478",
+        "likes_p75": "519.5",
+        "likes_p90": "774.6",
+        "likes_max": "1155",
+        "top_content_id": "xhs-6a6589e1000000000402abaf",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "7",
+        "snapshot_age_hours_median": "33.4",
+        "snapshot_age_hours_max": "82.8",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-CHABAIDAO-SIMILARITY",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "茶百道遥远的相似性互动事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 134,
+        "likes_mean": 134,
+        "likes_median": 134,
+        "likes_p75": 134,
+        "likes_p90": 134,
+        "likes_max": 134,
+        "top_content_id": "xhs-6a66ed06000000000301df0a",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 8.2,
+        "snapshot_age_hours_median": 8.2,
+        "snapshot_age_hours_max": 8.2,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "134",
+        "likes_mean": "134",
+        "likes_median": "134",
+        "likes_p75": "134",
+        "likes_p90": "134",
+        "likes_max": "134",
+        "top_content_id": "xhs-6a66ed06000000000301df0a",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "8.2",
+        "snapshot_age_hours_median": "8.2",
+        "snapshot_age_hours_max": "8.2",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-LUCKIN-THAILAND-TRADEMARK",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "瑞幸泰国商标维权进展事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 37000,
+        "likes_mean": 37000,
+        "likes_median": 37000,
+        "likes_p75": 37000,
+        "likes_p90": 37000,
+        "likes_max": 37000,
+        "top_content_id": "xhs-6a66d7e7000000001101fb64",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 9.6,
+        "snapshot_age_hours_median": 9.6,
+        "snapshot_age_hours_max": 9.6,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "37000",
+        "likes_mean": "37000",
+        "likes_median": "37000",
+        "likes_p75": "37000",
+        "likes_p90": "37000",
+        "likes_max": "37000",
+        "top_content_id": "xhs-6a66d7e7000000001101fb64",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "9.6",
+        "snapshot_age_hours_median": "9.6",
+        "snapshot_age_hours_max": "9.6",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-CHABAIDAO-CITRUS",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "茶百道夏日柑橘系列事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 6,
+        "likes_valid_count": 6,
+        "likes_missing_count": 0,
+        "likes_sum": 6306,
+        "likes_mean": 1051,
+        "likes_median": 922,
+        "likes_p75": 1302.25,
+        "likes_p90": 1887,
+        "likes_max": 2354,
+        "top_content_id": "xhs-6a62d580000000000100181a",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 11.6,
+        "snapshot_age_hours_median": 95.2,
+        "snapshot_age_hours_max": 152.2,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "6",
+        "likes_valid_count": "6",
+        "likes_missing_count": "0",
+        "likes_sum": "6306",
+        "likes_mean": "1051",
+        "likes_median": "922",
+        "likes_p75": "1302.25",
+        "likes_p90": "1887",
+        "likes_max": "2354",
+        "top_content_id": "xhs-6a62d580000000000100181a",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "11.6",
+        "snapshot_age_hours_median": "95.2",
+        "snapshot_age_hours_max": "152.2",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-LUCKIN-CROCS",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "瑞幸咖啡 × Crocs 夏日联名事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 2,
+        "content_count": 7,
+        "likes_valid_count": 7,
+        "likes_missing_count": 0,
+        "likes_sum": 10608,
+        "likes_mean": 1515.43,
+        "likes_median": 851,
+        "likes_p75": 1137.5,
+        "likes_p90": 3341.8,
+        "likes_max": 6568,
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 21.2,
+        "snapshot_age_hours_median": 75,
+        "snapshot_age_hours_max": 123.2,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "2",
+        "content_count": "7",
+        "likes_valid_count": "7",
+        "likes_missing_count": "0",
+        "likes_sum": "10608",
+        "likes_mean": "1515.43",
+        "likes_median": "851",
+        "likes_p75": "1137.5",
+        "likes_p90": "3341.8",
+        "likes_max": "6568",
+        "top_content_id": "xhs-6a6634d1000000001c011cfd",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "21.2",
+        "snapshot_age_hours_median": "75",
+        "snapshot_age_hours_max": "123.2",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-MOLLY-BIRTHDAY-BADGE",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "茉莉奶白生日徽章上新事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 232,
+        "likes_mean": 232,
+        "likes_median": 232,
+        "likes_p75": 232,
+        "likes_p90": 232,
+        "likes_max": 232,
+        "top_content_id": "xhs-6a65f6610000000001002624",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 25.8,
+        "snapshot_age_hours_median": 25.8,
+        "snapshot_age_hours_max": 25.8,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "232",
+        "likes_mean": "232",
+        "likes_median": "232",
+        "likes_p75": "232",
+        "likes_p90": "232",
+        "likes_max": "232",
+        "top_content_id": "xhs-6a65f6610000000001002624",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "25.8",
+        "snapshot_age_hours_median": "25.8",
+        "snapshot_age_hours_max": "25.8",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-MOLLY-YUNNAN",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "茉莉奶白滇西特调上新事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 460,
+        "likes_mean": 460,
+        "likes_median": 460,
+        "likes_p75": 460,
+        "likes_p90": 460,
+        "likes_max": 460,
+        "top_content_id": "xhs-6a65f5f800000000110195f1",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 25.8,
+        "snapshot_age_hours_median": 25.8,
+        "snapshot_age_hours_max": 25.8,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "460",
+        "likes_mean": "460",
+        "likes_median": "460",
+        "likes_p75": "460",
+        "likes_p90": "460",
+        "likes_max": "460",
+        "top_content_id": "xhs-6a65f5f800000000110195f1",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "25.8",
+        "snapshot_age_hours_median": "25.8",
+        "snapshot_age_hours_max": "25.8",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-LUCKIN-FULL-ICE",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "瑞幸全冰节与全冰去水系列事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 2,
+        "likes_valid_count": 2,
+        "likes_missing_count": 0,
+        "likes_sum": 1697,
+        "likes_mean": 848.5,
+        "likes_median": 848.5,
+        "likes_p75": 1091.25,
+        "likes_p90": 1236.9,
+        "likes_max": 1334,
+        "top_content_id": "xhs-6a65cc04000000000402ac45",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 28.5,
+        "snapshot_age_hours_median": 28.6,
+        "snapshot_age_hours_max": 28.7,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "2",
+        "likes_valid_count": "2",
+        "likes_missing_count": "0",
+        "likes_sum": "1697",
+        "likes_mean": "848.5",
+        "likes_median": "848.5",
+        "likes_p75": "1091.25",
+        "likes_p90": "1236.9",
+        "likes_max": "1334",
+        "top_content_id": "xhs-6a65cc04000000000402ac45",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "28.5",
+        "snapshot_age_hours_median": "28.6",
+        "snapshot_age_hours_max": "28.7",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-CHABAIDAO-COFFEE-MENU",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "茶百道咖啡产品集合事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 321,
+        "likes_mean": 321,
+        "likes_median": 321,
+        "likes_p75": 321,
+        "likes_p90": 321,
+        "likes_max": 321,
+        "top_content_id": "xhs-6a659d4d000000000101d9e3",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 32.1,
+        "snapshot_age_hours_median": 32.1,
+        "snapshot_age_hours_max": 32.1,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "321",
+        "likes_mean": "321",
+        "likes_median": "321",
+        "likes_p75": "321",
+        "likes_p90": "321",
+        "likes_max": "321",
+        "top_content_id": "xhs-6a659d4d000000000101d9e3",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "32.1",
+        "snapshot_age_hours_median": "32.1",
+        "snapshot_age_hours_max": "32.1",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-HEYTEA-APPLE",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "喜茶金韵苹果人参果上新与调整事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 3,
+        "likes_valid_count": 3,
+        "likes_missing_count": 0,
+        "likes_sum": 11095,
+        "likes_mean": 3698.33,
+        "likes_median": 1951,
+        "likes_p75": 4892,
+        "likes_p90": 6656.6,
+        "likes_max": 7833,
+        "top_content_id": "xhs-6a5ed2c500000000130267b8",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 53.5,
+        "snapshot_age_hours_median": 131.7,
+        "snapshot_age_hours_max": 155.7,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "3",
+        "likes_valid_count": "3",
+        "likes_missing_count": "0",
+        "likes_sum": "11095",
+        "likes_mean": "3698.33",
+        "likes_median": "1951",
+        "likes_p75": "4892",
+        "likes_p90": "6656.6",
+        "likes_max": "7833",
+        "top_content_id": "xhs-6a5ed2c500000000130267b8",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "53.5",
+        "snapshot_age_hours_median": "131.7",
+        "snapshot_age_hours_max": "155.7",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-COTTI-SUCHAO",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "库迪咖啡苏超观赛互动事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 2,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 1287,
+        "likes_mean": 1287,
+        "likes_median": 1287,
+        "likes_p75": 1287,
+        "likes_p90": 1287,
+        "likes_max": 1287,
+        "top_content_id": "xhs-6a6434730000000001032781",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 57.7,
+        "snapshot_age_hours_median": 57.7,
+        "snapshot_age_hours_max": 57.7,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "2",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "1287",
+        "likes_mean": "1287",
+        "likes_median": "1287",
+        "likes_p75": "1287",
+        "likes_p90": "1287",
+        "likes_max": "1287",
+        "top_content_id": "xhs-6a6434730000000001032781",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "57.7",
+        "snapshot_age_hours_median": "57.7",
+        "snapshot_age_hours_max": "57.7",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-HEYTEA-SHANGHAI-ICE-LAB",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "喜茶上海炒冰实验室+事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 412,
+        "likes_mean": 412,
+        "likes_median": 412,
+        "likes_p75": 412,
+        "likes_p90": 412,
+        "likes_max": 412,
+        "top_content_id": "xhs-6a6346da000000000a038ee9",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 74.7,
+        "snapshot_age_hours_median": 74.7,
+        "snapshot_age_hours_max": 74.7,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "412",
+        "likes_mean": "412",
+        "likes_median": "412",
+        "likes_p75": "412",
+        "likes_p90": "412",
+        "likes_max": "412",
+        "top_content_id": "xhs-6a6346da000000000a038ee9",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "74.7",
+        "snapshot_age_hours_median": "74.7",
+        "snapshot_age_hours_max": "74.7",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-CHABAIDAO-CHENGDU-FLAGSHIP",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "茶百道成都宽窄巷子旗舰店事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 257,
+        "likes_mean": 257,
+        "likes_median": 257,
+        "likes_p75": 257,
+        "likes_p90": 257,
+        "likes_max": 257,
+        "top_content_id": "xhs-6a6329c0000000000101deac",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 76.7,
+        "snapshot_age_hours_median": 76.7,
+        "snapshot_age_hours_max": 76.7,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "257",
+        "likes_mean": "257",
+        "likes_median": "257",
+        "likes_p75": "257",
+        "likes_p90": "257",
+        "likes_max": "257",
+        "top_content_id": "xhs-6a6329c0000000000101deac",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "76.7",
+        "snapshot_age_hours_median": "76.7",
+        "snapshot_age_hours_max": "76.7",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-LUCKIN-DUOLINGO",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "瑞幸咖啡 × 多邻国内容联动事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 2,
+        "content_count": 2,
+        "likes_valid_count": 2,
+        "likes_missing_count": 0,
+        "likes_sum": 4632,
+        "likes_mean": 2316,
+        "likes_median": 2316,
+        "likes_p75": 2575,
+        "likes_p90": 2730.4,
+        "likes_max": 2834,
+        "top_content_id": "xhs-6a632195000000000f02bdfd",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 77.2,
+        "snapshot_age_hours_median": 112.5,
+        "snapshot_age_hours_max": 147.8,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "2",
+        "content_count": "2",
+        "likes_valid_count": "2",
+        "likes_missing_count": "0",
+        "likes_sum": "4632",
+        "likes_mean": "2316",
+        "likes_median": "2316",
+        "likes_p75": "2575",
+        "likes_p90": "2730.4",
+        "likes_max": "2834",
+        "top_content_id": "xhs-6a632195000000000f02bdfd",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "77.2",
+        "snapshot_age_hours_median": "112.5",
+        "snapshot_age_hours_max": "147.8",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-MOLLY-SANRIO-POPUP",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "茉莉奶白 × 三丽鸥日晒海岛派对事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 2,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 1065,
+        "likes_mean": 1065,
+        "likes_median": 1065,
+        "likes_p75": 1065,
+        "likes_p90": 1065,
+        "likes_max": 1065,
+        "top_content_id": "xhs-6a6215dc000000000f02ba74",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 96.4,
+        "snapshot_age_hours_median": 96.4,
+        "snapshot_age_hours_max": 96.4,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "2",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "1065",
+        "likes_mean": "1065",
+        "likes_median": "1065",
+        "likes_p75": "1065",
+        "likes_p90": "1065",
+        "likes_max": "1065",
+        "top_content_id": "xhs-6a6215dc000000000f02ba74",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "96.4",
+        "snapshot_age_hours_median": "96.4",
+        "snapshot_age_hours_max": "96.4",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-CHAGEE-TEA-SPACE",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "霸王茶姬慢生长茶空间事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 1336,
+        "likes_mean": 1336,
+        "likes_median": 1336,
+        "likes_p75": 1336,
+        "likes_p90": 1336,
+        "likes_max": 1336,
+        "top_content_id": "xhs-6a61ff63000000001102d7fe",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 97.9,
+        "snapshot_age_hours_median": 97.9,
+        "snapshot_age_hours_max": 97.9,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "1336",
+        "likes_mean": "1336",
+        "likes_median": "1336",
+        "likes_p75": "1336",
+        "likes_p90": "1336",
+        "likes_max": "1336",
+        "top_content_id": "xhs-6a61ff63000000001102d7fe",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "97.9",
+        "snapshot_age_hours_median": "97.9",
+        "snapshot_age_hours_max": "97.9",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-CHABAIDAO-DIY-ICE",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "茶百道网友自制冰棍互动事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 927,
+        "likes_mean": 927,
+        "likes_median": 927,
+        "likes_p75": 927,
+        "likes_p90": 927,
+        "likes_max": 927,
+        "top_content_id": "xhs-6a61e507000000000402ba3a",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 99.8,
+        "snapshot_age_hours_median": 99.8,
+        "snapshot_age_hours_max": 99.8,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "927",
+        "likes_mean": "927",
+        "likes_median": "927",
+        "likes_p75": "927",
+        "likes_p90": "927",
+        "likes_max": "927",
+        "top_content_id": "xhs-6a61e507000000000402ba3a",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "99.8",
+        "snapshot_age_hours_median": "99.8",
+        "snapshot_age_hours_max": "99.8",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-LUCKIN-JASMINE-ORIGIN",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "瑞幸广西茉莉产区内容事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 3730,
+        "likes_mean": 3730,
+        "likes_median": 3730,
+        "likes_p75": 3730,
+        "likes_p90": 3730,
+        "likes_max": 3730,
+        "top_content_id": "xhs-6a61b9b8000000000a03a23a",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 102.8,
+        "snapshot_age_hours_median": 102.8,
+        "snapshot_age_hours_max": 102.8,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "3730",
+        "likes_mean": "3730",
+        "likes_median": "3730",
+        "likes_p75": "3730",
+        "likes_p90": "3730",
+        "likes_max": "3730",
+        "top_content_id": "xhs-6a61b9b8000000000a03a23a",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "102.8",
+        "snapshot_age_hours_median": "102.8",
+        "snapshot_age_hours_max": "102.8",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-AUNTEA-GREENBEAN",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "沪上阿姨绿豆冰升级回归事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 3,
+        "likes_valid_count": 3,
+        "likes_missing_count": 0,
+        "likes_sum": 231,
+        "likes_mean": 77,
+        "likes_median": 52,
+        "likes_p75": 98,
+        "likes_p90": 125.6,
+        "likes_max": 144,
+        "top_content_id": "xhs-6a5edbe4000000000100fdec",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 103.4,
+        "snapshot_age_hours_median": 130.5,
+        "snapshot_age_hours_max": 155,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "3",
+        "likes_valid_count": "3",
+        "likes_missing_count": "0",
+        "likes_sum": "231",
+        "likes_mean": "77",
+        "likes_median": "52",
+        "likes_p75": "98",
+        "likes_p90": "125.6",
+        "likes_max": "144",
+        "top_content_id": "xhs-6a5edbe4000000000100fdec",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "103.4",
+        "snapshot_age_hours_median": "130.5",
+        "snapshot_age_hours_max": "155",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-CHABAIDAO-WATERMELON",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "茶百道鲜榨茉莉西瓜产品传播事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 2,
+        "likes_valid_count": 2,
+        "likes_missing_count": 0,
+        "likes_sum": 1669,
+        "likes_mean": 834.5,
+        "likes_median": 834.5,
+        "likes_p75": 928.25,
+        "likes_p90": 984.5,
+        "likes_max": 1022,
+        "top_content_id": "xhs-6a606aea000000000100c58c",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 106.2,
+        "snapshot_age_hours_median": 116.45,
+        "snapshot_age_hours_max": 126.7,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "2",
+        "likes_valid_count": "2",
+        "likes_missing_count": "0",
+        "likes_sum": "1669",
+        "likes_mean": "834.5",
+        "likes_median": "834.5",
+        "likes_p75": "928.25",
+        "likes_p90": "984.5",
+        "likes_max": "1022",
+        "top_content_id": "xhs-6a606aea000000000100c58c",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "106.2",
+        "snapshot_age_hours_median": "116.45",
+        "snapshot_age_hours_max": "126.7",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-MIXUE-DASHU-CAMPAIGN",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "蜜雪冰城大暑果茶内容事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 323,
+        "likes_mean": 323,
+        "likes_median": 323,
+        "likes_p75": 323,
+        "likes_p90": 323,
+        "likes_max": 323,
+        "top_content_id": "xhs-6a6189960000000001030441",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 106.2,
+        "snapshot_age_hours_median": 106.2,
+        "snapshot_age_hours_max": 106.2,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "323",
+        "likes_mean": "323",
+        "likes_median": "323",
+        "likes_p75": "323",
+        "likes_p90": "323",
+        "likes_max": "323",
+        "top_content_id": "xhs-6a6189960000000001030441",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "106.2",
+        "snapshot_age_hours_median": "106.2",
+        "snapshot_age_hours_max": "106.2",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-GUMING-THAI-ORANGE",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "古茗泰橘系列上新事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 2,
+        "likes_valid_count": 2,
+        "likes_missing_count": 0,
+        "likes_sum": 223,
+        "likes_mean": 111.5,
+        "likes_median": 111.5,
+        "likes_p75": 133.25,
+        "likes_p90": 146.3,
+        "likes_max": 155,
+        "top_content_id": "xhs-6a61883b000000000903797f",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 106.4,
+        "snapshot_age_hours_median": 117,
+        "snapshot_age_hours_max": 127.6,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "2",
+        "likes_valid_count": "2",
+        "likes_missing_count": "0",
+        "likes_sum": "223",
+        "likes_mean": "111.5",
+        "likes_median": "111.5",
+        "likes_p75": "133.25",
+        "likes_p90": "146.3",
+        "likes_max": "155",
+        "top_content_id": "xhs-6a61883b000000000903797f",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "106.4",
+        "snapshot_age_hours_median": "117",
+        "snapshot_age_hours_max": "127.6",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-GUMING-MIFFY",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "古茗 × 米菲事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 2,
+        "content_count": 2,
+        "likes_valid_count": 2,
+        "likes_missing_count": 0,
+        "likes_sum": 2151,
+        "likes_mean": 1075.5,
+        "likes_median": 1075.5,
+        "likes_p75": 1377.75,
+        "likes_p90": 1559.1,
+        "likes_max": 1680,
+        "top_content_id": "xhs-6a603293000000001303c324",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 106.9,
+        "snapshot_age_hours_median": 118.8,
+        "snapshot_age_hours_max": 130.7,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "2",
+        "content_count": "2",
+        "likes_valid_count": "2",
+        "likes_missing_count": "0",
+        "likes_sum": "2151",
+        "likes_mean": "1075.5",
+        "likes_median": "1075.5",
+        "likes_p75": "1377.75",
+        "likes_p90": "1559.1",
+        "likes_max": "1680",
+        "top_content_id": "xhs-6a603293000000001303c324",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "106.9",
+        "snapshot_age_hours_median": "118.8",
+        "snapshot_age_hours_max": "130.7",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-HEYTEA-BEIJING-GELATO",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "喜茶北京 Gelato Lab+事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 1540,
+        "likes_mean": 1540,
+        "likes_median": 1540,
+        "likes_p75": 1540,
+        "likes_p90": 1540,
+        "likes_max": 1540,
+        "top_content_id": "xhs-6a61793b000000001303cc49",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 107.5,
+        "snapshot_age_hours_median": 107.5,
+        "snapshot_age_hours_max": 107.5,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "1540",
+        "likes_mean": "1540",
+        "likes_median": "1540",
+        "likes_p75": "1540",
+        "likes_p90": "1540",
+        "likes_max": "1540",
+        "top_content_id": "xhs-6a61793b000000001303cc49",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "107.5",
+        "snapshot_age_hours_median": "107.5",
+        "snapshot_age_hours_max": "107.5",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-COTTI-ZHANSHEN",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "库迪咖啡 ×《斩神》ChinaJoy 联动事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 2,
+        "content_count": 3,
+        "likes_valid_count": 3,
+        "likes_missing_count": 0,
+        "likes_sum": 2408,
+        "likes_mean": 802.67,
+        "likes_median": 642,
+        "likes_p75": 898,
+        "likes_p90": 1051.6,
+        "likes_max": 1154,
+        "top_content_id": "xhs-6a616fb20000000001002012",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 108,
+        "snapshot_age_hours_median": 108.1,
+        "snapshot_age_hours_max": 123.6,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "2",
+        "content_count": "3",
+        "likes_valid_count": "3",
+        "likes_missing_count": "0",
+        "likes_sum": "2408",
+        "likes_mean": "802.67",
+        "likes_median": "642",
+        "likes_p75": "898",
+        "likes_p90": "1051.6",
+        "likes_max": "1154",
+        "top_content_id": "xhs-6a616fb20000000001002012",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "108",
+        "snapshot_age_hours_median": "108.1",
+        "snapshot_age_hours_max": "123.6",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-MOLLY-LEMON",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "茉莉奶白针王香柠系列事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 2,
+        "likes_valid_count": 2,
+        "likes_missing_count": 0,
+        "likes_sum": 1300,
+        "likes_mean": 650,
+        "likes_median": 650,
+        "likes_p75": 836,
+        "likes_p90": 947.6,
+        "likes_max": 1022,
+        "top_content_id": "xhs-6a5f4da1000000000f0303c1",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 117.5,
+        "snapshot_age_hours_median": 132.25,
+        "snapshot_age_hours_max": 147,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "2",
+        "likes_valid_count": "2",
+        "likes_missing_count": "0",
+        "likes_sum": "1300",
+        "likes_mean": "650",
+        "likes_median": "650",
+        "likes_p75": "836",
+        "likes_p90": "947.6",
+        "likes_max": "1022",
+        "top_content_id": "xhs-6a5f4da1000000000f0303c1",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "117.5",
+        "snapshot_age_hours_median": "132.25",
+        "snapshot_age_hours_max": "147",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-LUCKIN-PROBIOTIC-RESTOCK",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "瑞幸益生菌产品补货事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 1173,
+        "likes_mean": 1173,
+        "likes_median": 1173,
+        "likes_p75": 1173,
+        "likes_p90": 1173,
+        "likes_max": 1173,
+        "top_content_id": "xhs-6a60902c000000000f006d3a",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 124,
+        "snapshot_age_hours_median": 124,
+        "snapshot_age_hours_max": 124,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "1173",
+        "likes_mean": "1173",
+        "likes_median": "1173",
+        "likes_p75": "1173",
+        "likes_p90": "1173",
+        "likes_max": "1173",
+        "top_content_id": "xhs-6a60902c000000000f006d3a",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "124",
+        "snapshot_age_hours_median": "124",
+        "snapshot_age_hours_max": "124",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-MIXUE-WUKEQUN-VISIT",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "吴克群到访蜜雪冰城总部事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 5053,
+        "likes_mean": 5053,
+        "likes_median": 5053,
+        "likes_p75": 5053,
+        "likes_p90": 5053,
+        "likes_max": 5053,
+        "top_content_id": "xhs-6a606392000000000503bacc",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 127.1,
+        "snapshot_age_hours_median": 127.1,
+        "snapshot_age_hours_max": 127.1,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "5053",
+        "likes_mean": "5053",
+        "likes_median": "5053",
+        "likes_p75": "5053",
+        "likes_p90": "5053",
+        "likes_max": "5053",
+        "top_content_id": "xhs-6a606392000000000503bacc",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "127.1",
+        "snapshot_age_hours_median": "127.1",
+        "snapshot_age_hours_max": "127.1",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-CHABAIDAO-LEMON-MILK",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "茶百道柠檬冰奶上新事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 729,
+        "likes_mean": 729,
+        "likes_median": 729,
+        "likes_p75": 729,
+        "likes_p90": 729,
+        "likes_max": 729,
+        "top_content_id": "xhs-6a6024bb000000000301efd7",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 131.7,
+        "snapshot_age_hours_median": 131.7,
+        "snapshot_age_hours_max": 131.7,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "729",
+        "likes_mean": "729",
+        "likes_median": "729",
+        "likes_p75": "729",
+        "likes_p90": "729",
+        "likes_max": "729",
+        "top_content_id": "xhs-6a6024bb000000000301efd7",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "131.7",
+        "snapshot_age_hours_median": "131.7",
+        "snapshot_age_hours_max": "131.7",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.event.EVT-2026W30-LUCKIN-GREEN-LATTE",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "瑞幸咖啡绿拿铁上新事件指标由事实表重算一致",
+      "expected": {
+        "event_count": 1,
+        "active_brand_count": 1,
+        "theme_count": 1,
+        "content_count": 1,
+        "likes_valid_count": 1,
+        "likes_missing_count": 0,
+        "likes_sum": 171,
+        "likes_mean": 171,
+        "likes_median": 171,
+        "likes_p75": 171,
+        "likes_p90": 171,
+        "likes_max": 171,
+        "top_content_id": "xhs-6a5f3ee5000000001002a11a",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": 148,
+        "snapshot_age_hours_median": 148,
+        "snapshot_age_hours_max": 148,
+        "review_status": "approved"
+      },
+      "actual": {
+        "event_count": "1",
+        "active_brand_count": "1",
+        "theme_count": "1",
+        "content_count": "1",
+        "likes_valid_count": "1",
+        "likes_missing_count": "0",
+        "likes_sum": "171",
+        "likes_mean": "171",
+        "likes_median": "171",
+        "likes_p75": "171",
+        "likes_p90": "171",
+        "likes_max": "171",
+        "top_content_id": "xhs-6a5f3ee5000000001002a11a",
+        "sample_flag": "small_sample",
+        "snapshot_age_hours_min": "148",
+        "snapshot_age_hours_median": "148",
+        "snapshot_age_hours_max": "148",
+        "review_status": "approved"
+      },
+      "details": []
+    },
+    {
+      "id": "recompute.overview",
+      "category": "metric_recomputation",
+      "status": "passed",
+      "message": "总览指标由事实表重算一致",
+      "expected": {
+        "unique_event_count": 35,
+        "brand_content_count": 94,
+        "active_brand_count": 9,
+        "entity_count": 74,
+        "observation_count": 94,
+        "theme_membership_count": 44,
+        "theme_union_event_count": 35,
+        "discovery_signal_count": 29,
+        "approved_event_review_count": 35,
+        "pending_event_review_count": 0,
+        "review_completion_rate": 1,
+        "pending_content_review_count": 0,
+        "pending_relation_review_count": 0,
+        "resolved_review_decision_count": 39,
+        "rejected_relation_count": 4,
+        "promotion_official_count": 8,
+        "promotion_discovery_count": 1,
+        "content_count": 94,
+        "likes_valid_count": 94,
+        "likes_missing_count": 0,
+        "likes_sum": 161547,
+        "likes_mean": 1718.59,
+        "likes_median": 688,
+        "likes_p75": 1335.5,
+        "likes_p90": 3748.2,
+        "likes_max": 37000,
+        "top_content_id": "xhs-6a66d7e7000000001101fb64",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": 3.7,
+        "snapshot_age_hours_median": 77.15,
+        "snapshot_age_hours_max": 155.7
+      },
+      "actual": {
+        "unique_event_count": "35",
+        "brand_content_count": "94",
+        "active_brand_count": "9",
+        "entity_count": "74",
+        "observation_count": "94",
+        "theme_membership_count": "44",
+        "theme_union_event_count": "35",
+        "discovery_signal_count": "29",
+        "approved_event_review_count": "35",
+        "pending_event_review_count": "0",
+        "review_completion_rate": "1",
+        "pending_content_review_count": "0",
+        "pending_relation_review_count": "0",
+        "resolved_review_decision_count": "39",
+        "rejected_relation_count": "4",
+        "promotion_official_count": "8",
+        "promotion_discovery_count": "1",
+        "content_count": "94",
+        "likes_valid_count": "94",
+        "likes_missing_count": "0",
+        "likes_sum": "161547",
+        "likes_mean": "1718.59",
+        "likes_median": "688",
+        "likes_p75": "1335.5",
+        "likes_p90": "3748.2",
+        "likes_max": "37000",
+        "top_content_id": "xhs-6a66d7e7000000001101fb64",
+        "sample_flag": "sufficient_for_descriptive_stats",
+        "snapshot_age_hours_min": "3.7",
+        "snapshot_age_hours_median": "77.15",
+        "snapshot_age_hours_max": "155.7"
+      },
+      "details": []
+    },
+    {
+      "id": "bi.csv.overview",
+      "category": "bi_reconciliation",
+      "status": "passed",
+      "message": "bi.csv.overview 行与关键字段一致",
+      "expected": 1,
+      "actual": 1,
+      "details": []
+    },
+    {
+      "id": "bi.csv.event_metrics",
+      "category": "bi_reconciliation",
+      "status": "passed",
+      "message": "bi.csv.event_metrics 行与关键字段一致",
+      "expected": 35,
+      "actual": 35,
+      "details": []
+    },
+    {
+      "id": "bi.csv.themes",
+      "category": "bi_reconciliation",
+      "status": "passed",
+      "message": "bi.csv.themes 行与关键字段一致",
+      "expected": 3,
+      "actual": 3,
+      "details": []
+    },
+    {
+      "id": "bi.csv.tags",
+      "category": "bi_reconciliation",
+      "status": "passed",
+      "message": "bi.csv.tags 行与关键字段一致",
+      "expected": 25,
+      "actual": 25,
+      "details": []
+    },
+    {
+      "id": "bi.csv.brands",
+      "category": "bi_reconciliation",
+      "status": "passed",
+      "message": "bi.csv.brands 行与关键字段一致",
+      "expected": 9,
+      "actual": 9,
+      "details": []
+    },
+    {
+      "id": "bi.csv.product_categories",
+      "category": "bi_reconciliation",
+      "status": "passed",
+      "message": "bi.csv.product_categories 行与关键字段一致",
+      "expected": 23,
+      "actual": 23,
+      "details": []
+    },
+    {
+      "id": "bi.csv.ingredients",
+      "category": "bi_reconciliation",
+      "status": "passed",
+      "message": "bi.csv.ingredients 行与关键字段一致",
+      "expected": 16,
+      "actual": 16,
+      "details": []
+    },
+    {
+      "id": "bi.csv.collaborations",
+      "category": "bi_reconciliation",
+      "status": "passed",
+      "message": "bi.csv.collaborations 行与关键字段一致",
+      "expected": 8,
+      "actual": 8,
+      "details": []
+    },
+    {
+      "id": "bi.csv.promotions",
+      "category": "bi_reconciliation",
+      "status": "passed",
+      "message": "bi.csv.promotions 行与关键字段一致",
+      "expected": 9,
+      "actual": 9,
+      "details": []
+    },
+    {
+      "id": "bi.csv.promotion_metrics",
+      "category": "bi_reconciliation",
+      "status": "passed",
+      "message": "bi.csv.promotion_metrics 行与关键字段一致",
+      "expected": 6,
+      "actual": 6,
+      "details": []
+    },
+    {
+      "id": "bi.csv.hotspots",
+      "category": "bi_reconciliation",
+      "status": "passed",
+      "message": "bi.csv.hotspots 行与关键字段一致",
+      "expected": 3,
+      "actual": 3,
+      "details": []
+    },
+    {
+      "id": "analysis.json.csv",
+      "category": "bi_reconciliation",
+      "status": "passed",
+      "message": "analysis.json.csv 行与关键字段一致",
+      "expected": 7,
+      "actual": 7,
+      "details": []
+    },
+    {
+      "id": "bi.analysis.json",
+      "category": "bi_reconciliation",
+      "status": "passed",
+      "message": "bi.analysis.json 行与关键字段一致",
+      "expected": 7,
+      "actual": 7,
+      "details": []
+    },
+    {
+      "id": "bi.long_metrics",
+      "category": "bi_reconciliation",
+      "status": "passed",
+      "message": "bi.long_metrics 行与关键字段一致",
+      "expected": 174,
+      "actual": 174,
+      "details": []
+    },
+    {
+      "id": "page.js.parse",
+      "category": "page_data",
+      "status": "passed",
+      "message": "页面数据JS可解析并提供RADAR_V12_DATA"
+    },
+    {
+      "id": "page.meta",
+      "category": "page_data",
+      "status": "passed",
+      "message": "页面数据版本元信息正确",
+      "expected": {
+        "release": "V1.2",
+        "source_release": "V1.1",
+        "rule_version": "bi-tag-rule-v1.2"
+      },
+      "actual": {
+        "release": "V1.2",
+        "source_release": "V1.1",
+        "rule_version": "bi-tag-rule-v1.2"
+      }
+    },
+    {
+      "id": "page.bi.full_snapshot",
+      "category": "page_data",
+      "status": "passed",
+      "message": "页面内嵌BI快照与正式BI JSON完全一致",
+      "expected": "identical",
+      "actual": "identical"
+    },
+    {
+      "id": "page.bi.key_numbers",
+      "category": "page_data",
+      "status": "passed",
+      "message": "页面总览关键数字与CSV一致",
+      "expected": {
+        "unique_event_count": "35",
+        "brand_content_count": "94",
+        "active_brand_count": "9",
+        "entity_count": "74",
+        "likes_valid_count": "94",
+        "likes_median": "688",
+        "likes_p75": "1335.5",
+        "approved_event_review_count": "35",
+        "pending_event_review_count": "0",
+        "resolved_review_decision_count": "39",
+        "rejected_relation_count": "4",
+        "promotion_official_count": "8",
+        "promotion_discovery_count": "1"
+      },
+      "actual": {
+        "unique_event_count": 35,
+        "brand_content_count": 94,
+        "active_brand_count": 9,
+        "entity_count": 74,
+        "likes_valid_count": 94,
+        "likes_median": 688,
+        "likes_p75": 1335.5,
+        "approved_event_review_count": 35,
+        "pending_event_review_count": 0,
+        "resolved_review_decision_count": 39,
+        "rejected_relation_count": 4,
+        "promotion_official_count": 8,
+        "promotion_discovery_count": 1
+      },
+      "details": []
+    },
+    {
+      "id": "page.bi.event_numbers",
+      "category": "page_data",
+      "status": "passed",
+      "message": "page.bi.event_numbers 行与关键字段一致",
+      "expected": 35,
+      "actual": 35,
+      "details": []
+    },
+    {
+      "id": "page.bi.theme_numbers",
+      "category": "page_data",
+      "status": "passed",
+      "message": "page.bi.theme_numbers 行与关键字段一致",
+      "expected": 3,
+      "actual": 3,
+      "details": []
+    },
+    {
+      "id": "page.bi.tag_numbers",
+      "category": "page_data",
+      "status": "passed",
+      "message": "page.bi.tag_numbers 行与关键字段一致",
+      "expected": 25,
+      "actual": 25,
+      "details": []
+    },
+    {
+      "id": "page.editorial.hotspots",
+      "category": "page_data",
+      "status": "passed",
+      "message": "page.editorial.hotspots 行与关键字段一致",
+      "expected": 3,
+      "actual": 3,
+      "details": []
+    }
+  ]
+}

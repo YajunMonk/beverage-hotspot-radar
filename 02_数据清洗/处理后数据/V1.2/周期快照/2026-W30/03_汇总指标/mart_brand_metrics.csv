@@ -1,0 +1,10 @@
+﻿period_id,metric_version,source_class,rule_version,brand_id,brand_name,event_count,content_count,theme_count,pending_event_count,likes_valid_count,likes_missing_count,likes_sum,likes_mean,likes_median,likes_p75,likes_p90,likes_max,top_content_id,sample_flag,snapshot_age_hours_min,snapshot_age_hours_median,snapshot_age_hours_max
+2026-W30,bi-metric-v1.2,brand,bi-tag-rule-v1.2,luckin,瑞幸咖啡,7,15,3,0,15,0,59011,3934.07,1173,2316,5432.8,37000,xhs-6a66d7e7000000001101fb64,sufficient_for_descriptive_stats,9.6,75.3,148
+2026-W30,bi-metric-v1.2,brand,bi-tag-rule-v1.2,chabaidao,茶百道,7,13,2,0,13,0,10343,795.62,729,949,1340.4,2354,xhs-6a62d580000000000100181a,sufficient_for_descriptive_stats,8.2,99.8,152.2
+2026-W30,bi-metric-v1.2,brand,bi-tag-rule-v1.2,mixue,蜜雪冰城,4,9,2,0,9,0,30113,3345.89,2331,5053,7213.6,11000,xhs-6a61909f0000000001002bb5,sufficient_for_descriptive_stats,3.7,57.7,127.1
+2026-W30,bi-metric-v1.2,brand,bi-tag-rule-v1.2,heytea,喜茶,4,6,2,0,6,0,13546,2257.67,1425.5,1848.25,4892,7833,xhs-6a5ed2c500000000130267b8,sufficient_for_descriptive_stats,6.9,91.1,155.7
+2026-W30,bi-metric-v1.2,brand,bi-tag-rule-v1.2,molly,茉莉奶白,4,5,3,0,5,0,3057,611.4,460,1022,1047.8,1065,xhs-6a6215dc000000000f02ba74,sufficient_for_descriptive_stats,25.8,96.4,147
+2026-W30,bi-metric-v1.2,brand,bi-tag-rule-v1.2,cotti,库迪咖啡,3,22,3,0,22,0,22265,1012.05,627,1223.5,2293.4,4144,xhs-6a61f537000000000100dc0c,sufficient_for_descriptive_stats,5.4,76,124
+2026-W30,bi-metric-v1.2,brand,bi-tag-rule-v1.2,chagee,霸王茶姬,2,10,3,0,10,0,17362,1736.2,1033,1359.25,4743.7,5722,xhs-6a620670000000001101feb4,sufficient_for_descriptive_stats,4,81,125.5
+2026-W30,bi-metric-v1.2,brand,bi-tag-rule-v1.2,guming,古茗,2,4,2,0,4,0,2374,593.5,313,773.25,1317.3,1680,xhs-6a603293000000001303c324,small_sample,106.4,117.25,130.7
+2026-W30,bi-metric-v1.2,brand,bi-tag-rule-v1.2,auntea,沪上阿姨,2,10,2,0,10,0,3476,347.6,237.5,508,584.4,1155,xhs-6a6589e1000000000402abaf,sufficient_for_descriptive_stats,7,47.15,155

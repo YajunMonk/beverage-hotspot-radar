@@ -1,0 +1,132 @@
+{
+  "project": "饮品热点雷达",
+  "status": "public_github_pages_v1.2_ready",
+  "active_release": "V1.2",
+  "source_release": "V1.1",
+  "collection_rule_version": "source-collection-v1.0",
+  "tag_rule_version": "bi-tag-rule-v1.2",
+  "metric_version": "bi-metric-v1.2",
+  "validated_at": "2026-08-05T03:45:29.217Z",
+  "period": {
+    "period_id": "2026-W30",
+    "start_date": "2026-07-21",
+    "end_date": "2026-07-27",
+    "timezone": "Asia/Shanghai",
+    "comparable_period_count": 1,
+    "wow_status": "disabled_insufficient_periods",
+    "trend_status": "disabled_insufficient_periods"
+  },
+  "source_layers": {
+    "brand": {
+      "role": "official_fact_and_kpi",
+      "brand_count": 9,
+      "content_count": 94,
+      "event_count": 35
+    },
+    "third_party": {
+      "role": "discovery_only",
+      "post_count": 10,
+      "included_in_brand_kpi": false
+    },
+    "koc": {
+      "role": "experience_signal_only",
+      "post_count": 19,
+      "included_in_brand_kpi": false
+    },
+    "editorial": {
+      "role": "topic_reference_only",
+      "topic_count": 3,
+      "included_in_brand_kpi": false
+    }
+  },
+  "counts": {
+    "active_brands": 9,
+    "brand_contents": 94,
+    "events": 35,
+    "active_entities": 74,
+    "inactive_rejected_entities": 1,
+    "tag_definitions": 54,
+    "tag_assignments": 162,
+    "tag_metric_rows": 25,
+    "review_decisions": 39,
+    "approved_review_decisions": 35,
+    "rejected_relations": 4,
+    "pending_reviews": 0,
+    "official_promotions": 8,
+    "discovery_promotions": 1,
+    "likes_valid_n": 94,
+    "likes_median": 688,
+    "likes_p75": 1335.5
+  },
+  "theme_distribution": {
+    "product_action": 20,
+    "collaboration": 9,
+    "brand_event": 15,
+    "theme_membership_count": 44,
+    "theme_union_event_count": 35
+  },
+  "entrypoints": {
+    "project_readme": "README.md",
+    "collection_readme": "01_数据抓取/README.md",
+    "analysis_readme": "02_数据清洗/README.md",
+    "analysis_spec": "02_数据清洗/规则/数据分析与BI执行规范_V1.2.md",
+    "workbook": "02_数据清洗/处理后数据/V1.2/饮品热点雷达_V1.2_BI数据中心.xlsx",
+    "bi_dataset": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/05_BI数据集/bi_dashboard_snapshot.json",
+    "page": "03_网页呈现/V1.2/index.html",
+    "release_builder": "99_工程工具/scripts/build_v1_2_release.mjs",
+    "workbook_builder": "99_工程工具/scripts/build_v1_2_workbook.mjs",
+    "release_validator": "99_工程工具/scripts/validate_v1_2_release.mjs",
+    "interface_validator": "99_工程工具/scripts/playwright_v1_2_interface_qa.mjs",
+    "public_page_builder": "99_工程工具/scripts/build_public_v1_2_release.mjs",
+    "public_source_builder": "99_工程工具/scripts/build_public_source_v1_2.mjs"
+  },
+  "validations": {
+    "release": {
+      "status": "passed",
+      "checks": 245,
+      "failed": 0,
+      "report": "02_数据清洗/校验记录/2026-W30/V1.2/release_validation_report.json"
+    },
+    "workbook": {
+      "status": "passed",
+      "sheet_count": 16,
+      "formula_errors": 0,
+      "rendered_sheet_count": 16
+    },
+    "interface_local": {
+      "status": "passed",
+      "checks": 26,
+      "console_errors": 0,
+      "console_warnings": 0,
+      "report": "03_网页呈现/验收记录/2026-W30/V1.2/interface_validation_local.json"
+    },
+    "interface_live": {
+      "status": "passed",
+      "checks": 26,
+      "console_errors": 0,
+      "console_warnings": 0,
+      "report": "03_网页呈现/验收记录/2026-W30/V1.2/interface_validation_live.json"
+    },
+    "v1_1_immutability": {
+      "status": "passed",
+      "fingerprint_file": "02_数据清洗/校验记录/2026-W30/V1.2/v1.1_immutable_fingerprints.json"
+    }
+  },
+  "disclosed_limitations": [
+    "94条品牌内容未采集分享数",
+    "94条品牌内容的内容形式仍为未知",
+    "29条三方/KOC线索缺少结构化captured_at与run_id",
+    "当前仅1个完整可比周期",
+    "互动快照龄不一致，不能推导销量或转化"
+  ],
+  "deployment": {
+    "repository": "https://github.com/YajunMonk/beverage-hotspot-radar",
+    "visibility": "public",
+    "viewer_permission": "ADMIN",
+    "page": "https://yajunmonk.github.io/beverage-hotspot-radar/",
+    "pages_branch": "main",
+    "pages_commit": "468a32e117ac23d19170f788812fc315ccd490b2",
+    "public_source_branch": "project-source",
+    "public_scope": "whitelist_only_without_raw_data_or_archive"
+  }
+}

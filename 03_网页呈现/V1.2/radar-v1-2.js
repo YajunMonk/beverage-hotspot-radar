@@ -1,9 +1,15 @@
 (() => {
   "use strict";
 
-  const DATA = window.RADAR_V1_DATA;
+  const DATA = window.RADAR_V12_DATA;
   if (!DATA) {
-    document.body.innerHTML = "<main style='padding:40px;font-family:sans-serif'>V1.1 数据文件未正确载入，请确认 radar-v1-data.js 与页面位于同一目录。</main>";
+    document.body.innerHTML = "<main style='padding:40px;font-family:sans-serif'>V1.2 数据文件未正确载入，请确认 radar-v1-2-data.js 与页面位于同一目录。</main>";
+    return;
+  }
+
+  const BI = DATA.bi;
+  if (!BI?.overview) {
+    document.body.innerHTML = "<main style='padding:40px;font-family:sans-serif'>V1.2 BI 数据契约缺失，页面停止渲染以避免展示错误数字。</main>";
     return;
   }
 
@@ -16,7 +22,9 @@
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
   const safeUrl = (value) => /^https:\/\/www\.xiaohongshu\.com\//.test(value || "") ? value : "#";
-  const formatNumber = (value) => Number.isFinite(Number(value)) ? Number(value).toLocaleString("zh-CN") : "—";
+  const hasNumber = (value) => value !== null && value !== undefined && value !== "" && Number.isFinite(Number(value));
+  const formatNumber = (value) => hasNumber(value) ? Number(value).toLocaleString("zh-CN", { maximumFractionDigits: 2 }) : "—";
+  const formatPercent = (value) => hasNumber(value) ? `${(Number(value) * 100).toFixed(1)}%` : "—";
   const shortDate = (value) => {
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return "—";
@@ -45,6 +53,9 @@
   const entityMap = new Map(DATA.entities.map((item) => [item.entity_id, item]));
   const relationsByEvent = new Map();
   const relationsByContent = new Map();
+  const biEventMetricMap = new Map((BI.event_metrics || []).map((item) => [item.event_id, item]));
+  const biThemeMetricMap = new Map((BI.themes || []).map((item) => [item.theme_id, item]));
+  const biTagMetricMap = new Map((BI.tags || []).map((item) => [item.tag_id, item]));
   for (const relation of DATA.relations) {
     if (!relationsByEvent.has(relation.event_id)) relationsByEvent.set(relation.event_id, []);
     if (!relationsByContent.has(relation.content_id)) relationsByContent.set(relation.content_id, []);
@@ -387,118 +398,185 @@
     scrollToEventLibrary();
   }
 
-  function sortedAnalysisTags(analysis) {
-    return [...(analysis.tags || [])].sort((a, b) =>
-      Number(b.event_count || 0) - Number(a.event_count || 0)
-      || Number(b.avg_likes ?? -1) - Number(a.avg_likes ?? -1)
-      || Number(b.content_count || 0) - Number(a.content_count || 0)
-      || String(a.label || "").localeCompare(String(b.label || ""), "zh-CN")
-      || String(a.tag_id || "").localeCompare(String(b.tag_id || ""))
-    );
+  function renderMetaAndStatus() {
+    const overview = BI.overview;
+    $("#release-period").textContent = overview.period_id.replace("2026-", "");
+    $("#release-version").textContent = BI.release;
+    $("#period-label").textContent = `WEEKLY RESEARCH NOTE · ${overview.start_date.replaceAll("-", ".")}—${overview.end_date.replaceAll("-", ".")}`;
+    $("#rule-label").textContent = `规则 ${overview.rule_version}`;
+    $("#method-rule").textContent = overview.rule_version;
+    $("#hero-lead").textContent = `本期 ${formatNumber(overview.brand_content_count)} 条品牌官号内容归并为 ${formatNumber(overview.unique_event_count)} 个去重事件，覆盖 ${formatNumber(overview.active_brand_count)} 个品牌。三方与 KOC 独立作为发现和体验线索，不与品牌 KPI 混算。`;
+    $("#method-scope").textContent = `本期正式 KPI 覆盖 ${formatNumber(overview.active_brand_count)} 个品牌、${formatNumber(overview.brand_content_count)} 条官号内容和 ${formatNumber(overview.unique_event_count)} 个事件；三方 ${formatNumber(overview.third_party_post_count)} 条、KOC ${formatNumber(overview.koc_post_count)} 条只进入来源线索。`;
+    $("#method-engagement").textContent = `点赞快照龄为 ${formatNumber(overview.snapshot_age_hours_min)}—${formatNumber(overview.snapshot_age_hours_max)} 小时，中位 ${formatNumber(overview.snapshot_age_hours_median)} 小时；没有曝光和粉丝基数，因此不计算互动率。`;
+    $("#method-review").textContent = `当前事件细标签待复核 ${formatNumber(overview.pending_event_review_count)} 个、内容迁移字段待复核 ${formatNumber(overview.pending_content_review_count)} 条、实体关系待复核 ${formatNumber(overview.pending_relation_review_count)} 条，均已进入独立队列。`;
+
+    const quality = BI.quality || {};
+    const hasWarnings = Number(quality.warning_count || 0) > 0;
+    const badge = $("#quality-badge");
+    badge.textContent = hasWarnings ? "阻断项通过 · 有已披露待办" : "质量校验通过";
+    badge.classList.toggle("has-warning", hasWarnings);
+    $("#data-status-content").innerHTML = `
+      <div><span>数据周期</span><strong>${escapeHtml(overview.start_date)}—${escapeHtml(overview.end_date)}</strong><small>当前仅 1 个可比周期，环比和趋势已禁用</small></div>
+      <div><span>来源边界</span><strong>品牌事实层进入 KPI</strong><small>三方 ${formatNumber(overview.third_party_post_count)} 帖 · KOC ${formatNumber(overview.koc_post_count)} 帖 · 热点 ${formatNumber(overview.editorial_topic_count)} 条</small></div>
+      <div><span>互动可比性</span><strong>快照龄中位 ${formatNumber(overview.snapshot_age_hours_median)} 小时</strong><small>最短 ${formatNumber(overview.snapshot_age_hours_min)} · 最长 ${formatNumber(overview.snapshot_age_hours_max)} 小时</small></div>
+      <div><span>复核进度</span><strong>${formatPercent(overview.review_completion_rate)}</strong><small>${formatNumber(overview.pending_event_review_count)} 个事件细标签仍待确认</small></div>
+      <div><span>质量状态</span><strong>0 个阻断错误</strong><small>${formatNumber(quality.warning_count)} 类限制已在质量报告中披露</small></div>`;
   }
 
-  function splitAnalysisSummary(summary) {
-    const sentences = String(summary || "")
-      .split("。")
-      .map((item) => item.trim())
-      .filter(Boolean);
-    return {
-      lead: sentences.shift() || "本周暂无已确认判断",
-      body: sentences.length ? `${sentences.join("；")}。` : "",
-    };
-  }
-
-  function eventTagContentIds(event, tag) {
-    const tagContentIds = new Set(tag?.content_ids || []);
-    return (event?.content_ids || []).filter((contentId) => !tagContentIds.size || tagContentIds.has(contentId));
-  }
-
-  function eventAverageLikes(event, tag) {
-    const likes = eventTagContentIds(event, tag)
-      .map((contentId) => Number(contentMap.get(contentId)?.engagement_snapshot?.likes))
-      .filter((value) => Number.isFinite(value) && value >= 0);
-    return likes.length ? likes.reduce((sum, value) => sum + value, 0) / likes.length : -1;
-  }
-
-  function representativeEvent(analysis, tag) {
-    const candidateIds = tag?.event_ids?.length ? tag.event_ids : analysis.event_ids;
-    return candidateIds
-      .map((eventId) => eventMap.get(eventId))
-      .filter(Boolean)
-      .sort((a, b) =>
-        eventTagContentIds(b, tag).length - eventTagContentIds(a, tag).length
-        || eventAverageLikes(b, tag) - eventAverageLikes(a, tag)
-        || String(b.latest_at || "").localeCompare(String(a.latest_at || ""))
-        || String(a.event_id || "").localeCompare(String(b.event_id || ""))
-      )[0] || null;
+  function renderBiOverview() {
+    const overview = BI.overview;
+    const cards = [
+      ["去重事件", overview.unique_event_count, "事件", `${overview.theme_membership_count} 次主题归属，主题允许重叠`],
+      ["品牌内容", overview.brand_content_count, "篇", `${overview.active_brand_count} 个活跃品牌`],
+      ["有效互动样本", overview.likes_valid_count, "N", "点赞为非负有效值的品牌内容"],
+      ["点赞中位数", overview.likes_median, "", `均值 ${formatNumber(overview.likes_mean)} 仅作辅助`],
+      ["点赞 P75", overview.likes_p75, "", `P90 ${formatNumber(overview.likes_p90)}`],
+      ["最高单条", overview.likes_max, "", "必须结合样本量与中位数阅读"],
+    ];
+    $("#bi-overview-grid").innerHTML = cards.map(([label, value, unit, note]) => `
+      <article class="bi-kpi-card">
+        <span>${escapeHtml(label)}</span>
+        <strong>${formatNumber(value)}<small>${escapeHtml(unit)}</small></strong>
+        <p>${escapeHtml(note)}</p>
+      </article>`).join("");
+    $("#bi-overview-note").textContent = overview.interpretation_limit;
   }
 
   function renderCoreThemes() {
-    $("#theme-analysis-grid").innerHTML = themeAnalyses.map((analysis, index) => {
-      const tags = sortedAnalysisTags(analysis);
-      const summary = splitAnalysisSummary(analysis.summary);
-      const featuredTag = tags[0];
-      const featuredEvent = representativeEvent(analysis, featuredTag);
+    $("#theme-analysis-grid").innerHTML = (BI.themes || []).map((metric, index) => {
+      const analysis = themeMap.get(metric.theme_id) || {};
+      const tags = (BI.tags || []).filter((tag) => tag.theme_id === metric.theme_id).sort((a, b) => a.display_order - b.display_order);
+      const insight = (BI.insights || []).find((item) => item.insight_type === "theme" && item.subject_id === metric.theme_id);
+      const featuredEvent = eventMap.get(metric.representative_event_id);
+      const evidencePoints = String(insight?.evidence_points || "").split("｜").filter(Boolean);
       return `
-        <article class="theme-analysis-card theme-tone-${escapeHtml(analysis.theme_id)}" data-theme-card="${escapeHtml(analysis.theme_id)}">
+        <article class="theme-analysis-card theme-tone-${escapeHtml(metric.theme_id)}" data-theme-card="${escapeHtml(metric.theme_id)}">
           <span class="theme-watermark" aria-hidden="true">${escapeHtml(analysis.decorative_alias || "")}</span>
           <header class="theme-card-header">
             <button
               class="theme-card-filter"
               type="button"
-              data-apply-theme="${escapeHtml(analysis.theme_id)}"
+              data-apply-theme="${escapeHtml(metric.theme_id)}"
               aria-pressed="false"
-              aria-describedby="theme-summary-${escapeHtml(analysis.theme_id)}"
-              aria-label="筛选${escapeHtml(analysis.label)}，涉及${analysis.event_count}个事件"
+              aria-describedby="theme-summary-${escapeHtml(metric.theme_id)}"
+              aria-label="筛选${escapeHtml(metric.theme_label)}，涉及${metric.event_count}个事件"
             >
               <span class="theme-card-heading">
                 <span>
                   <span class="theme-card-index">0${index + 1}</span>
-                  <span class="theme-card-title">${escapeHtml(analysis.label)}</span>
+                  <span class="theme-card-title">${escapeHtml(metric.theme_label)}</span>
                 </span>
                 <small>${escapeHtml(analysis.subtitle)}</small>
               </span>
-              <span class="theme-card-count"><strong>${analysis.event_count}</strong><small>个事件</small></span>
+              <span class="theme-card-count"><strong>${metric.event_count}</strong><small>个事件</small></span>
             </button>
           </header>
-          <div id="theme-summary-${escapeHtml(analysis.theme_id)}" class="theme-analysis-copy">
-            <strong class="theme-analysis-lead">${escapeHtml(summary.lead)}</strong>
-            ${summary.body ? `<p>${escapeHtml(summary.body)}</p>` : ""}
+          <div id="theme-summary-${escapeHtml(metric.theme_id)}" class="theme-analysis-copy">
+            <strong class="theme-analysis-lead">${escapeHtml(insight?.conclusion || "暂无已确认结论")}</strong>
+            <p>${escapeHtml(insight?.boundary_note || metric.metric_scope)}</p>
           </div>
+          <div class="theme-metric-strip" aria-label="${escapeHtml(metric.theme_label)}统计指标">
+            <span><small>内容</small><strong>${formatNumber(metric.content_count)}</strong></span>
+            <span><small>品牌</small><strong>${formatNumber(metric.active_brand_count)}</strong></span>
+            <span><small>有效 N</small><strong>${formatNumber(metric.likes_valid_count)}</strong></span>
+            <span><small>中位数</small><strong>${formatNumber(metric.likes_median)}</strong></span>
+            <span><small>P75</small><strong>${formatNumber(metric.likes_p75)}</strong></span>
+            <span class="aux"><small>均值·辅助</small><strong>${formatNumber(metric.likes_mean)}</strong></span>
+          </div>
+          ${evidencePoints.length ? `<ul class="theme-evidence-points">${evidencePoints.map((point) => `<li>${escapeHtml(point)}</li>`).join("")}</ul>` : ""}
           ${featuredEvent ? `
             <button
               class="theme-featured-event"
               type="button"
               data-open-event="${escapeHtml(featuredEvent.event_id)}"
-              aria-label="查看${escapeHtml(analysis.label)}代表事件：${escapeHtml(featuredEvent.standard_name)}"
+              aria-label="查看${escapeHtml(metric.theme_label)}代表事件：${escapeHtml(featuredEvent.standard_name)}"
             >
-              <span class="theme-featured-label">代表事件 · ${escapeHtml(featuredTag?.label || analysis.label)}</span>
+              <span class="theme-featured-label">代表事件 · 具体证据</span>
               <strong>${escapeHtml(featuredEvent.standard_name)}</strong>
               <small>${escapeHtml(featuredEvent.primary_brand_name)} · ${featuredEvent.evidence_count} 条官方证据 <b>查看 ↗</b></small>
             </button>` : ""}
-          <div class="theme-tag-list" aria-label="${escapeHtml(analysis.label)}重点标签">
+          <div class="theme-tag-list" aria-label="${escapeHtml(metric.theme_label)}重点标签">
             ${tags.map((tag) => {
-              const averageLikes = Number.isFinite(Number(tag.avg_likes))
-                ? formatNumber(Math.round(Number(tag.avg_likes)))
-                : "—";
               return `
               <button
                 type="button"
                 data-apply-core-tag="${escapeHtml(tag.tag_id)}"
-                data-theme-id="${escapeHtml(analysis.theme_id)}"
+                data-theme-id="${escapeHtml(metric.theme_id)}"
                 aria-pressed="false"
-                aria-label="查看${escapeHtml(analysis.label)}中的${escapeHtml(tag.label)}，${tag.event_count}个事件，单条平均点赞${averageLikes}"
+                aria-label="查看${escapeHtml(metric.theme_label)}中的${escapeHtml(tag.tag_name)}，${tag.event_count}个事件，中位点赞${formatNumber(tag.likes_median)}"
               >
                 <span class="theme-tag-main">
-                  <span>${escapeHtml(tag.label)}</span>
+                  <span>${escapeHtml(tag.tag_name)}</span>
                   <strong>${tag.event_count}个事件</strong>
                 </span>
-                <small>单条均赞 ${averageLikes}</small>
+                <small>N ${formatNumber(tag.likes_valid_count)} · 中位 ${formatNumber(tag.likes_median)}</small>
               </button>`;
             }).join("")}
           </div>
         </article>`;
     }).join("");
+  }
+
+  function renderTagMetrics() {
+    const rows = [...(BI.tags || [])].sort((a, b) => a.display_order - b.display_order);
+    $("#tag-metric-table").innerHTML = `
+      <div class="tag-metric-row tag-metric-head" role="row">
+        <span>标签</span><span>维度</span><span>事件</span><span>内容</span><span>品牌</span><span>有效 N</span><span>中位数</span><span>P75</span><span>状态</span>
+      </div>
+      ${rows.map((row) => `
+        <button class="tag-metric-row" type="button" role="row" data-apply-core-tag="${escapeHtml(row.tag_id)}" data-theme-id="${escapeHtml(row.theme_id)}" aria-label="筛选${escapeHtml(row.tag_name)}">
+          <strong data-label="标签">${escapeHtml(row.tag_name)}<small>${escapeHtml(row.theme_label)}</small></strong>
+          <span data-label="维度">${escapeHtml(row.tag_dimension)}</span>
+          <span data-label="事件">${formatNumber(row.event_count)}</span>
+          <span data-label="内容">${formatNumber(row.content_count)}</span>
+          <span data-label="品牌">${formatNumber(row.active_brand_count)}</span>
+          <span data-label="有效 N">${formatNumber(row.likes_valid_count)}</span>
+          <span data-label="中位数">${formatNumber(row.likes_median)}</span>
+          <span data-label="P75">${formatNumber(row.likes_p75)}</span>
+          <span data-label="状态" class="sample-status ${row.sample_flag === "small_sample" ? "small" : ""}">${row.sample_flag === "small_sample" ? "小样本" : row.review_status === "approved" ? "已复核" : "暂行"}</span>
+        </button>`).join("")}`;
+  }
+
+  function renderBreakdowns() {
+    const panels = [
+      { title: "产品品类", subtitle: "二级品类 · 事件数", rows: (BI.product_categories || []).filter((row) => row.category_level === 2).slice(0, 7), name: "category_name" },
+      { title: "原料 / 产品元素", subtitle: "优先看跨品牌覆盖", rows: (BI.ingredients || []).filter((row) => row.event_count >= 2).slice(0, 7), name: "entity_name" },
+      { title: "联名对象", subtitle: "具体IP与跨界品牌", rows: (BI.collaborations || []).slice(0, 7), name: "entity_name" },
+    ];
+    $("#breakdown-grid").innerHTML = panels.map((panel) => {
+      const max = Math.max(...panel.rows.map((row) => Number(row.event_count || 0)), 1);
+      return `<article class="breakdown-panel">
+        <header><h3>${escapeHtml(panel.title)}</h3><span>${escapeHtml(panel.subtitle)}</span></header>
+        <div class="breakdown-list">
+          ${panel.rows.map((row) => `
+            <div class="breakdown-row">
+              <div><strong>${escapeHtml(row[panel.name])}</strong><span>${formatNumber(row.event_count)}事件 · ${formatNumber(row.active_brand_count)}品牌 · N ${formatNumber(row.likes_valid_count)}</span></div>
+              <div class="breakdown-bar"><i style="width:${Math.max(6, Number(row.event_count || 0) / max * 100)}%"></i></div>
+              <small>中位 ${formatNumber(row.likes_median)} · P75 ${formatNumber(row.likes_p75)}</small>
+            </div>`).join("")}
+        </div>
+      </article>`;
+    }).join("");
+  }
+
+  function renderPromotions() {
+    const promotions = BI.promotions || [];
+    const official = promotions.filter((row) => row.included_in_official_kpi);
+    const discoveryRows = promotions.filter((row) => !row.included_in_official_kpi);
+    $("#promotion-content").innerHTML = `
+      <div class="promotion-summary">
+        <article><span>品牌正文已核实</span><strong>${formatNumber(BI.overview.promotion_official_count)}</strong><small>条促销机制证据 · ${formatNumber(new Set(official.map((row) => row.primary_brand_id)).size)}个品牌</small></article>
+        <article class="discovery"><span>三方待官方确认</span><strong>${formatNumber(BI.overview.promotion_discovery_count)}</strong><small>条低价线索 · 不进入官方KPI</small></article>
+      </div>
+      <div class="promotion-list">
+        ${[...official, ...discoveryRows].map((row) => `
+          <article class="promotion-card ${row.included_in_official_kpi ? "official" : "discovery"}">
+            <div><span>${row.included_in_official_kpi ? "品牌事实" : "三方发现"}</span><em>${escapeHtml(row.promotion_type)}</em></div>
+            <h3>${escapeHtml(row.primary_brand_name)} · ${escapeHtml(row.mechanism)}</h3>
+            <p>${escapeHtml(row.evidence_note)}</p>
+            <footer><small>${row.start_date ? `${escapeHtml(row.start_date)}${row.end_date ? `—${escapeHtml(row.end_date)}` : ""}` : "活动时间待补"}</small><a href="${escapeHtml(safeUrl(row.canonical_url))}" target="_blank" rel="noopener noreferrer">打开证据 ↗</a></footer>
+          </article>`).join("")}
+      </div>`;
   }
 
   function renderEditorialWatch() {
@@ -507,59 +585,51 @@
 
     const reference = DATA.editorial_reference || {};
     const sources = reference.sources || [];
-    const topics = [...(reference.topics || [])].sort((a, b) =>
-      Number(b.likes ?? -1) - Number(a.likes ?? -1)
-      || String(b.published_at || "").localeCompare(String(a.published_at || ""))
-      || String(a.topic_id || "").localeCompare(String(b.topic_id || ""))
-    );
+    const topics = [...(BI.hotspots || [])].sort((a, b) => Number(a.display_rank || 999) - Number(b.display_rank || 999));
     const sourceById = new Map(sources.map((source) => [source.source_id, source]));
-    const displayLimit = Math.max(1, Number(reference.ranking?.display_limit || 6));
     const windowLabel = reference.editorial_window?.label || "最近 7 天";
     const otherHotspots = [...new Map(
-      topics.flatMap((topic) => (topic.hotspot_tags || []).map((tag) => {
+      topics.flatMap((topic) => String(topic.other_hot_phrases || "").split("｜").filter(Boolean).map((tag) => {
         const label = String(tag).trim();
         return [label, {
           label,
           topicId: topic.topic_id,
           topicTitle: topic.title,
-          postUrl: topic.direct_post_url,
+          postUrl: topic.canonical_url,
         }];
       }))
     ).values()].slice(0, 10);
 
     const topicMarkup = topics.length
-      ? `<ol class="editorial-rank-list" aria-label="近7天热点选题点赞排行">
-          ${topics.slice(0, displayLimit).map((topic, index) => {
-            const source = sourceById.get(topic.primary_source_id);
-            const likes = topic.likes_is_approximate && topic.likes_display
-              ? escapeHtml(topic.likes_display)
-              : Number.isFinite(Number(topic.likes))
-                ? formatNumber(Number(topic.likes))
-                : escapeHtml(topic.likes_display || "—");
+      ? `<ol class="editorial-rank-list editorial-explained-list" aria-label="近7天热点选题与解释">
+          ${topics.map((topic, index) => {
+            const source = sourceById.get(topic.source_id);
+            const likes = formatNumber(topic.likes);
             const rank = Number(topic.display_rank || index + 1);
             return `<li class="editorial-rank-item">
-              <a
-                href="${escapeHtml(safeUrl(topic.direct_post_url))}"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-editorial-topic-source="${escapeHtml(topic.topic_id)}"
-                aria-label="打开第${rank}名热点选题${escapeHtml(topic.title)}的小红书原帖，抓取时${likes}个赞"
-              >
+              <div class="editorial-explained-card">
                 <span class="editorial-rank-number" aria-hidden="true">${String(rank).padStart(2, "0")}</span>
-                <span class="editorial-rank-body">
+                <div class="editorial-rank-body">
                   <span class="editorial-topic-tags">
-                    ${(topic.topic_tags || []).slice(0, 5).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}
+                    ${String(topic.topic_tags || "").split("｜").filter(Boolean).slice(0, 5).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}
                   </span>
-                  <strong>${escapeHtml(topic.title)}</strong>
-                  <span class="editorial-topic-angle">${escapeHtml(topic.editorial_angle)}</span>
+                  <strong class="hot-phrase">“${escapeHtml(topic.hot_phrase)}”</strong>
+                  <span class="editorial-topic-title">来源标题：${escapeHtml(topic.title)}</span>
+                  <dl class="hotspot-explanation">
+                    <div><dt>白话解释</dt><dd>${escapeHtml(topic.plain_explanation)}</dd></div>
+                    <div><dt>为什么现在出现</dt><dd>${escapeHtml(topic.why_now)}</dd></div>
+                    <div><dt>品牌怎么借势</dt><dd>${escapeHtml(topic.brand_application)}</dd></div>
+                  </dl>
                   <span class="editorial-topic-meta">
-                    ${escapeHtml(source?.account_name || "热点来源")} · ${shortDate(topic.published_at)} 发布 · <i>打开原帖 ↗</i>
+                    ${escapeHtml(source?.account_name || "热点来源")} · ${shortDate(topic.published_at)} 发布 · ${shortDate(topic.captured_at)} 抓取
                   </span>
-                </span>
+                  <p class="hotspot-boundary">${escapeHtml(topic.boundary_note)}</p>
+                  <a class="editorial-open-source" href="${escapeHtml(safeUrl(topic.canonical_url))}" target="_blank" rel="noopener noreferrer" data-editorial-topic-source="${escapeHtml(topic.topic_id)}">打开可见原帖 ↗</a>
+                </div>
                 <span class="editorial-heat" aria-label="${likes}个赞">
                   <span aria-hidden="true">🔥</span><strong>${likes}</strong><small>点赞</small>
                 </span>
-              </a>
+              </div>
             </li>`;
           }).join("")}
         </ol>`
@@ -602,7 +672,7 @@
         <div class="editorial-topic-stage">
           <div class="editorial-ranking-note">
             <span>${escapeHtml(windowLabel)}</span>
-            <p>热点按抓取时点赞降序；推荐与标签均直达已验证原帖。</p>
+            <p>按已审核展示顺序排列；点赞只是来源帖快照，不代表全平台热度排名。</p>
           </div>
           ${topicMarkup}
           ${otherHotspotMarkup}
@@ -796,7 +866,7 @@
           <span><strong>${formatNumber(snapshot.collects)}</strong>收藏</span>
           <span><strong>${formatNumber(snapshot.comments)}</strong>评论</span>
         </div>
-        <a class="source-link" href="${escapeHtml(safeUrl(content.url))}" target="_blank" rel="noopener noreferrer" aria-label="打开小红书原文：${escapeHtml(content.title)}">↗</a>
+        <a class="source-link" href="${escapeHtml(safeUrl(content.url))}" target="_blank" rel="noopener noreferrer" aria-label="打开小红书原文：${escapeHtml(content.title)}">查看单条原文 ↗</a>
       </article>`;
   }
 
@@ -822,6 +892,7 @@
   }
 
   function eventDialogMarkup(event) {
+    const metric = biEventMetricMap.get(event.event_id) || {};
     const entityRows = bestEventEntityRows(event, true);
     const grouped = new Map();
     for (const row of entityRows) {
@@ -849,7 +920,12 @@
         <div><span>官方证据</span><strong>${event.evidence_count} 条</strong></div>
         <div><span>产品品类</span><strong>${escapeHtml(categories.join("、") || "非产品")}</strong></div>
         <div><span>趋势判断</span><strong>${escapeHtml(event.trend_claim)}</strong></div>
+        <div><span>有效互动 N</span><strong>${formatNumber(metric.likes_valid_count)}</strong></div>
+        <div><span>点赞中位数</span><strong>${formatNumber(metric.likes_median)}</strong></div>
+        <div><span>点赞 P75</span><strong>${formatNumber(metric.likes_p75)}</strong></div>
+        <div><span>最高单条</span><strong>${formatNumber(metric.likes_max)}</strong></div>
       </div>
+      <p class="dialog-metric-note">互动快照龄 ${formatNumber(metric.snapshot_age_hours_min)}—${formatNumber(metric.snapshot_age_hours_max)} 小时；N&lt;5 时只作案例观察。标签规则：${escapeHtml(metric.rule_version || BI.overview.rule_version)}。</p>
       <section class="dialog-section">
         <h3>关联业务模块</h3>
         <div class="event-action-line">${event.business_modules.map((item) => `<span class="tag">${escapeHtml(item)}</span>`).join("")}</div>
@@ -874,7 +950,7 @@
                 <h4>${escapeHtml(content.title)}</h4>
                 <p>点赞 ${formatNumber(content.engagement_snapshot.likes)} · 收藏 ${formatNumber(content.engagement_snapshot.collects)} · 评论 ${formatNumber(content.engagement_snapshot.comments)}</p>
               </div>
-              <a href="${escapeHtml(safeUrl(content.url))}" target="_blank" rel="noopener noreferrer" aria-label="打开原文：${escapeHtml(content.title)}">↗</a>
+              <a href="${escapeHtml(safeUrl(content.url))}" target="_blank" rel="noopener noreferrer" aria-label="打开原文：${escapeHtml(content.title)}">查看单条小红书原文 ↗</a>
             </article>`).join("")}
         </div>
       </section>`;
@@ -994,7 +1070,12 @@
   }
 
   function init() {
+    renderMetaAndStatus();
+    renderBiOverview();
     renderCoreThemes();
+    renderTagMetrics();
+    renderBreakdowns();
+    renderPromotions();
     renderEditorialWatch();
     renderSourceCoverage();
     renderFilterControls($("#desktop-filters"), "desktop");

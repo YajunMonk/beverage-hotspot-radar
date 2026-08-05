@@ -1,0 +1,8 @@
+﻿check_id,reported_value,recalculated_value,difference,status,checked_at
+overview.unique_event_count,35,35,0,passed,2026-08-05T03:26:09.000Z
+overview.brand_content_count,94,94,0,passed,2026-08-05T03:26:09.000Z
+overview.active_brand_count,9,9,0,passed,2026-08-05T03:26:09.000Z
+overview.likes_valid_count,94,94,0,passed,2026-08-05T03:26:09.000Z
+themes.event_memberships,44,44,0,passed,2026-08-05T03:26:09.000Z
+source_signals.total,29,29,0,passed,2026-08-05T03:26:09.000Z
+promotions.total,9,9,0,passed,2026-08-05T03:26:09.000Z
