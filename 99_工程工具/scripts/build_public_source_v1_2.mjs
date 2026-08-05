@@ -10,6 +10,7 @@ const ROOT = path.resolve(import.meta.dirname, "../..");
 const PAGE_BUILDER = path.join(import.meta.dirname, "build_public_v1_2_release.mjs");
 const METRIC_DIR = "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/03_汇总指标";
 const ANALYSIS_DIR = "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/04_分析结论";
+const BI_DIR = "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/05_BI数据集";
 
 const PUBLIC_FILES = [
   ".gitignore",
@@ -98,7 +99,8 @@ async function main() {
 
   const aggregateFiles = await selectedFiles(METRIC_DIR, (name) => name.startsWith("mart_") && name.endsWith(".csv"));
   const analysisFiles = await selectedFiles(ANALYSIS_DIR, (name) => name.startsWith("analysis_insights.") && [".csv", ".json"].includes(path.extname(name)));
-  const whitelist = [...new Set([...PUBLIC_FILES, ...aggregateFiles, ...analysisFiles])];
+  const biFiles = await selectedFiles(BI_DIR, (name) => ["bi_dashboard_snapshot.json", "bi_metric_long.csv"].includes(name));
+  const whitelist = [...new Set([...PUBLIC_FILES, ...aggregateFiles, ...analysisFiles, ...biFiles])];
 
   for (const relative of whitelist) await copyRelative(relative, outputDir);
 

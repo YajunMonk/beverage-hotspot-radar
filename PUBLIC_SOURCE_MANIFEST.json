@@ -1,7 +1,7 @@
 {
   "release": "V1.2",
   "scope": "public_safe_source",
-  "generated_at": "2026-08-05T03:48:40.756Z",
+  "generated_at": "2026-08-05T03:50:13.095Z",
   "excluded": [
     "原始抓取",
     "运行记录",
@@ -120,6 +120,16 @@
       "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/04_分析结论/analysis_insights.json",
       "bytes": 5607,
       "sha256": "39077457010fcb19d64df669d79faabaede3d15a6b94be5add0c8bfed9322536"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/05_BI数据集/bi_dashboard_snapshot.json",
+      "bytes": 162009,
+      "sha256": "135bafd5becdafe0e65259da951a5a8df1273d566c28d70cdbc2ee70837bab9d"
+    },
+    {
+      "path": "02_数据清洗/处理后数据/V1.2/周期快照/2026-W30/05_BI数据集/bi_metric_long.csv",
+      "bytes": 14786,
+      "sha256": "2ccc3362b0216c9c6c1a75adcd356b837bc501bb0edc3479683ef106c7070cf5"
     },
     {
       "path": "02_数据清洗/处理后数据/V1.2/README.md",
@@ -253,8 +263,8 @@
     },
     {
       "path": "99_工程工具/scripts/build_public_source_v1_2.mjs",
-      "bytes": 6935,
-      "sha256": "b696bdf99a3cfced397e347bf864952f2ac5bde6b4062c04f335e18ff0521556"
+      "bytes": 7165,
+      "sha256": "62a5d8c6762add130a3238a6f38e29b4200d8bf0dd24ea361cbc1d75b58855bb"
     },
     {
       "path": "99_工程工具/scripts/build_public_v1_2_release.mjs",
@@ -293,8 +303,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5192,
-      "sha256": "a3242b6f546238288bd88cbb84c1226d98c92a3fdc0ed9cb5e73f0b839423bf0"
+      "bytes": 5238,
+      "sha256": "1d5662ad441bccc5df6a12bb113e291926285c417743e2082de003a3a15feb69"
     }
   ]
 }
