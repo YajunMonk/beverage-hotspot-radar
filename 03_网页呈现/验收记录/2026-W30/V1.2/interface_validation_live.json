@@ -1,11 +1,11 @@
 {
   "schema_version": "interface-validation-v1.2",
   "target_url": "https://yajunmonk.github.io/beverage-hotspot-radar/",
-  "checked_at": "2026-08-05T03:45:29.217Z",
+  "checked_at": "2026-08-05T04:33:25.652Z",
   "status": "passed",
   "summary": {
-    "total": 26,
-    "passed": 26,
+    "total": 34,
+    "passed": 34,
     "failed": 0
   },
   "failed_check_ids": [],
@@ -19,8 +19,8 @@
     {
       "id": "title",
       "status": "passed",
-      "expected": "饮品热点雷达 V1.2 · BI 数据版",
-      "actual": "饮品热点雷达 V1.2 · BI 数据版"
+      "expected": "饮品热点雷达 V1.2 · 本周市场信号",
+      "actual": "饮品热点雷达 V1.2 · 本周市场信号"
     },
     {
       "id": "release",
@@ -31,14 +31,20 @@
     {
       "id": "all_source_count",
       "status": "passed",
-      "expected": "64 条来源线索",
-      "actual": "64 条来源线索"
+      "expected": "64 条市场线索",
+      "actual": "64 条市场线索"
     },
     {
       "id": "brand_content_count",
       "status": "passed",
-      "expected": "94 条内容",
-      "actual": "94 条内容"
+      "expected": "94 条官号内容",
+      "actual": "94 条官号内容"
+    },
+    {
+      "id": "initial_event_card_count",
+      "status": "passed",
+      "expected": 12,
+      "actual": 12
     },
     {
       "id": "theme_count",
@@ -53,27 +59,51 @@
       "actual": 25
     },
     {
+      "id": "popular_tag_count",
+      "status": "passed",
+      "expected": 8,
+      "actual": 8
+    },
+    {
+      "id": "quick_action_count",
+      "status": "passed",
+      "expected": 4,
+      "actual": 4
+    },
+    {
+      "id": "methodology_collapsed",
+      "status": "passed",
+      "expected": "closed",
+      "actual": "closed"
+    },
+    {
+      "id": "evidence_collapsed",
+      "status": "passed",
+      "expected": "closed",
+      "actual": "closed"
+    },
+    {
       "id": "kpi_values",
       "status": "passed",
       "expected": [
-        "35事件",
-        "94篇",
-        "94N",
-        "688",
-        "1,335.5",
-        "37,000"
+        "35个",
+        "9个",
+        "688"
       ],
       "actual": [
-        "35事件",
-        "94篇",
-        "94N",
-        "688",
-        "1,335.5",
-        "37,000"
+        "35个",
+        "9个",
+        "688"
       ]
     },
     {
       "id": "desktop_overflow",
+      "status": "passed",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "id": "engineering_terms_not_in_primary_reading",
       "status": "passed",
       "expected": 0,
       "actual": 0
@@ -93,8 +123,8 @@
     {
       "id": "koc_filter",
       "status": "passed",
-      "expected": "19 条来源线索",
-      "actual": "19 条来源线索"
+      "expected": "19 条市场线索",
+      "actual": "19 条市场线索"
     },
     {
       "id": "koc_direct_link",
@@ -105,14 +135,20 @@
     {
       "id": "third_party_filter",
       "status": "passed",
-      "expected": "10 条来源线索",
-      "actual": "10 条来源线索"
+      "expected": "10 条市场线索",
+      "actual": "10 条市场线索"
     },
     {
       "id": "jasmine_filter",
       "status": "passed",
-      "expected": "3 条来源线索",
-      "actual": "3 条来源线索"
+      "expected": "3 条市场线索",
+      "actual": "3 条市场线索"
+    },
+    {
+      "id": "event_evidence_button",
+      "status": "passed",
+      "expected": true,
+      "actual": true
     },
     {
       "id": "event_dialog",
@@ -130,7 +166,7 @@
       "id": "canonical_evidence_link",
       "status": "passed",
       "expected": "canonical explore URL",
-      "actual": "https://www.xiaohongshu.com/explore/6a61909f0000000001002bb5"
+      "actual": "https://www.xiaohongshu.com/explore/6a65f5f800000000110195f1"
     },
     {
       "id": "ephemeral_url_count",
@@ -143,6 +179,12 @@
       "status": "passed",
       "expected": 0,
       "actual": 0
+    },
+    {
+      "id": "mobile_page_height",
+      "status": "passed",
+      "expected": "< 20000px",
+      "actual": 14664
     },
     {
       "id": "mobile_filter_button",

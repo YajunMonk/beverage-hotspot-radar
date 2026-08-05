@@ -1,7 +1,7 @@
 {
   "release": "V1.2",
   "scope": "public_safe_source",
-  "generated_at": "2026-08-05T03:50:13.095Z",
+  "generated_at": "2026-08-05T04:34:39.845Z",
   "excluded": [
     "原始抓取",
     "运行记录",
@@ -163,8 +163,8 @@
     },
     {
       "path": "02_数据清洗/规则/数据分析与BI执行规范_V1.2.md",
-      "bytes": 15304,
-      "sha256": "d4061104019efe906756bbf2130fc3a93e053f09d9910860b070a5bfb36f481c"
+      "bytes": 15302,
+      "sha256": "e5f824596a29441242b54236e45a5f3acf861bc7a64c6fe62e46d503fbb1020c"
     },
     {
       "path": "02_数据清洗/校验记录/2026-W30/V1.2/data_quality_checks.csv",
@@ -189,7 +189,7 @@
     {
       "path": "02_数据清洗/校验记录/2026-W30/V1.2/release_validation_report.json",
       "bytes": 180402,
-      "sha256": "2b776ce5b21e14582234a227552466068abb04b0af4f4877c4421649894b71d8"
+      "sha256": "44d394db875ac5a757f4c4774e0348b15fff773849200d464421833441259278"
     },
     {
       "path": "02_数据清洗/校验记录/2026-W30/V1.2/v1.1_immutable_fingerprints.json",
@@ -203,18 +203,18 @@
     },
     {
       "path": "03_网页呈现/验收记录/2026-W30/V1.2/页面验收记录.md",
-      "bytes": 1780,
-      "sha256": "0d9b8659b498d23f2f158bc22633e8a88ae5f211b1302ce99b9e801f1b6bb11e"
+      "bytes": 2263,
+      "sha256": "1ecbc1c302a8c4d5eed2d12d94fbecdbde21345ffe427f955bfc8b2759f5efdc"
     },
     {
       "path": "03_网页呈现/验收记录/2026-W30/V1.2/interface_validation_live.json",
-      "bytes": 4002,
-      "sha256": "8d439535632d96e5aec1e3586189721c4ccd587d9ba039d55598b2b7e3e55e6a"
+      "bytes": 4893,
+      "sha256": "6500f4360e723804cfffa6d9180548170fedb18db55168f8dbd3685318f7b1e7"
     },
     {
       "path": "03_网页呈现/验收记录/2026-W30/V1.2/interface_validation_local.json",
-      "bytes": 3973,
-      "sha256": "09d6a829c27bd7ca28baa08ccd77e8b4bf45961e19d85150fe56a91def193911"
+      "bytes": 4864,
+      "sha256": "13b752bae120d49da0a241b5482dc8850d37d98bb8af4d9d9df749a64dc8a8be"
     },
     {
       "path": "03_网页呈现/README.md",
@@ -228,8 +228,8 @@
     },
     {
       "path": "03_网页呈现/V1.2/index.html",
-      "bytes": 13906,
-      "sha256": "8c9d7587653dcda1800853fdd6124b51d05a03eb7f826d2cafb7fad7ccd11775"
+      "bytes": 15421,
+      "sha256": "66e9c4f80fafb8c078288e7f00790562173860ef000d17c961bc8ac8dfb7c742"
     },
     {
       "path": "03_网页呈现/V1.2/radar-v1-2-data.js",
@@ -238,13 +238,13 @@
     },
     {
       "path": "03_网页呈现/V1.2/radar-v1-2.css",
-      "bytes": 58735,
-      "sha256": "044c722cc769f6f08e14d5a23dae4321a1fae0ae3ed2160a4cea1d46413a8e40"
+      "bytes": 71815,
+      "sha256": "0ccd7299cc0aa3ea01f6776b8e3f4fdf7edeee352d899734a50653f212b7d898"
     },
     {
       "path": "03_网页呈现/V1.2/radar-v1-2.js",
-      "bytes": 55860,
-      "sha256": "c3547a29687de5b9b61dafc56d57ddf58b3dd61339782ff7cf9c762f2ce60994"
+      "bytes": 59968,
+      "sha256": "6cbdf711ff32a51b130a86b032ea58015e0f15b885b270fc68d2265587c35c68"
     },
     {
       "path": "03_网页呈现/V1.2/README.md",
@@ -283,8 +283,8 @@
     },
     {
       "path": "99_工程工具/scripts/playwright_v1_2_interface_qa.mjs",
-      "bytes": 7999,
-      "sha256": "560552ef05a5c977456e8a8c49e38e5eaf0f24e84281175ae38eebab5ecd8401"
+      "bytes": 9436,
+      "sha256": "82e3c1e15fa87d94496f2ace7f2bb72cae7356e275445c82b9144b7c356a6af2"
     },
     {
       "path": "99_工程工具/scripts/README.md",

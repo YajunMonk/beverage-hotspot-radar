@@ -2,7 +2,7 @@
   "schema_version": "release-validation-v1.2",
   "release": "V1.2",
   "period_id": "2026-W30",
-  "checked_at": "2026-08-05T03:46:44.663Z",
+  "checked_at": "2026-08-05T04:34:29.464Z",
   "status": "passed",
   "summary": {
     "total_checks": 245,
@@ -864,12 +864,12 @@
       "status": "passed",
       "message": "03_网页呈现/V1.2/index.html 文件哈希和字节数符合manifest",
       "expected": {
-        "sha256": "8c9d7587653dcda1800853fdd6124b51d05a03eb7f826d2cafb7fad7ccd11775",
-        "bytes": 13906
+        "sha256": "66e9c4f80fafb8c078288e7f00790562173860ef000d17c961bc8ac8dfb7c742",
+        "bytes": 15421
       },
       "actual": {
-        "sha256": "8c9d7587653dcda1800853fdd6124b51d05a03eb7f826d2cafb7fad7ccd11775",
-        "bytes": 13906
+        "sha256": "66e9c4f80fafb8c078288e7f00790562173860ef000d17c961bc8ac8dfb7c742",
+        "bytes": 15421
       }
     },
     {
@@ -892,12 +892,12 @@
       "status": "passed",
       "message": "03_网页呈现/V1.2/radar-v1-2.css 文件哈希和字节数符合manifest",
       "expected": {
-        "sha256": "044c722cc769f6f08e14d5a23dae4321a1fae0ae3ed2160a4cea1d46413a8e40",
-        "bytes": 58735
+        "sha256": "0ccd7299cc0aa3ea01f6776b8e3f4fdf7edeee352d899734a50653f212b7d898",
+        "bytes": 71815
       },
       "actual": {
-        "sha256": "044c722cc769f6f08e14d5a23dae4321a1fae0ae3ed2160a4cea1d46413a8e40",
-        "bytes": 58735
+        "sha256": "0ccd7299cc0aa3ea01f6776b8e3f4fdf7edeee352d899734a50653f212b7d898",
+        "bytes": 71815
       }
     },
     {
@@ -906,12 +906,12 @@
       "status": "passed",
       "message": "03_网页呈现/V1.2/radar-v1-2.js 文件哈希和字节数符合manifest",
       "expected": {
-        "sha256": "c3547a29687de5b9b61dafc56d57ddf58b3dd61339782ff7cf9c762f2ce60994",
-        "bytes": 55860
+        "sha256": "6cbdf711ff32a51b130a86b032ea58015e0f15b885b270fc68d2265587c35c68",
+        "bytes": 59968
       },
       "actual": {
-        "sha256": "c3547a29687de5b9b61dafc56d57ddf58b3dd61339782ff7cf9c762f2ce60994",
-        "bytes": 55860
+        "sha256": "6cbdf711ff32a51b130a86b032ea58015e0f15b885b270fc68d2265587c35c68",
+        "bytes": 59968
       }
     },
     {
@@ -920,12 +920,12 @@
       "status": "passed",
       "message": "03_网页呈现/V1.2/README.md 文件哈希和字节数符合manifest",
       "expected": {
-        "sha256": "db070f460db33b4e7b0c18596e719aeb242843c3d3cd3400546a19e74ceb90f9",
-        "bytes": 1197
+        "sha256": "f025d94807fe74df6b6ec98b313ac3a13233acd51cc2b680ed45fea5894d08fd",
+        "bytes": 2067
       },
       "actual": {
-        "sha256": "db070f460db33b4e7b0c18596e719aeb242843c3d3cd3400546a19e74ceb90f9",
-        "bytes": 1197
+        "sha256": "f025d94807fe74df6b6ec98b313ac3a13233acd51cc2b680ed45fea5894d08fd",
+        "bytes": 2067
       }
     },
     {

@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#fffefc">
-  <meta name="description" content="饮品热点雷达 V1.2：基于可追溯数据表，查看品牌事件、互动分布、品类、原料、联名、促销与热点选题。">
-  <title>饮品热点雷达 V1.2 · BI 数据版</title>
+  <meta name="description" content="饮品热点雷达 V1.2：先看一周市场主线，再按新品、联名、促销、KOC与原帖证据继续查找。">
+  <title>饮品热点雷达 V1.2 · 本周市场信号</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111111'/%3E%3Cpath d='M18 19h28l-3 31H21z' fill='%23fff'/%3E%3Cpath d='M25 28c5-5 11-5 16 0-5 5-11 5-16 0Z' fill='%23f15b35'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="./radar-v1-2.css">
   <script src="./radar-v1-2-data.js" defer></script>
@@ -37,11 +37,11 @@
 
     <nav class="section-nav" aria-label="页面章节">
       <div class="page-shell nav-track">
-        <a href="#overview">数据总览</a>
-        <a href="#breakdowns">分类洞察</a>
-        <a href="#events">来源线索</a>
-        <a href="#evidence">原始内容</a>
-        <a href="#methodology">数据口径</a>
+        <a href="#core-themes">本周看点</a>
+        <a href="#tag-metrics">热门标签</a>
+        <a href="#promotion-watch">优惠与热点</a>
+        <a href="#events">市场线索</a>
+        <a href="#methodology">数据说明</a>
       </div>
     </nav>
   </header>
@@ -52,39 +52,33 @@
         <div class="scope-line" aria-label="本期数据范围">
           <span id="period-label" class="eyebrow">WEEKLY RESEARCH NOTE</span>
           <div class="scope-chips">
-            <span>小红书 · 品牌事实层</span>
-            <span>三方 / KOC 独立分层</span>
-            <span>事件去重 · 主题可重叠</span>
-            <span id="rule-label">规则 —</span>
+            <span id="scope-summary">— 个品牌 · — 个事件</span>
+            <span id="scope-source">品牌官号 + KOC / 三方线索</span>
+            <span class="scope-quality">数据已复核</span>
           </div>
         </div>
 
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="kicker">本周饮品市场，什么值得看？</p>
-            <h1>从品牌发帖，<span class="mobile-break" aria-hidden="true"></span>回到<br><em>真正发生的事</em></h1>
+            <p class="kicker">一周竞品动态，先看结论</p>
+            <h1>本周饮品市场，<span class="mobile-break" aria-hidden="true"></span><br><em>哪些动作值得跟？</em></h1>
             <p id="hero-lead" class="hero-lead">正在读取本期数据范围……</p>
+            <div class="hero-actions" aria-label="快捷查看">
+              <button type="button" data-apply-core-tag="product-new-launch" data-theme-id="product_action">看新品</button>
+              <button type="button" data-apply-theme="collaboration">看联名</button>
+              <a href="#promotion-watch">看优惠</a>
+              <button type="button" data-apply-source="koc">看 KOC 体验</button>
+            </div>
           </div>
         </div>
-
-        <section class="data-status-panel" aria-labelledby="data-status-heading">
-          <div class="data-status-heading">
-            <div>
-              <span class="section-index">00 / DATA STATUS</span>
-              <h2 id="data-status-heading">数据范围与质量状态</h2>
-            </div>
-            <span id="quality-badge" class="quality-badge">读取中</span>
-          </div>
-          <div id="data-status-content" class="data-status-content" aria-live="polite"></div>
-        </section>
 
         <section class="bi-overview-section" aria-labelledby="bi-overview-heading">
           <div class="core-theme-heading">
             <div>
-              <span class="section-index">BI / EXECUTIVE OVERVIEW</span>
-              <h2 id="bi-overview-heading">本期数据总览</h2>
+              <span class="section-index">本期概览</span>
+              <h2 id="bi-overview-heading">先看三个数字</h2>
             </div>
-            <p>固定展示全周期事实，不随下方筛选变化。均值只作辅助，主要看有效 N、中位数和 P75。</p>
+            <p>连续发帖已按同一市场事件归并，避免把声量误当成事件数量。</p>
           </div>
           <div id="bi-overview-grid" class="bi-overview-grid"></div>
           <p id="bi-overview-note" class="bi-overview-note"></p>
@@ -93,10 +87,10 @@
         <section id="core-themes" class="core-theme-section" aria-labelledby="core-theme-heading">
           <div class="core-theme-heading">
             <div>
-              <span class="section-index">01 / CORE THEMES</span>
-              <h2 id="core-theme-heading">核心看点</h2>
+              <span class="section-index">01 / 本周主线</span>
+              <h2 id="core-theme-heading">本周三条主线</h2>
             </div>
-            <p>先看判断，再看标签；点击卡片、代表事件或标签，即可回到对应事件与原始证据。</p>
+            <p>每张卡只给一个判断、一个代表案例和几个高频方向；详细指标按需展开。</p>
           </div>
 
           <div id="theme-analysis-grid" class="theme-analysis-grid" aria-label="核心看点分析"></div>
@@ -105,32 +99,28 @@
         <section id="tag-metrics" class="tag-metric-section" aria-labelledby="tag-metric-heading">
           <div class="core-theme-heading">
             <div>
-              <span class="section-index">TAG METRICS / 标签指标</span>
-              <h2 id="tag-metric-heading">标签指标明细</h2>
+              <span class="section-index">02 / 热门标签</span>
+              <h2 id="tag-metric-heading">大家都在做什么</h2>
             </div>
-            <p>点击标签可联动下方事件与原始证据；桌面显示表格，手机显示纵向指标卡。</p>
+            <p>先看覆盖事件多、跨品牌出现的方向；点击标签即可查看对应案例。</p>
           </div>
-          <div id="tag-metric-table" class="tag-metric-table"></div>
-        </section>
-
-        <section id="breakdowns" class="breakdown-section" aria-labelledby="breakdown-heading">
-          <div class="core-theme-heading">
-            <div>
-              <span class="section-index">02 / BUSINESS BREAKDOWN</span>
-              <h2 id="breakdown-heading">品类、原料与联名结构</h2>
-            </div>
-            <p>事件数看覆盖，品牌数看扩散，中位数和 P75 只描述当前互动快照。</p>
-          </div>
-          <div id="breakdown-grid" class="breakdown-grid"></div>
+          <div id="popular-tag-list" class="popular-tag-list" aria-label="本周热门标签"></div>
+          <details class="full-data-disclosure">
+            <summary>
+              <span>查看完整标签数据</span>
+              <small>25 项标签 · 含事件数、品牌数与互动参考</small>
+            </summary>
+            <div id="tag-metric-table" class="tag-metric-table"></div>
+          </details>
         </section>
 
         <section id="promotion-watch" class="promotion-watch" aria-labelledby="promotion-heading">
           <div class="core-theme-heading">
             <div>
-              <span class="section-index">PROMOTION / 促销观察</span>
-              <h2 id="promotion-heading">品牌活动与低价线索</h2>
+              <span class="section-index">03 / 优惠观察</span>
+              <h2 id="promotion-heading">优惠与拉新动作</h2>
             </div>
-            <p>品牌正文证据与三方发现线索分开统计，未找到官方规则的内容不会进入官方促销 KPI。</p>
+            <p>已核实的官号活动与尚待确认的低价传闻分开展示，避免把爆料当成事实。</p>
           </div>
           <div id="promotion-content"></div>
         </section>
@@ -138,12 +128,23 @@
         <section id="editorial-watch" class="editorial-watch" aria-labelledby="editorial-watch-heading">
           <div class="editorial-watch-heading">
             <div>
-              <span class="section-index">03 / HOT TOPICS</span>
-              <h2 id="editorial-watch-heading">近 7 天热点选题</h2>
+              <span class="section-index">04 / 借势热点</span>
+              <h2 id="editorial-watch-heading">可以借势的热点</h2>
             </div>
-            <span class="editorial-scope-badge">原句 · 白话解释 · 借势角度</span>
+            <span class="editorial-scope-badge">原帖 · 解释 · 借势角度</span>
           </div>
           <div id="editorial-watch-content" aria-live="polite"></div>
+        </section>
+
+        <section id="breakdowns" class="breakdown-section" aria-labelledby="breakdown-heading">
+          <div class="core-theme-heading">
+            <div>
+              <span class="section-index">05 / 市场结构</span>
+              <h2 id="breakdown-heading">品类、原料与联名风向</h2>
+            </div>
+            <p>用事件覆盖和品牌覆盖看市场方向；互动数据仅作为案例参考。</p>
+          </div>
+          <div id="breakdown-grid" class="breakdown-grid"></div>
         </section>
       </div>
     </section>
@@ -152,15 +153,15 @@
       <div class="page-shell">
         <div class="section-title">
           <div>
-            <span class="section-index">04 / EVENT LIBRARY</span>
-            <h2>来源线索库</h2>
+            <span class="section-index">06 / 全部动态</span>
+            <h2>全部市场线索</h2>
           </div>
-          <p>品牌按事件归并；三方与 KOC 按单帖呈现，可直接打开原帖。</p>
+          <p>按品牌、主题或来源筛选；官号按事件归并，KOC与三方保留单帖体验。</p>
         </div>
 
         <div class="event-toolbar">
           <div class="toolbar-summary">
-            <strong id="event-result-count">— 条来源线索</strong>
+            <strong id="event-result-count">— 条市场线索</strong>
             <span id="filter-summary">当前为全部结果</span>
           </div>
           <button id="mobile-filter-open" class="mobile-filter-button" type="button">
@@ -173,10 +174,10 @@
         <div id="source-coverage" class="source-coverage" aria-live="polite"></div>
 
         <div class="event-layout">
-          <aside class="desktop-filter-panel" aria-label="来源线索筛选">
+          <aside class="desktop-filter-panel" aria-label="市场线索筛选">
             <div class="filter-intro">
-              <strong>筛选规则</strong>
-              <p>同一组为 OR，不同组之间为 AND。</p>
+              <strong>快速找到需要的案例</strong>
+              <p>同类条件可多选，不同条件同时生效。</p>
             </div>
             <div id="desktop-filters" class="filter-groups"></div>
           </aside>
@@ -184,9 +185,10 @@
           <div class="event-results">
             <div id="active-filter-chips" class="active-filter-chips" aria-live="polite"></div>
             <div id="event-list" class="event-list"></div>
+            <button id="event-load-more" class="load-more" type="button">查看更多市场线索</button>
             <div id="event-empty" class="empty-state" hidden>
               <span aria-hidden="true">○</span>
-              <h3>没有符合条件的来源线索</h3>
+              <h3>没有符合条件的市场线索</h3>
               <p>可以减少一个筛选条件，或清空后重新查看。</p>
               <button class="button reset-filters" type="button">清空筛选</button>
             </div>
@@ -197,33 +199,37 @@
 
     <section id="evidence" class="section evidence-section">
       <div class="page-shell">
-        <div class="section-title">
-          <div>
-            <span class="section-index">05 / SOURCE EVIDENCE</span>
-            <h2>原始内容证据</h2>
+        <details class="evidence-disclosure">
+          <summary>
+            <span>
+              <small class="section-index">07 / 原帖回看</small>
+              <strong>查看品牌官号原帖</strong>
+              <em>KOC 与三方原帖已放在上方市场线索卡片中。</em>
+            </span>
+            <b>展开 94 条官号内容</b>
+          </summary>
+          <div class="evidence-body">
+            <div class="evidence-toolbar">
+              <label class="search-field">
+                <span>搜索标题、品牌或线索</span>
+                <input id="content-search" type="search" placeholder="例如：菠萝、蜘蛛侠、瑞幸" autocomplete="off">
+              </label>
+              <label class="select-field">
+                <span>排序</span>
+                <select id="content-sort">
+                  <option value="latest">最新发布</option>
+                  <option value="likes">点赞从高到低</option>
+                  <option value="collects">收藏从高到低</option>
+                  <option value="comments">评论从高到低</option>
+                </select>
+              </label>
+              <p id="content-result-count" class="content-result-count"></p>
+            </div>
+
+            <div id="content-list" class="content-list"></div>
+            <button id="content-load-more" class="load-more" type="button">继续查看</button>
           </div>
-          <p>保留原文、发布时间与互动快照，不展示缺失的分享数。</p>
-        </div>
-
-        <div class="evidence-toolbar">
-          <label class="search-field">
-            <span>搜索标题、品牌或线索</span>
-            <input id="content-search" type="search" placeholder="例如：菠萝、蜘蛛侠、瑞幸" autocomplete="off">
-          </label>
-          <label class="select-field">
-            <span>排序</span>
-            <select id="content-sort">
-              <option value="latest">最新发布</option>
-              <option value="likes">点赞从高到低</option>
-              <option value="collects">收藏从高到低</option>
-              <option value="comments">评论从高到低</option>
-            </select>
-          </label>
-          <p id="content-result-count" class="content-result-count"></p>
-        </div>
-
-        <div id="content-list" class="content-list"></div>
-        <button id="content-load-more" class="load-more" type="button">继续查看</button>
+        </details>
       </div>
     </section>
 
@@ -231,57 +237,77 @@
       <div class="page-shell">
         <div class="section-title light">
           <div>
-            <span class="section-index">06 / READING RULES</span>
-            <h2>这份雷达应该怎么读</h2>
+            <span class="section-index">08 / 数据说明</span>
+            <h2>需要时，再看完整口径</h2>
           </div>
-          <p>边界比结论更重要。</p>
+          <p>首页负责给判断，这里负责说明判断的边界。</p>
         </div>
 
-        <div class="method-grid">
-          <article>
-            <span>01</span>
-            <h3>当前只代表监测样本</h3>
-            <p id="method-scope">品牌事实、三方发现、KOC体验和编辑热点分层使用，只有品牌事实层进入正式事件 KPI。</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>内容数不等于事件数</h3>
-            <p>品牌可以为同一轮活动连续发布多条内容。页面默认按事件归并，内容只作为证据展开。</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>中位数优先于均值</h3>
-            <p id="method-engagement">点赞、收藏和评论只是不同暴露时长下的公开快照。缺少曝光与粉丝量时，不计算互动率。</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>待复核不会被隐藏</h3>
-            <p id="method-review">事件标签、迁移字段和实体关系的待复核项进入独立队列，并在质量状态中显示。</p>
-          </article>
-          <article>
-            <span>05</span>
-            <h3>趋势必须跨周期判断</h3>
-            <p>至少 2 个同口径周期后才展示环比，至少 4 个周期后才允许输出趋势；当前只展示本周结构。</p>
-          </article>
-          <article>
-            <span>06</span>
-            <h3>表格、Excel、网页同源</h3>
-            <p>CSV 是事实来源，Excel 用于管理复核，网页只读取预计算后的 BI 数据，不再临时计算正式指标。</p>
-          </article>
-        </div>
+        <details class="methodology-disclosure">
+          <summary>
+            <span>
+              <strong>本期数据已完成复核</strong>
+              <small>品牌事实与 KOC / 三方分开统计；互动是单次快照，不等同销量。</small>
+            </span>
+            <span id="quality-badge" class="quality-badge">读取中</span>
+          </summary>
 
-        <div class="method-footer">
-          <p>数据版本 <strong>V1.2</strong> · 标签规则 <strong id="method-rule">—</strong></p>
-          <p>更新于 <time id="generated-time">—</time></p>
-        </div>
+          <section class="data-status-panel" aria-labelledby="data-status-heading">
+            <div class="data-status-heading">
+              <div>
+                <span class="section-index">数据范围与质量</span>
+                <h3 id="data-status-heading">本期数据状态</h3>
+              </div>
+            </div>
+            <div id="data-status-content" class="data-status-content" aria-live="polite"></div>
+          </section>
+
+          <div class="method-grid">
+            <article>
+              <span>01</span>
+              <h3>当前只代表监测样本</h3>
+              <p id="method-scope">品牌事实、三方发现、KOC体验和编辑热点分层使用，只有品牌事实层进入正式事件 KPI。</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>内容数不等于事件数</h3>
+              <p>品牌可以为同一轮活动连续发布多条内容。页面默认按事件归并，内容只作为证据展开。</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>互动只作案例参考</h3>
+              <p id="method-engagement">点赞、收藏和评论只是不同暴露时长下的公开快照。缺少曝光与粉丝量时，不计算互动率。</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>待复核不会被隐藏</h3>
+              <p id="method-review">事件标签、迁移字段和实体关系的待复核项进入独立队列，并在质量状态中显示。</p>
+            </article>
+            <article>
+              <span>05</span>
+              <h3>趋势必须跨周期判断</h3>
+              <p>至少 2 个同口径周期后才展示环比，至少 4 个周期后才允许输出趋势；当前只展示本周结构。</p>
+            </article>
+            <article>
+              <span>06</span>
+              <h3>完整数据仍可追溯</h3>
+              <p>CSV 是事实来源，Excel 用于管理复核，网页读取同一份预计算数据；完整指标没有删除，只从主阅读路径收起。</p>
+            </article>
+          </div>
+
+          <div class="method-footer">
+            <p>数据版本 <strong>V1.2</strong> · 标签规则 <strong id="method-rule">—</strong></p>
+            <p>更新于 <time id="generated-time">—</time></p>
+          </div>
+        </details>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="page-shell">
-      <span>饮品热点雷达 · 可追溯 BI 数据版</span>
-      <span>品牌事实 / 三方发现 / KOC体验 / 编辑热点</span>
+      <span>饮品热点雷达 · 一周市场信号</span>
+      <span>先看判断，再查案例与原帖</span>
     </div>
   </footer>
 
@@ -296,12 +322,12 @@
     <div class="mobile-filter-shell">
       <div class="mobile-filter-head">
         <div>
-          <span class="section-index">FILTER EVENTS</span>
-          <h2 id="mobile-filter-title">筛选来源线索</h2>
+          <span class="section-index">筛选市场线索</span>
+          <h2 id="mobile-filter-title">找到需要的案例</h2>
         </div>
         <button id="mobile-filter-close" class="dialog-close" type="button" aria-label="关闭筛选">×</button>
       </div>
-      <p class="mobile-filter-rule">同一组为 OR，不同组之间为 AND。</p>
+      <p class="mobile-filter-rule">同类条件可多选，不同条件同时生效。</p>
       <div id="mobile-filters" class="filter-groups"></div>
       <div class="mobile-filter-actions">
         <button class="text-button reset-filters" type="button">清空</button>
